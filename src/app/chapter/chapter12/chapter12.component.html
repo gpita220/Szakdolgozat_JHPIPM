@@ -1,0 +1,94 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">12. Fejezet</h1>
+        <br> <h2 class="h2title"> Az Kódolás hatásfoka, kódolási eljárások</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben meg fogunk ismerkedni az alapvető kódolási eljárásokkal, az elkészített kódrendszereket elemezni is fogjuk (átlagos kódhossz, hatásfok).</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>A kódolás hatásfoka</li>
+                    <li>Shannon-Fano kódolás</li>
+                    <li>Huffman kódolás</li>
+                </ul>
+                <h1 class="h1content">A lecke tartalma:</h1>
+                <h2 class="h2content">A kódolás hatásfoka</h2>
+                <p>A kódoknak a csatornán való továbbítása bizonyos „költséggel" jár. (Gondoljunk arra, hogy pl. a távirati díj nemcsak a szavak számától, hanem a hosszától is függ.) A legegyszerűbb költségfüggvényt úgy kapjuk, hogy minden egyes Ai-hoz hozzárendeljük a kódját alkotó jelek h<sub>i</sub> számát, vagyis a kód h<sub>i</sub> hosszát (i = 1,2,... ,n), mert akkor a közleményenkénti átlagos költség arányos a közleményeket alkotó jelek számának átlagával.</p>
+                <p><b>Definíció </b>Az A<sub>1</sub>,A<sub>2</sub>,...,A<sub>n</sub> jeleket p<sub>1</sub>,p<sub>2</sub>,...,p<sub>n</sub> valószínűséggel kibocsátott jelek h<sub>1</sub>,h<sub>2</sub>,...,h<sub>n</sub> hosszúságú kódsorozatának átlagos hossza, a kódhosszak a megfelelő valószínűségekkel súlyozott középértéke (várható érték), vagyis</p>
+                <img src="assets/pic121.jpg">
+                <p>Hatásosabb kódrendszernek azt a kódrendszert nevezhetjük, melyhez kisebb átlagos hossz (szóhossz) tartozik. A feladat pedig olyan kódolási eljárás keresése és megvalósítása, amelynél hátl értéke minimális.</p>
+                <p>Az előzőek során megadott kódrendszereknél:</p>
+                <p>K1 esetén: mivel minden kódban h<sub>1</sub> = 2, ezért itt h<sub>átl</sub>= 2,</p>
+                <img src="assets/pic122.jpg">
+                <p>K2 esetén:</p>
+                <img src="assets/pic123.jpg">
+                <p>K3 esetén:</p>
+                <img src="assets/pic124.jpg">
+                <p>Az átlagos hossz tehát a K3 kódrendszernél a legkisebb a fenti kód rendszerek közül. (A K4 kódrendszer nem szeparálható kódrendszer, így az átlagos hossz vizsgálatának itt nincs is értelme.)</p>
+                <p>Bebizonyítható, hogy az átlagos hossz minimuma</p>
+                <img src="assets/pic125.jpg">
+                <p>ahol H(A) az adó entrópiája, m pedig a kódábécé jeleinek a száma, tehát</p>
+                <img src="assets/pic126.jpg">
+                <p>Egyenlőség akkor érhető el, ha</p>
+                <img src="assets/pic127.jpg">
+                <p>Bináris kódolásnál, mivel m = 2, ezért</p>
+                <p style="text-align: center;">min(h<sub>átl</sub>) = H(A) ,</p>
+                <p>és ez akkor érhető el, ha</p>
+                <p style="text-align: center;">p<sub>i</sub>=2<sup>-h<sub>i</sub></sup></p>
+                <p>és</p>
+                <img src="assets/pic128.jpg">
+                <p>Mivel példánkban</p>
+                <img src="assets/pic129.jpg">
+                <p>tehát a K3 kódrendszer minimális átlagos hosszat ad, tehát ezt tarthatjuk a leghatékonyabbnak.</p>
+                <p><b>Definíció</b> Egy kódokási eljárás hatásfoka  a kódolt jelek jelenkénti átlagos információjának (H(A)/h<sub>átl</sub>) és a kódábécé lehetséges maximális jelenkénti információjának a hányadosa, azaz</p>
+                <img src="assets/pic130.jpg">
+                <p>Bináris kódolásnál:</p>
+                <img src="assets/pic131.jpg">
+                <p>Mivel η≤1, ezért</p>
+                <img src="assets/pic132.jpg">
+                <p>vagyis</p>
+                <img src="assets/pic133.jpg">
+                <p><b>Definíció</b>Egy kódolási eljárás redundanciája (terjengössége) az</p>
+                <p style="text-align: center;">r = 1 − η</p>
+                <p>értékkel jellemezhető.</p>
+                <p>A hatásfok és a redundancia értékeit is általában %-ban fejezzük ki. A definíció értelmében a legnagyobb hatásfok egyenértékű a legkisebb redundanciával.</p>
+                <p>Mintafeladatunkban</p>
+                <img src="assets/pic134D.jpg">
+                <p>Tehát valóban a K3 kódrendszer a leghatásosabb. Vegyük észre, hogy a legnagyobb valószínűséggel előforduló jelnek van a legrövidebb kódja.</p>
+                <ul>
+                    <li>1/2 valószínűségű jel kódja 0, – egy jegy,</li>
+                    <li>1/4 valószínűségű jel kódja 10, – két jegy,</li>
+                    <li>1/8 valószínűségű jelek kódja három jegy.</li>
+                </ul>
+
+                <h2 class="h2content">Kódolási eljárások</h2>
+                <p>Nyilván fontos számunkra, hogy hogyan tudunk konstruálni nagy hatásfokú kódokat, egyáltalán szeparálható kódokat. Mi itt döntően csak a bináris kódolással foglalkozunk, mivel azok a számítógépek és automaták fontos alkalmazási területei.</p>
+                <h2 class="h2content">Szeparálható bináris kódolás</h2>
+                <p>Ha csak a szeparálhatóság az egyetlen kikötés, akkor a következő egyszerű kódolási algoritmust alkalmazhatjuk.</p>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+</section>

@@ -14,6 +14,7 @@ import { Chapter8Component } from './chapter/chapter8/chapter8.component';
 import { Chapter9Component } from './chapter/chapter9/chapter9.component';
 import { Chapter10Component } from './chapter/chapter10/chapter10.component';
 import { Chapter11Component } from './chapter/chapter11/chapter11.component';
+import { Chapter12Component } from './chapter/chapter12/chapter12.component';
 
 const routes: Routes = [
   {path:'',redirectTo: '/mainpage', pathMatch: 'full'},
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path:'chapter8',component:Chapter8Component},
   {path:'chapter9',component:Chapter9Component},
   {path:'chapter10',component:Chapter10Component},
-  {path:'chapter11',component:Chapter11Component}
+  {path:'chapter11',component:Chapter11Component},
+  {path:'chapter12',component:Chapter12Component}
 ];
 
 @NgModule({

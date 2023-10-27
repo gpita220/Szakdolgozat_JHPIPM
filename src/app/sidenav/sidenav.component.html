@@ -70,6 +70,11 @@
                       <span>11. Fejezet</span>
                   </a>
                   </mat-nav-list>
+                  <mat-nav-list>
+                    <a mat-list-item routerLink="chapter12"(click)="sidenav.toggle()">
+                        <span>12. Fejezet</span>
+                    </a>
+                    </mat-nav-list>
         </ng-template>
       </mat-expansion-panel>
       <a mat-list-item class="listitem" routerLink="studenteditor" routerLinkActive="active"(click)="sidenav.toggle()"><mat-icon>portrait</mat-icon><span class="fo"><b>Hallgatók</b></span></a>

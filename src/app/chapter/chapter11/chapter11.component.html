@@ -1,0 +1,218 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">11. Fejezet</h1>
+        <br> <h2 class="h2title"> Az entrópia és tulajdonságai, kódolás alapjai</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben megismerkedünk az entrópia fogalmával, és a kódolás alapjaival.</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>entrópia fogalma</li>
+                    <li>entrópia tulajdonságai</li>
+                </ul>
+                <h1 class="h1content">A lecke tartalma:</h1>
+                <h2 class="h2content">Az entrópia és tulajdonságai</h2>
+                <p>A mérték definiálásánál az n = 2<sup>m</sup> és az egyforma valószínűség erős kikötések. A forrásból kibocsátott jelek előfordulási valószínűsége ugyanis különböző. Például a magyar nyelvben (angolban is) a leggyakoribb betű az „e". (Ezt a billentyűt használjuk a legtöbbet.) Ez a valószínűség 0,1, ami azt jelenti, hogy egy elég hosszú szövegben a betűk 10%-a „e" betű.</p>
+                <p><b>Definíció</b>Az A<sub>1</sub>,A<sub>2</sub>,...,A<sub>n</sub> jeleket rendre p1,p2,...,pn valószínűségekkel kibocsátó adó (rendszer), ahol</p>
+                <p style="text-align: center;">p<sub>1</sub> + p<sub>2</sub> + ··· + p<sub>n</sub> = 1	és	0 ≤ pi ≤1 (i = 1,2,... ,n),</p>
+                <p>átlagos információját a valószínűségekkel súlyozott középértékkel jellemezhetjük, vagyis</p>
+                <img src="assets/pic111.jpg">
+                <p>amit a rendszer bizonytalanságának, határozatlanságának vagy entrópiájának is nevezünk.</p>
+                <p>Megjegyezzük, hogy a rendszer entrópiája objektív mérőszám, függetlenül attól, hogy az információt értjük, vagy nem. Az információ ugyanis a rendszerben van és nem a megfigyelő tudatában. A bizonytalanság szóhasználat arra utal, hogy egy jel kibocsátásakor annyi információt nyerünk, amennyi bizonytalanság éppen megszűnik.
+                <br>A fenti definíció nincs ellentmondásban az előzőek során már ismertetett fogalommal, ahol a jelek kibocsátásának valószínűsége egyenlő.
+                </p>
+                <img src="assets/pic112.jpg">
+                <p>és</p>
+                <img src="assets/pic113.jpg">
+                <p>miatt</p>
+                <img src="assets/pic114.jpg">
+                <p>vagyis</p>
+                <img src="assets/pic115.jpg">
+                <p>Az, hogy a definíció hűen tükrözi-e a valóságot, a rendszer bizonytalanságait, azt az alkalmazás, a gyakorlat dönti el. </p>
+                <p>Ennek bemutatására vizsgáljunk meg néhány példát:
+                <br>Hasonlítsuk össze három adó entrópiáját, amelyek mindegyike egyformán két-két jelet bocsát ki, de más-más valószínűséggel.
+                </p>
+                <img src="assets/pic116.jpg">
+                <p>A harmadik adónál majdnem biztos, hogy a C<sub>1</sub> jel kerül kibocsátásra, a másodiknál már sokkal nehezebb, az elsőnél pedig a legnehezebb megjósolni, hogy melyik jel kerül kibocsátásra. Ez összhangban van azokkal az eredményekkel, amelyeket kaptunk</p>
+                <p style="text-align: center;">H<sub>3</sub> &lt; H<sub>2</sub> &lt; H<sub>1</sub> .</p>
+                <p>Az első adóhoz tartozó bizonytalanság jóval nagyobb mint a harmadikhoz tartozó és nagyobb a másodikhoz tartozónál is. </p>
+                <p>Adott helyen annak a valószínűsége,</p>
+                <ul>
+                    <li>hogy június 10-én esik az eső: p1 = 0,4 ,</li>
+                    <li>hogy nem esik: p2 = 0,6 ;</li>
+                    <li>hogy november 20-án esik az eső: q1 = 0,65 ,</li>
+                    <li>hogy hó esik: q2 = 0,15 , hogy nem esik: q3 = 0,2;</li>
+                </ul>
+                <p>Ha csak az érdekel bennünket, hogy esik vagy nem esik, akkor mivel</p>
+                <p style="text-align: center;">H(p<sub>1</sub>,p<sub>2</sub>) = −0,4log<sub>2</sub>0,4 − 0,6log<sub>2</sub>0,6 ≈ 0,97 bit</p>
+                <p>és</p>
+                <p style="text-align: center;">H(q<sub>1</sub> + q<sub>2</sub>,q<sub>3</sub>) = −0,8log<sub>2</sub>0,8 − 0,2log<sub>2</sub>0,2 ≈ 0,72 bit,</p>
+                <p>ezért a június 10-i időjárás határozatlanabb.</p>
+
+                <p>Ha a csapadék minősége is (eső, hó) érdekel, akkor viszont a november 20-i időjárás határozatlanabb, mert</p>
+                <p style="text-align: center;">H(q<sub>1</sub>,q<sub>2</sub>,q<sub>3</sub>) = −0,65log<sub>2</sub>0,65−0,15log<sub>2</sub>0,15−0,2log<sub>2</sub>0,2 ≈ 1,28 bit</p>
+                <p>és</p>
+                <p style="text-align: center;">H(p<sub>1</sub>,p<sub>2</sub>) ≈ 0.97 bit.</p>
+                <p>Kilenc db egyforma pénzünk van, ezek közül 1 könnyebb, hamis. Serpenyős mérlegen mérősúlyok nélkül hány méréssel állapíthatjuk meg, hogy melyik a hamis?
+                <br>Mivel hamis a 9 érme közül bármelyik ugyanolyan valószínűséggel lehet, ezért
+                </p>
+                <p style="text-align: center;">H<sub>1</sub> = log<sub>2</sub>9 = 2log<sub>2</sub>3 .</p>
+                <p>Végezzünk n mérlegelést. Ezeknek egyenként 3 eredménye (kimenete) lehet:</p>
+                <ul>
+                    <li>bal serpenyő süllyed,</li>
+                    <li>jobb serpenyő süllyed,</li>
+                    <li>egyensúlyban lesz a két serpenyő, így</li>
+                </ul>
+                <p style="text-align: center;">nlog3 > 2log<sub>2</sub>3 ,</p>
+                <p>ahonnan n>2</p>
+                <p>Ha a mérlegelést úgy végezzük, hogy a kimenetek valószínűsége közel egyenlő, akkor n = 2 mérés elegendő is:</p>
+                <ol>
+                    <li>mérésnél:	3 db	3 db	kimarad: 3 db
+                        <br>valószínűségek:	1/3	1/3	1/3
+                    </li>
+                    <li>mérésnél:	1 db	1 db	kimarad: 1 db
+                        <br>valószínűségek:	1/3	1/3	1/3
+                    </li>
+                </ol>
+                <h3 class="h3content">Példa</h3>
+                <p>Az alábbi  C++ program bekér a felhasználótól egy sztringet, majd kiszámolja annak entrópiáját a calculateEntropy függvény segítségével.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include  &lt;string>
+                            #include  &lt;map>
+                            #include  &lt;cmath>
+                            
+                            using namespace std;
+                            
+                            double calculateEntropy(const string& inputString) &#10100;
+                                map &lt;char, int> characterCount;
+                                int totalCharacters = 0;
+                            
+                                // Karakterek előfordulását
+                                for (char c : inputString) &#10100;
+                                    characterCount[c]++;
+                                    totalCharacters++;
+                                &#10101;
+                                double entropy = 0.0;
+                                // Entrópia számítása
+                                for (const auto& pair : characterCount) &#10100;
+                                    double probability = static_cast&lt;double>(pair.second) / totalCharacters;
+                                    entropy -= probability * log2(probability);
+                                &#10101;
+                                return entropy;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                string inputString;
+                            
+                                cout  &lt; &lt; "Adjon meg egy sztringet: ";
+                                getline(cin, inputString);
+                                double entropy = calculateEntropy(inputString);
+                                cout  &lt; &lt; "Az entrópia: "  &lt; &lt; entropy  &lt; &lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic117.jpg">
+                    <figcaption>40. ábra Entrópia számítása I. C++ kód</figcaption>
+                </figure>
+                <h3 class="h3content">Példa</h3>
+                <p>Az alábbi C++ program bekéri rendszer elemszámát, majd bekéri a valószínűségeket és összegezi azokat. Ellenőrzi, hogy a valószínűségek összeg 1-e,  ha az összeg 1, akkor kiszámolja a rendszer entrópiáját a calculateEntropy függvény segítségével.
+                <br>Emlékezzünk vissza, hogy az összeadásnál a double típusú lebegőpontos számok pontossági problémákat okozhatnak, ezért egyenlőségvizsgálat helyett az összeg 1-hez epsilon távolságon belüli közelségét vizsgáljuk.
+                </p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;vector>
+                            #include &lt;cmath>
+                            using namespace std;
+                            
+                            double calculateEntropy(const vector&lt;double>& probabilities) &#10100;
+                                double entropy = 0.0;
+                                // Kiszámoljuk az entrópiát
+                                for (double p : probabilities)  &#10100;
+                                    entropy -= p * log2(p);
+                                &#10101;
+                                return entropy;
+                            &#10101;
+                            int main()  &#10100;
+                                int n;
+                                cout &lt;&lt; "Adja meg a jelek számát (n): ";
+                                cin >> n;
+                                vector&lt;double> probabilities(n);
+                                double sum = 0.0;
+                                for (int i = 0; i &lt; n; i++)  &#10100;
+                                    cout &lt;&lt; "Adja meg a(z) A" &lt;&lt; i + 1 &lt;&lt; " jel, p"  &lt;&lt; i + 1 &lt;&lt; " valószínűségét: ";
+                                    cin >> probabilities[i];
+                                    sum += probabilities[i];
+                                &#10101;
+                                // Ellenőrzük, hogy a valószínűségek összege 1-e?
+                                if (abs(sum - 1.0) &lt; 1e-9)  &#10100;
+                                    // Ha a valószínűségek összege 1, akkor kiszámoljuk az entrópiát
+                                    double entropy = calculateEntropy(probabilities);
+                                    cout &lt;&lt; "A rendszer entrópiája: " &lt;&lt; entropy &lt;&lt; endl;
+                                &#10101; else  &#10100;
+                                    cout &lt;&lt; "A valószínűségek összege nem egyenlő 1-gyel." &lt;&lt; endl;
+                                &#10101;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic118.jpg">
+                    <figcaption>41. ábra Entrópia számítása II. C++ kód</figcaption>
+                </figure>
+
+                <h2 class="h2content">Az entrópiafüggvény tulajdonságai.</h2>
+                <p><b>Tétel</b>A H(p<sub>1</sub>,p<sub>2</sub>,...,p<sub>n</sub>) függvény folytonos valamennyi p<sub>1</sub> változójában a (0,1] intervallumon.</p>
+                <p><b>Tétel</b>Az entrópiafüggvény minden változójában szimmetrikus.</p>
+                <p><b>Tétel</b>Tétel Az entrópiafüggvény maximumát akkor veszi fel, amikor a valószínűségek egyenlők, vagyis</p>
+                <img src="assets/pic119.jpg">
+                <p><b>Tétel</b>A jelek számának növelésével, továbbá bontással a bizonytalanság nem csökken.</p>
+
+                <h2 class="h2content">A kódolás célja, feladata</h2>
+                <p>A kódolás az információátvitel és alkalmazások szempontjából az információelmélet egyik legfontosabb területe. A kódolást szükségessé teszi egyrészt az a tény, hogy az adó jeleit, a továbbító csatorna általában nem tudja értelmezni, mert technikailag csak más jelek továbbítására alkalmas. Másrészt a kódolással az átvitel hatásfokát is javítani szeretnénk, és végül feltesszük, hogy a csatorna az adó jeleit nem torzítja el, vagyis a csatorna zajmentes.</p>
+                <p>Tegyük fel, hogy az adó</p>
+                <p style="text-align: center;">A<sub>1</sub>,A<sub>2</sub>,...,A<sub>n</sub></p>
+                <p>jeleket bocsát ki</p>
+                <p style="text-align: center;">p<sub>1</sub>,p<sub>2</sub>,...,p<sub>n</sub></p>
+                <p>valószínűségekkel, és a csatorna</p>
+                <p style="text-align: center;">x<sub>1</sub>,x<sub>2</sub>,...,x<sub>m</sub></p>
+                <p>jeleket képes továbbítani, ahol n ≫ m (általában n jóval nagyobb mint m). Mi többnyire az x<sub>1</sub> = 0, x<sub>2</sub> = 1 és m = 2, tehát a két jelet fogadó bináris csatornával foglalkozunk.</p>
+
+                <p><b>Definíció</b>Definíció A kódolás az Ai jeleknek az xi jelek sorozatára történő kölcsönösen egyértelmű leképzése úgy, hogy az egyértelműen dekódolható legyen.
+                <br>A kölcsönösen egyértelmű megfeleltetés azt jelenti, hogy az Ai-hez rendelt kódszó, különbözik az Ak-hoz rendeltől (i ≤ k). Az egyértelmű dekódolhatóság pedig azt jelenti, hogy különböző közleményekhez különböző kódsorozatok tartoznak.
+                <br>Egy adott jelrendszerhez több kódolási előírást is megvalósíthatunk ugyanazokkal a csatornajelekkel. Ezek hatásfoka különböző lehet. Célszerű tehát ezeket közelebbről is megvizsgálni. Vegyünk egy egyszerű kódolási problémát:
+                <br>Legyen n = 4, a jelek A1, A2, A3, A4, a megfelelő valószínűségek 1/2,1/4, 1/8, 1/8 és m = 2, x1 = 0, x2 = 1, valamint a kódolt közlemény
+                </p>
+                <p style="text-align: center;">...10010001101110...</p>
+                <p>Tekintsük a következő táblázatban megadott kódolási szabályokat (K1, K2, K3, K4):</p>
+                <img src="assets/pic120.jpg">
+                <p>Láthatjuk, hogy a K4 kódrendszer nem egyértelműen dekódolja a közleményt, de a többi igen. Vegyük észre, hogy az egyértelmű megfejtéshez nem volt szükségünk az elemek közötti határolójelekre sem a K1, K2, K3 kódrendszernél.</p>
+
+                <p><b>Definíció</b>Azokat a kódokat, amelyekkel a közlemények az elemek közötti határolójelek alkalmazása nélkül egyértelműen dekódolhatók szeparálható, vagy egyértelműen megfejthető kódoknak nevezzük</p>
+                <p>A közönséges nyelv szavai nem szeparálhatók, mert pl.</p>
+                <ul>
+                    <li>mást jelent a kalapács, mint a kalap meg az ács szóközzel elválasztva</li>
+                    <li>vagy pl. búvár; bú, vár,</li>
+                    <li>törülköző; tör, ül, köz, ő.</li>
+                </ul>
+                <p>Az egyértelmű megfejthetőségnek elégséges feltétele az, hogy egyetlen kódot se lehessen megkapni valamely másikból további betűk hozzávételével. (Egyik kód sem eleje egy másik kódnak.)</p>
+                <p><b>Definíció</b>Az olyan kódokat, amelyeknél egyik kód sem eleje egy másik kódnak, prefix tulajdonságú, vagy irreducibilis kódoknak nevezzük.
+                <br>A K2 esetnél megadott kódok nem irreducibilisek, mert pl. 1 a 10-nek eleje, 10 a 100-nak eleje és így tovább, de szeparábilis vagyis egyértelműen megfejthető. Tehát az irreducibilis kódok az egyértelműen megfejthető kódok egy szűkebb osztályát alkotják.
+                </p>
+            </div>
+        </div>
+</section>

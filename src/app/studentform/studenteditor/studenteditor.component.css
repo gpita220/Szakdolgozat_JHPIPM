@@ -1,0 +1,89 @@
+.container{
+    max-width: 1250px;
+    height: 100%;
+    margin:0 auto 24px;
+    
+}
+.div1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.sidenote{
+    width: 180px;
+    position:static;
+    float:right;
+    margin-top: 0px;
+    margin-left: 10px;
+    text-align: left;
+   
+}
+.contact{
+    font-size: 22px;
+    text-align: center; 
+    background-color: #63b800;
+}
+.icon{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.p1{
+    position:absolute;
+}
+.h1title {
+    color: #111; 
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-size: 45px; 
+    font-weight: 100; 
+    line-height: 45px; 
+    margin: 0 0 0; 
+    padding: 10px 30px;
+    text-align: center; 
+    
+}
+hr {
+    border: 0;
+    height: 5px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #63b800, rgba(0, 0, 0, 0));
+}
+/* <table> */
+.mattable{
+    float: right;
+    width: 675px;
+    max-width: 100%;
+    overflow: auto;
+    position:relative;
+}
+
+.table{
+    width: 800px;
+  }
+.mat-column-name {
+  border-right: 1px solid #63b800;
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-school {
+  width: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mat-column-major {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.mat-column-select{
+  text-align: center;
+  font-weight: bold;
+}
+
+.p2{
+  background-color: #B3FD5C;
+  padding: 20px;
+  font-size: larger;
+}
+th{
+  border-bottom: 1px solid #63b800 ;
+}

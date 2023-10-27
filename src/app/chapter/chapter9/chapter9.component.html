@@ -1,0 +1,290 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">9. Fejezet</h1>
+        <br> <h2 class="h2title"> Utasítások, algoritmusok, programok, kifejezések kiértékelése</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben az utasítások, algoritmusok, programok alapfogalmaival, illetve a kifejezések kiértékelésének szabályaival, sajátosságaival fogunk megismerkedni.  </p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>utasítás fogalma</li>
+                    <li>algoritmus fogalma</li>
+                    <li>program fogalma</li>
+                    <li>szekvenciapontok</li>
+                    <li>mellékhatás</li>
+                    <li>rövidzár</li>
+                    <li>kifejezések kiértékelése</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+                <h1 class="h1content">Az utasítás fogalma</h1>
+                <p>Az előző fejezetekben megismerkedtünk a számítógéppel feldolgozható információk, adatok tárolásával és ábrázolásával. Ezen adatok feldolgozásához, mint azt már jeleztük is, a számítógépben tárolni kell azokat az utasításokat is, amelyek alapján a kijelölt feladat automatikusan, lépésről-lépésre haladva megoldást eredményez, vagyis kimenő adatokat (output), információkat eredményez. Szükséges tehát annak tisztázása is, hogy az utasítások ábrázolása és tárolása hogyan valósítható meg. Először azonban tisztázni kell milyen utasításokat értelmezhetünk a számítógépnél.</p>
+                <p><b>Definíció</b>Az utasítás olyan tevékenység pontos megfogalmazása, amelyet tovább részletezni nem tudunk, vagy nem akarunk, és a végrehajtó számára egyértelmű jelentéssel bír.</p>
+                <p>A számítógépes utasítás nyilván szűkebb területre vonatkozik, a gép belső működéséhez, állapotváltozásához nyújt információt.</p>
+                <p>A számítógép mint automata az utasítások hatására a kiinduló, kezdeti állapotból több közbülső állapoton keresztül eljut egy végső állapotba, melynek hatására az input adatokból eredményadatok állnak elő. Egy-egy számítógépes utasítás alapvetően</p>
+                <ul>
+                    <li>műveletek elvégzését kezdeményezi, vagy</li>
+                    <li>vezérlési feladatot lát el.</li>
+                </ul>
+                <p>Kétfajta elven működő számítógépeken különböztethetünk meg, bár manapság már ötvözik a két technológiát.</p>
+                <ul>
+                    <li>A CISC (a Complex Instruction Set Computer, vagyis "összetett utasításkészlettel rendelkező számítógép"). Az ilyen processzoroknak utasításkészlete több és komplexebb, mint a RISC processzoroké. A CISC processzorok utasításai sokszor több elemi műveletet végeznek egyidőben, a gépi kódú programjaik rövidebbek, jobban átláthatók, ami egyszerűsíti a fordítóprogramok működését. Viszont a bonyolultabb utasítások megnövelhetik a végrehajtási időt. Ilyen bonyolult processzorok például, a X86-os architektúrák, amit az Intel és az AMD gyárt.</li>
+                    <li>A RISC (Reduced Instruction Set Computing), csökkentett utasításkészletű számítástechnika, vagy erre az elvre épülő számítógépi processzortervezés. Egyszerűség miatt a RISC elvet a mikrokontrollerek tervezésénél is kihasználják. RISC technológiát alkalmaznak például az Oracle (korábban, Sun Microsystems) SPARC számítógépe vagy az IBM Power Architecture típusú szuperszámítógépe. A RISC technológia alkalmazásának új területe az ARM architektúrájú hordozható eszközök, táblagépek és ultrabook-ok piaca, illetve a szintén főleg ARM-re készített Microsoft Windows CE (beágyazott Windows) technológia.</li>
+                </ul>   
+                <h2 class="h2content">A program és algoritmus fogalma</h2>
+                <p>Egy számítógéppel megoldandó feladat, probléma megoldása pontosan megfogalmazott és megfelelő sorrendben leírt utasítások sorozata, amely alapján a gép a szükséges adatok ismeretében előállítja a probléma megoldásához szükséges információt.</p>
+                <p><b>Definíció</b>A program olyan utasítássorozat, amely egy kijelölt (változtatható) input adatstruktúrából egy meghatározott output adatstruktúrába való átmenet lépéseit írja elő. A program számítógéppel történő végrehajtását dinamikus programnak nevezzük.</p>
+                <p>A program általában két részből áll, az adatdefiníciós és a vezérlésleíró részből. Az adatdefiníciós részben az előforduló adatok típusait adjuk meg, a vezérlésleíró részben pedig az eredményt előállító utasítások sorrendjét és tartalmát rögzíthetjük.
+                <br>Egy-egy probléma megoldási lépéseit, vagy egy folyamat, tevékenységsorozat elvégzését írásban rögzítjük.
+                </p>
+                <p><b>Definíció</b>Az algoritmus egy probléma általános érvényű megoldásának véges számú részlépésben történő egyértelmű és teljes leírása.</p>
+                <p>Általános érvényű olyan értelemben, hogy segítségükkel több, esetleg végtelen sok egymástól csak bemenő adatokban különböző feladat megoldható. Ebből következően minden algoritmus értelmezési tartománnyal rendelkezik.</p>
+                <p>Az algoritmus és az utasítás fogalma is független a számítógéptől, azaz általánosabb érvényű. Az algoritmusok segítségével olyan tevékenységek végrehajtási sorrendje is leírható, amelyek elvégzése számítógéppel nem lehetséges, de a gyakorlatban hasznosak. Sok mindennapi tevékenységünk is algoritmizálható.</p>
+                <p>Az algoritmusok leírási módjára nincsenek külön megkötések. Több algoritmusleíró eszköz ismeretes. Ezek célja a megoldás menetének, a program vezérlési részének géptől és nyelvtől független, szemléletes, a logikai gondolatmenetet, a szerkezeti egységeket világosan tükröző leírása.</p>
+                <p>Algoritmuselíró eszközök:</p>
+                <ul>
+                    <li>folyamatábra,</li>
+                    <li>struktogram,</li>
+                    <li>mondatszerű leírás.</li>
+                </ul>
+                <h3 class="h3content">Példa</h3>
+                <p>A következő C++ program, a Leibniz sorozatot használja a π közelítő értékének meghatározásához.</p>
+                <p>Leibniz sorozat:</p>
+                <img src="assets/pic101.jpg">
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+
+                            using namespace std;
+                            int main() &#10100;
+                                int n;
+                                double pi = 0.0;
+                            
+                                cout &lt;&lt; "Adjon meg egy pozitív egész számot (p - iterációk száma): ";
+                                cin >> n;
+                            
+                                if (n &lt;= 0) &#10100;
+                                    cout &lt;&lt; "Hibás bemenet. A szám legyen pozitív egész szám." &lt;&lt; endl;
+                                    return 0;
+                                &#10101;
+                            
+                                for (int i = 0; i &lt; n; i++) &#10100;
+                                    double term = 1.0 / (2 * i + 1);
+                                    if (i % 2 == 0) &#10100;
+                                        pi += term;
+                                    &#10101; else &#10100;
+                                        pi -= term;
+                                    &#10101;
+                                &#10101;
+                            
+                                pi *= 4;
+                            
+                                cout &lt;&lt; "π közelítő értéke: " &lt;&lt; pi &lt;&lt; endl;
+                            
+                                return 0;
+                            &#10101;
+                            
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic102.jpg">
+                    <figcaption>36. ábra Leibniz sorozat π értékének meghatározásához C++ kód</figcaption>
+                </figure>
+                <h3 class="h3content">Példa</h3>
+                <p>A következő C++ program, a sin x érékét numerikusan közelítőeljárás segítségével határozza meg.</p>
+                <p>A szinusz függvényt leíró Taylor-sorozat:</p>
+                <img src="assets/pic103.jpg">
+                <p>A sorozat általános alakja:</p>
+                <img src="assets/pic104.jpg">
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;cmath>
+                            
+                            double degreesToRadians(double degrees) &#10100;
+                                return degrees * M_PI / 180.0;
+                            &#10101;
+                            int factorial(int n)
+                            &#10100;
+                                return (n==1 || n==0) ? 1: n * factorial(n - 1); 
+                            &#10101;
+                            
+                            double calculateSin(double x, int n) &#10100;
+                                double sinx=0.0;
+                            
+                                for (int i = 0; i &lt;= n; i++) &#10100;
+                                    
+                                    sinx +=pow(-1,i)*(pow(x,2*i+1))/(factorial(2*i+1));
+                                &#10101;
+                            
+                                return sinx;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                double x;
+                                int n;
+                            
+                                std::cout &lt;&lt; "Adjon meg egy szöget fokban (x): ";
+                                std::cin >> x;
+                                std::cout &lt;&lt; "Adjon meg egy pozitív egész számot (n- iterációk száma): ";
+                                std::cin >> n;
+                            
+                                double radians = degreesToRadians(x);
+                                double sinValue = calculateSin(radians, n);
+                                std::cout &lt;&lt; "sin(" &lt;&lt; x &lt;&lt; ") közelítő értéke: " &lt;&lt; sinValue &lt; std::endl;
+                            
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic105.jpg">
+                    <figcaption>37. ábra sin x numerikus meghatározása C++ kód</figcaption>
+                </figure>
+
+                <h1 class="h1content">Kifejezések kiértékelése</h1>
+                <h2 class="h2content">Kifejezés</h2>
+                <p>A kifejezés egyetlen operandus vagy operandusok és operátorok sorozatából álló nyelvi elem, ahol az operátorok különféle műveleti jelek, melyek összekapcsolják a kifejezésekben szereplő operandusokat. Egy operandust, amennyiben például egy konstans érték, azonosító, sztring, metódushívás, tömbindex vagy tagkiválasztó operátor, elsődleges kifejezésnek nevezzük. Természetesen egy operandus lehet egy zárójelezett vagy zárójel nélküli operátorokkal összekapcsolt további operandusokból álló összetett kifejezés is.</p>
+                <h2 class="h2content">Művelet</h2>
+                <p>A művelet egy olyan tevékenység (sorozat), amit az operátorok előírnak. A kifejezés kiértékelése nem más, mint a benne szereplő összes művelet elvégzése. Elsőbbségi (precedencia) szabályok a műveletek során a kifejezések kiértékelési sorrendjét meghatározó szabályok, amelyek által precedencia szintenként csoportosíthatók a műveletek. A sorrend zárójelezés segítségével testre szabható, mert először mindig a zárójelben lévő műveletek hajtódnak végre.</p>
+                <p><b>Megjegyzés</b>Az operátorok többsége túlterhelhető, amennyiben az egyik vagy mindkét operandusa felhasználó által definiált osztály vagy típus.</p>
+                <h2 class="h2content">Asszociativitás</h2>
+                <p>Amennyiben több azonos precedencia szinten lévő operátorral van dolgunk, akkor a kiértékelési sorrendje általában balról jobbra haladva történik, kivételt képeznek az egy operandusú, értékadással egybekötött két operandusú, illetve a három operandusú műveletek, melyek kiértékelése jobbról balra történik. A sorrend zárójelezés segítségével testre szabható, mert először mindig a zárójelben lévő műveletek hajtódnak végre.</p>
+                <p><b>Példa</b>Jobbról-balra szabály</p>
+                <p>A a = b = c = 5; azonos az a = (b = (c = 5)); kifejezéssel, mivel az értékadó utasításoknál a kiértékelés jobbról-balra történik.</p>
+                <p><b>Példa</b>Balról-jobbra szabály</p>
+                <p>Az alábbi kifejezésben / és ∗, illetve a + és a − azonos precedencia szinten vannak.</p>
+                <p style="text-align: center;">a + b/c ∗ d − e;</p>
+                <p>A kiértékelés balról-jobbra történik, először a /, majd a ∗, ezt követően az + és végül a − kerül kiértékelésre.</p>
+                <p><b>Példa</b>Zárójelezés</p>
+                <p>Mint arról az előzőekben volt szó, amennyiben egy kifejezésben különböző precedencia szinteken lévő műveletek vannak, a kiértékelést mindig a magasabb precedenciájú műveleteket tartalmazó részkifejezés kiértékelésével kell kezdenünk. A zárójelezéssel a kiértékelés sorrendjét változtathatjuk meg. Amennyiben a+b/c*d-e helyett a (a+b)/c*d-e  kifejezés értékét szeretnénk kiszámolni, a + művelet precedenciáját zárójelezéssel előrébb kell hozni,</p>
+                <p style="text-align: center;">(a + b)/c ∗ d − e.</p>
+
+                <h2 class="h2content">Mellékhatás (side effect)</h2>
+                <p>Bizonyos műveletek pl. függvényhívás, többszörös értékadás, léptetés (++, −−) feldolgozásakor jelentkező jelenség, melynek során a kifejezés értékének megjelenése mellett bizonyos változók is megváltoztathatják értékeiket. Kiértékelésük sorrendjét nem határozzák meg a fordítók, így ügyelni kell rájuk, el kell kerülni az olyan utasításokat, melyek kiértékelése függ a precedenciától. Mellékhatások esetében a program viselkedése függhet az előzményektől, vagyis a kiértékelés sorrendje számít. A mellékhatásokkal járó függvény viselkedésének megértéséhez ismerni kell az adott kontextust, és annak lehetséges előzményeit.</p>
+                <p>A C/C++ nyelvekben egy függvényről vagy kifejezésről azt mondjuk, hogy mellékhatása van, ha módosít egy állapotot a hatókörén kívül, vagy interakcióba lép az őt meghívó függvénnyel, illetve a hatókörén kívüli programrészekkel. </p>
+                <p>Megállapodás szerint egy érték visszaadása hatással van a hívó függvényre, de ezt nem tekintjük mellékhatásnak. </p>
+                <p>Néhány mellékhatás:</p>
+                <ul>
+                    <li>globális vagy statikus változó módosítása, </li>
+                    <li>függvény argumentumainak módosítása, </li>
+                    <li>adatok írása képernyőre vagy fájlba, </li>
+                    <li>adatok olvasása, </li>
+                    <li>egyéb mellékhatásos függvény meghívása.</li>
+                </ul>
+
+                <h3 class="h3content">Példa</h3>
+                <p>Az alábbi programban van egy multiplyByTwo függvény, amely kap egy egész számot paraméterként, és visszaadja a szám dupláját. A függvényen belül kiírjuk a szám dupláját a konzolra. A main függvényben bekérünk egy egész számot a felhasználótól, majd meghívjuk a multiplyByTwo függvényt ezzel a számmal. Az eredeti számot és a visszatérési értéket is kiírjuk a konzolra.</p>
+                <p>Az, hogy a multiplyByTwo függvénnyel kiíratjuk a szám dupláját a konzolra, egy  mellékhatást idézünk elő, mert a függvénynek eredetileg a szám dupláját kellene visszaadnia. Azáltal, hogy a függvény kiír valamit, a végrehajtás során a program állapota megváltozik, ami a mellékhatást idéz elő.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            using namespace std;
+                            
+                            int multiplyByTwo(int num) &#10100;
+                                int result = num * 2;
+                                cout &lt;&lt; "A szám duplája: " &lt;&lt; result &lt;&lt; endl;
+                                return result;
+                            &#10101;
+                            int main() &#10100;
+                                int number;
+                                cout &lt;&lt; "Adjon meg egy egész számot: ";
+                                cin >> number;
+                                int multiplied = multiplyByTwo(number);
+                                cout &lt;&lt; "A szám eredeti értéke: " &lt;&lt; number &lt;&lt; endl;
+                                cout &lt;&lt; "A szám duplája a visszatérési értékben: " &lt;&lt; multiplied &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic106.jpg">
+                    <figcaption>38. ábra Mellékhatás szemléltetése C++ kód</figcaption>
+                </figure>
+
+                <h2 class="h2content">Szekvencia-pontok</h2>
+                <p>A szekvencia-pontok, a program végrehajtásának azon pontjait, amelynél garantált, hogy a korábbi kiértékelések összes mellékhatása végrehajtódott, de a későbbi kiértékelésekből származó mellékhatások még nem kerültek kiértékelésre. </p>
+                <p>Gyakran több szekvencia-pont hozzáadása szükséges egy kifejezés egyértelmű definiálásához, illetve a megfelelő kiértékelési sorrend biztosításához. A függvényhívás egy ilyen szekvencia-pont, a függvény törzsének végrehajtása csak az aktuális paraméterek kiértékelése után kezdődhet meg. Azonban az aktuális paraméterek előre nem definiált sorrendben értékelődnek ki, kiértékelési sorrendjük előre nem definiált.</p>
+                <h2 class="h2content">Rövidzár (short circuit)</h2>
+                <p>Az a kiértékelési mód, amely során nem szükséges kiértékelni a teljes kifejezést ahhoz, hogy egyértelműen meghatározzuk az értékét. Például ha egy && bal oldali operandusa 0, a jobb oldalit már szükségtelen kiértékelni, a kifejezés értéke egyértelműen 0 lesz.</p>
+                <h3 class="h3content">Példa</h3>
+                <p><kbd>bool result = false && someFunction();  // someFunction() nem hajtódik végre</kbd></p>
+                <p><kbd>bool result = true || someFunction();   // someFunction() nem hajtódik végre</kbd> </p>
+                <p>Kifejezések kiértékelésének sorrendje egy általános célú imperatív programozási nyelv esetében.</p>
+                <p>Kifejezések kiértékelésének sorrendje</p>
+                <ol>
+                    <li>Egyoperandusú (unáris) operátorok :</li>
+                    <ul>
+                        <li>− (kettes komplementer képzés jele), </li>
+                        <li>+  (változatlanul hagyás jele) ,</li>
+                        <li>NOT (bitenkénti tagadás).</li>
+                    </ul>
+                    <li>Kétoperandusú multiplikatív operátorok:</li>
+                    <ul>
+                        <li>∗ (szorzás),</li>
+                        <li>/ (osztás),</li>
+                        <li>DIV (egészrész osztás),</li>
+                        <li>MOD (maradékos osztás),</li>
+                        <li>SHL (bitenkénti eltolás, balra),</li>
+                        <li>SHR (bitenkénti eltolás, jobbra),</li>
+                        <li>AND (bitenkénti és művelet), </li>
+                    </ul>
+                    <li>Kétoperandusú additív operátorok:</li>
+                    <ul>
+                        <li>+ (összeadás),</li>
+                        <li>− (kivonás), </li>
+                        <li>OR (bitenkénti vagy művelet).</li>
+                    </ul>
+                    <li>Az azonos precedencia szinten lévő műveletek között a kiértékelés sorrendje (balról-jobbra). Zárójelezéssel a kiértékelés sorrendje természetesen módosítható.</li>
+                </ol>
+                <h3 class="h3content">Példa</h3>
+                <p>Előjeles bájton értékeljük ki a következő kifejezést: (−7) AND 3 SHR 5 OR (−15) + 4 / NOT(9) =</p>
+                <ol>
+                    <li>unáris műveletek </li>
+                    <ul>
+                        <li>a: (−7) −− > 11111001</li>
+                        <li>b: (−15) −− > 11110001 </li>
+                        <li>c: NOT(9) −− > 11110110 </li>
+                    </ul>
+                    <li>kétoperandusú multiplikatív műveletek</li>
+                    <ul>
+                        <li>d: a. AND 3 −− > 11111001 AND 00000011 = 00000001 </li>
+                        <li>e: d. SHR 5 −− > 00000001 SHR 5 = 00000000 </li>
+                        <li>f: 4 / c. −− > 00000010 / c. = 00000000 </li>
+                    </ul>
+                    <li>kétoperandusú additív műveletek</li>
+                    <ul>
+                        <li>g: e. OR b. −− > 00000000 OR 11110001 = 11110001</li>
+                        <li>h: g. + f. −− > 11110001 + 00000000 = 11110001</li>
+                    </ul>
+                </ol>
+                <p>Eredmény: 11110001 −− > −15.</p>
+                <h2 class="h2content">C++ nyelv precedencia sorrendje</h2>
+                <img src="assets/pic107.jpg">
+                <img src="assets/pic108.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>Az előzőkben ismertetett (−7) AND 3 SHR 5 OR (−15) + 4 / NOT(9) példa C++ implentációja.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            using namespace std;
+                            int main() &#10100;
+                                char e = -7 & 3 >> 5 | -15 + 4 / ~9;
+                                cout  &lt; &lt; e  &lt; &lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+
+            </div>
+        </div>
+</section>

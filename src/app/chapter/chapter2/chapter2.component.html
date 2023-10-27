@@ -1,0 +1,161 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+  </div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">2. Fejezet</h1>
+        <br> <h2 class="h2title"> Helyiértékes számrendszerek I.</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>A számítástechnikában alapvető a számrendszerek ismerete. Ebben a fejezetben
+                    igyekszünk részletesen és alaposan körbejárni ezt a területet. Megismerkedünk a p>1 alapú számrendszerekkel, a p>1 alapú számrendszerekből, decimális számrendszerbe történő áttérés konverziós algoritmusaival, illetve a Horner-Ruffini féle eljárással.
+                    </p>
+                
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, vonalzó, radír, böngésző.</p>
+
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>p>1 alapú számrendszerbeli szám értéke a 10-es számrendszerben.</li>
+                    <li>Horner-Ruffini féle elrendezés.</li>
+                    <li>Áttérés tetszőleges p>1 alapú számrendszerből decimális számrendszerbe.</li>
+                </ul>
+
+                <h2 class="h2content">A lecke tartalma:</h2>
+
+                <h1 class="h1content">Helyiértékes számrendszerek</h1>
+                <p>A mechanikus eszközökön és gépeken lehetséges volt sokfajta számrendszer kezelése. Az emberi természetből adódóan a legtöbb megvalósítás a tízes számrendszeren alapult. A számítógépek elterjedésével általánossá vált a kettes (és a kettő hatványain alapuló) számrendszer használata.</p>
+                <p> A 10-es számrendszerben egy szám értékét a számot formálisan felépítő számjegy
+                    értéke és helye határozza meg, az ilyen rendszereket helyiértékes számrend-
+                    szernek nevezzük. Vannak más elven felépülő számrendszerek is, például a
+                    római számrendszer nem helyiértékes. Itt például az I jel értéke a mögötte
+                    lévő jelektől függ. Tekintsük például az Eszterházy Károly Katolikus Egyetem megnyitásának a dátumát:
+                    </p>
+                    
+                <p style="text-align: center;">1774 = MDCCLXXIV.</p>
+
+                <h2 class="h2content">Néhány történelmileg érdekes számrendszer</h2>
+                <ul>
+                    <li><b>Római számrendszer:</b> A római számrendszer az ókori Róma által használt számrendszer volt, amely a (I,V,X,L,C,D,M) betűk különböző kombinációit használta az egész számok kifejezésére.</li>
+                    <li><b>Babiloni hatvanas (Babylonian sexagesimal) számrendszer:</b> Ez egy ókori mezopotámiai (Sumer) számrendszer volt, amely az 1 és 59 közötti számokra épült . A babiloni csillagászat is hatvanas számrendszert használt, a számrendszert használó matematikusok képesek voltak számokat összeadni, kivonni, szorozni, osztani. Az idő mérésére a mai napig használatban van. 
+                        <figure>
+                            <img src="assets/pic3.jpg" style="height: 300px;">
+                            <figcaption>3. ábra A babiloni számok 1-től 59-ig.</figcaption>
+                        </figure>
+                    </li>
+                    <li><b>Maya számrendszer:</b> A Maya kultúra által használt számrendszer a 20-as alapú  (vigezimális) számrendszeren alapult, amelyben az egész számokat vonalakkal és pöttyökkel jelölték.
+                        <figure>
+                            <img src="assets/pic4.jpg" style="height: 200px; margin-left: 450px;">
+                            <figcaption>4. ábra A Maja számok 0-tól 19-ig.</figcaption>
+                        </figure>
+                    </li>
+                    <li><b>Az ókori kínai számrendszer:</b> Ez a számrendszer tízes számrendszeren alapul, de a számokat (Suzhou számok) különböző karakterekkel fejezték ki.
+                        <figure>
+                            <img src="assets/pic5.jpg" style="margin-left: 425px;">
+                            <figcaption>5. ábra A Suzhou számok 0-tól 9-ig.</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                
+                <h1 class="h1content">Tetszőleges p>1 alapú számrendszer</h1>
+                <p>Tetszőleges p>1 alapú számrendszer esetében a számjegyek: &#10100;,1,…,p-1&#10101;.</p>
+                <h2 class="h2content">Általános alak:</h2>
+                <img src="assets/pic6.jpg" style="margin-left: 400px;">
+                <p>Az N szám értékét úgy kapjuk meg, hogy a számjegyek értékét megszorozzuk a helyiértékükkel és mindezt összeadjuk. </p>
+                <p>Ha p > 10, akkor az ai ∈ &#10100;,1,2,3,4,5,6,7,8,9, A, B, C, D, E, F, ...&#10101; jelölést alkalmazzuk a számjegyek megadására.</p>
+
+                <h2 class="h2content">Decimális számrendszer</h2>
+                <p>A decimális számrendszerben a &#10100;,1,2,3,4,5,6,7,8,9&#10101; véges számjegyhalmaz elemeiből képzett végtelen sorozatok és a valós számok között kölcsönösen egyértelmű leképezést valósítunk meg figyelembe véve a helyiértékes jelölést.</p>
+                <p>Például az 543,21 helyiértékes szám 5 db 100-ast, 4 db 10-est, 3 db 1-est, 2 db tizedet és 1 db századot jelöl, azaz 543,21 = 5 * 10<sup>2</sup> + 4 * 10<sup>1</sup> + 3 * 10<sup>0</sup> + 2 * 10<sup>-1</sup> + 1 * 10<sup>-2</sup></p>
+                <p>A fenti példát általános formában felírva az</p>
+                <p style="text-align: center;">&#10100;a<sub>n</sub>a<sub>n-1</sub>...a<sub>1</sub>a<sub>0</sub>,a<sub>-1</sub>a<sub>-2</sub>...a<sub>-m</sub>&#10101;<sub>10</sub></p>
+                <p>alakban jelölt szám értéke</p>
+                <img src="assets/pic7.jpg" style="margin-left: 400px;">
+
+                <h1 class="h1content">Bináris (kettes) számrendszer</h1>
+                <p>Bináris számrendszer esetében a számjegyek: &#10100;0,1&#10101;. A Számrendszer alapja: p = 2. Jelölés: 1110<sub>2</sub> , 1110<sub>b</sub> vagy (1110)<sub>2</sub>.</p>
+                <h2 class="h2content">Általános alak:</h2>
+                <img src="assets/pic8.jpg" style="margin-left: 400px;">
+                <p>Bináris számrendszerben az N = 1110, 11<sub>2</sub> helyiértékes szám 1 db 8-ast, 1 db 4-est, 1 db 2-est, 0 db 1-est, 1 db 1/2-et és 1 db 1/4-et jelöl, azaz N = 1 * 2<sup>3</sup> + 1 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup> + 1 * 2<sup>-1</sup> + 1 * 2<sup>-2</sup> .</p>
+                <p style="text-align: center;">N = 14, 75</p>
+                <h2 class="h2content">Oktális (nyolcas) számrendszer</h2>
+                <p>Oktális számrendszer esetében a számjegyek: &#10100;0,1,2,3,4,5,6,7&#10101;.</p>
+                <p>A Számrendszer alapja: p = 8. </p>
+                <p>Jelölés: 734<sub>8</sub> , 734<sub>o</sub> vagy (734)<sub>8</sub></p>
+
+                <h2 class="h2content">Általános alak:</h2>
+                <img src="assets/pic9.jpg" style="margin-left: 400px;">
+                <p>Oktális számrendszerben az N = 437, 128 helyiértékes szám 4 db 64-est, 3 db 8-ast, 7 db 1-est, 1 db 1/8-ot és 2 db 1/64-et jelöl, azaz N = 4 * 8<sup>2</sup> + 3 * 8<sup>1</sup> + 7 * 8<sup>0</sup> + 1 * 8<sup>-1</sup> + 2 * 8<sup>-2</sup> . </p>
+                <p style="text-align: center;">N = 287, 15625</p>
+
+                <h1 class="h1content">Hexadecimális (tizenhatos) számrendszer</h1>
+                <p>Hexadecimális számrendszer esetében a számjegyek: &#10100;0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F&#10101;.</p>
+                <p>A Számrendszer alapja: p = 16. </p>
+                <p>Jelölés: BABA<sub>16</sub> , BABA<sub>h</sub> vagy (BABA)<sub>16</sub></p>
+            
+                <h2 class="h2content">Általános alak:</h2>
+                <img src="assets/pic10.jpg" style="margin-left: 400px;">
+                <p>Oktális számrendszerben az N = 437, 128 helyiértékes szám 4 db 64-est, 3 db 8-ast, 7 db 1-est, 1 db 1/8-ot és 2 db 1/64-et jelöl, azaz N = 4 * 8<sup>2</sup> + 3 * 8<sup>1</sup> + 7 * 8<sup>0</sup> + 1 * 8<sup>-1</sup> + 2 * 8<sup>-2</sup> . </p>
+                <p style="text-align: center;">N = 287, 15625</p>
+
+                <p>A továbbiakban a tízes számrendszerbeli számoknál nem jelöljük a szám-
+                    rendszer alapszámát. Más alapú számrendszereknél többféle jelölés a szokásos: (123,12)4, 123,124. Ebben a jegyzetben az első változatot fogjuk követni.
+                    </p>
+                <h2 class="h2content">Összehasonlítás</h2>
+                <img src="assets/pic11.jpg" style="margin-left: 350px;">
+
+                <h1 class="h1content">Áttérés tetszőleges p>1 alapú számrendszerből 10-es  számrendszerbe</h1>
+                <p><b>Definíció</b> Ha p>1 egy egész szám, akkor az &#10100;a<sub>n</sub>a<sub>n-1</sub>...a<sub>1</sub>a<sub>0</sub>,a<sub>-1</sub>a<sub>-2</sub>...a<sub>-m</sub>&#10101;<sub>p</sub>  p alapú  számrendszerbeli szám értéke a 10-es számrendszerben</p>
+
+                <img src="assets/pic12.jpg">
+                <p style="text-align: center;">ahol a<sub>i</sub>,i,n,m∈Z és 0≤ a<sub>i</sub>&lt;p.</p>
+                
+                <p>Az előző formula egy algoritmust szolgáltat nekünk arra, hogyan tudunk tetszőleges p alapú számrendszerből áttérni 10-es alapú számrendszerbe. </p>
+                
+                <h2 class="h2content">Példa</h2>
+                <ol>
+                    <li>(123,12)<sub>4</sub> = 1 * 4<sup>2</sup> + 2 * 4 + 3 + 1 * 4<sup>-1</sup> + 2 * 4<sup>-2</sup> = 16 + 8 + 3 + 0,25 + 0,125 = 27,375</li>
+                    <li>(123,12)<sub>8</sub> = 1 * 8<sup>2</sup> + 2 * 8 + 3 + 1 * 8<sup>-1</sup> + 2 * 8<sup>-2</sup> = 83,15625</li>
+                    <li>(123,12)<sub>16</sub> = 1 * 16<sup>2</sup> + 2 * 16 + 3 + 1 * 16<sup>-1</sup> + 2 * 16<sup>-2</sup> = 291 18/256 = 291 9/128</li>
+                </ol>
+                <p>Ha külön választjuk a szám egész és törtrészét, akkor az úgynevezett Horner-Ruffini
+                    féle elrendezéssel is megoldhatjuk a feladatot. 
+                    </p>
+                <p>De mielőtt folytatnák a Horner-Ruffini eljárás ismertetését, ismételjük át polinomokról tanultakat.</p>
+                
+                <p>A polinom egy olyan többtagú algebrai egész kifejezés, melyben csak számok és változók nemnegatív egész kitevőjű hatványainak szorzatai, illetve ilyenek összegei szerepelnek.</p>
+                <p>Határozatlanok számossága szerint megkülönböztetünk egyhatározatlanú, illetve többhatározatlanú polinomokat. </p>
+                <ul>
+                    <li>egyhatározatlanú - például: 1 + y + y<sup>2</sup>3y<sup>5</sup> , 1 + x + x<sup>2</sup>3x<sup>5</sup></li>
+                    <li>többhatározatlanú - például: 1 + y + x<sup>2</sup>3z<sup>5</sup> , 1 + xy + x<sup>2</sup>3z<sup>5</sup></li>
+                </ul>
+
+                <p>Egyhatározatlanú polinomnak nevezzük az f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>n</sup> formális kifejezéseket, ahol n ≥ 0 egész szám és a<sub>0</sub>, . . . , a<sub>n</sub> komplex számok. Az x neve határozatlan. Az a<sub>j</sub>x<sub>j</sub> a polinom egy tagja, az <sub>j</sub> együtthatója a<sub>j</sub>. Az a<sub>0</sub> = a<sub>0</sub>x<sub>0</sub> a konstans tag. Polinom foka Ha a<sub>n</sub> ≠ 0, akkor f foka n. A legnagyobb olyan kitevő ,amelyhez tartozó együttható nem 0.</p>
+
+                <p>Amint az az előzőkből is látszik, egy tetszőleges p>1 alapú szám tulajdonképpen egy olyan speciális polinom, ahol a határozatlan a p, az együtthatók pedig csak a &#10100;0,1,…,p-1&#10101; vehetnek fel értékeket.</p>
+
+                <p>Egy n-ed fokú polinom kiértékelésére (n<sup>2</sup>+2)/2 szorzásra és n db összeadásra van szükség. A polinomok hatékony kiértékelésére a Horner-elrendezés használatos.</p>
+                <p>Tetszőleges n-ed fokú f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>n</sup> polinom Horner-elrendezése</p>
+                <p style="text-align: center;">f(x) =(…(a<sub>n</sub>x+a<sub>n-1</sub>)x+…)x+a<sub>0</sub>.</p>
+                <br>
+                <p>Ezzel az (optimális) elrendezéssel az összeadások és szorzások száma egyaránt n.</p>
+                <p>A számítógépeken az optimalizált elrendezésű f(x) kifejezés x0 helyen vett helyettesítési értékét az adott x<sub>0</sub> helyhez felírható Ruffini-sorozat segítségével számolhatjuk ki. </p>
+                <pre style="text-align: center;">
+                    b<sub>n</sub>=a<sub>n</sub>
+                    b<sub>n-1</sub>=a<sub>n-1</sub>+b<sub>n</sub>x<sub>0</sub>
+                    …
+                    b<sub>0</sub>=a<sub>0</sub>+b<sub>1</sub>x<sub>0</sub>
+                </pre>
+                <p>A b<sub>0</sub> éppen a f(x<sub>0</sub>) érték.</p>
+
+
+
+            </div>
+        </div>
+</section>

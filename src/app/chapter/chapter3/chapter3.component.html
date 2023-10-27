@@ -1,0 +1,161 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">3. Fejezet</h1>
+        <br> <h2 class="h2title"> Helyiértékes számrendszerek II.</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Az előző fejezeben elkezdtük az ismerkedést a helyiértékes számrendszerekkel, és megnéztük, hogyan tudunk áttérni p>1 alapú számrendszerekből decimálisba. Ebben a fejezeteben vizsgáljuk a véges pozíción ábrázolt számok tulajdonságait. Megnézzük ,hogy  p alapú számrendszerben h pozíción ábrázolható melyik a legkisebb és legnagyobb ábrázolható szám. Megkeressük az optimális számrendszert. Ez másképp megfogalmazva, vizsgáljuk, hogy milyen alapú számrendszerben ábrázolhatjuk a legkevesebb jelölővel a legfeljebb N különböző számot magába foglaló számhalmazt?</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2> 
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Véges pozíción ábrázolt számok (p alapú számrendszerben h pozíción ábrázolható legkisebb és legnagyobb ábrázolható szám).</li>
+                    <li>Milyen alapú számrendszerben ábrázolhatjuk a legkevesebb jelölővel a legfeljebb N különböző számot magába foglaló számhalmazt?</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+                <p><b>Véges pozíción ábrázolt számok</b></p>
+                <p>A hétköznapi életben műszereken, vagy gépek kijelzőin számtalan számláló típussal találkozhatunk. Pl. a gépjárművek kilométer számlálója általában 6 pozíción mutatja a megtett kilométereket:</p>
+                <img src="assets/pic13.jpg" style="margin-left: 400px;">
+                <p>Ha szerencsések vagyunk az óra elérheti a 999999 km-t. Ha még egy kilómétert megyünk, akkor a kijelző 000000-ra vált mivel a keletkezett magasabb helyiérték a hetedik egyes a regiszterből kicsordul. Ugyanez történt Al Bundy Dodge autójával, amely a "Get outta Dodge" (0817) részben több mint egymillió kilométert futott, és ezért a kilométer számláló még egyszer csupa nullát mutatott. Az ócska Dodge-ért Al kapott volna egy új Vipert, de mint annyiszor, ezt is elhibázza.</p>
+                <p>Az informatikában gyakori probléma, hogy adott számú pozíción határozzuk meg egy számrendszerben a legnagyobb és a legkisebb ábrázolható számot. Legyen tehát h a pozíciók száma, p a számrendszer alapszáma. Az</p>
+                <p style="text-align: center;">(a<sub>n</sub>a<sub>n-1</sub> ...a<sub>1</sub>a<sub>0</sub>,a<sub>-1</sub>a<sub>-2</sub> ...a<sub>-m</sub>)<sub>p</sub></p>
+                <p>szám esetén</p>
+                <p style="text-align: center;">h = n + 1 + m.</p>
+                <p>A legnagyobb számot kapjuk, ha minden pozíción (p − 1) áll, tehát</p>
+
+                <img src="assets/pic14.jpg"style="margin-left: 400px;">
+                <p>A geometriai (más néven mértani) sor összegképletét felhasználhatjuk :</p>
+                <img src="assets/pic15.jpg"style="margin-left: 400px;">
+
+                <p>Ha a számnak nincs törtrésze (m = 0), akkor h = n + 1 és</p>
+                <p style="text-align: center;">N<sub>max</sub> = p<sup>h</sup> − 1.</p>
+                <br>
+                <p>Például h = 6 esetén</p>
+                <p>10-es számrendszerben:	10<sup>6</sup> − 1 = 999999,</p>
+                <p>2-es számrendszerben:	2<sup>6</sup> − 1 = 64 − 1 = 63 = (111111)<sub>2</sub>.</p>
+                <p>Ha a számnak elmarad az egész része, azaz nulla az egész rész, akkor</p>
+                <p>n + 1 = 0 (azaz h = m) és</p>
+                <p style="text-align: center;">N<sub>max</sub> = 1 − p<sup>-h</sup>,</p>
+                <br>
+                <p>tehát h = 6 esetén</p>
+                <p>10-es számrendszerben:	1 − 10<sup>-6</sup> = 0,999999</p>
+                <p>2-es számrendszerben:	1 − 2<sup>-6</sup> = (0.111111)<sub>2</sub>.</p>
+                <p>Nem negatív számok esetében minden számrendszerben a legkisebb szám a nulla. Viszont sokszor meg kell határoznunk azt a legkisebb törtszámot is, amely még ábrázolható h pozíción. Ebben az esetben az utolsó pozíción van 1-es jegy a többi helyen 0,</p>
+                <p style="text-align: center;">N<sub>min</sub> = 0p<sup>n</sup> + ··· + 0p<sup>0</sup> + 0p<sup>-1</sup> + ··· + 1p<sup>-m</sup> = p<sup>-m</sup>.</p>
+                
+                <p>Például 4 egész és 2 törtszámjegy esetén leírható legnagyobb és legkisebb szám</p>
+                <p>2-es számrendszerben:	(1111,11)<sub>2</sub>, illetve (0000,01)<sub>2</sub></p>
+                <p>10-es számrendszerben:	9999,99, illetve 0000,01</p>
+                <p>16-os számrendszerben:	(FFFF,FF)<sub>16</sub>, illetve (0000,01)<sub>16</sub>.</p>
+                <p>(A törtet elválasztó vessző jel nem számít bele a pozíciók számába.)</p>
+
+                <p>A számrendszer alapszámától függően ugyanolyan hosszúságú regiszterben több vagy kevesebb különböző számot tudunk ábrázolni. Ha az alapszám nagyobb és így a jelölő számjegyek száma is, akkor több számot tudunk ábrázolni egy konstans h hosszúságú (pozícióval rendelkező) regiszterben.</p>
+                <p>Felmerül a kérdés úgy is, hogy milyen alapú számrendszerben ábrázolhatjuk a legkevesebb jelölővel a legfeljebb N különböző számot magába foglaló számhalmazt.</p>
+                <p><b>Tétel.</b> Számok reprezentálására (tárolására) az optimális számrendszer alapja az e.</p>
+                <p><b>Bizonyítás.</b> Információelméleti megközelítés.</p>
+                <p>A p jelölők előfordulásának valószínűsége egyenlőnek tekinthető: 1/p.  Az egyes jelölőkhöz tartozó információmennyiség: log p. Az optimális kódolási eljárások hatékonysága jelölőnként: f(p) = ln p/p.</p>
+                <figure>
+                    <img src="assets/pic16.jpg">
+                    <figcaption>10. ábra ln(p)/p</figcaption>
+                </figure>
+                <p>f<sup>'</sup>(p) = 0 − > zéruspont: e. ln p = 1 − > optimális alap az e.</p>
+                <figure>
+                    <img src="assets/pic17.jpg">
+                    <figcaption>11. ábra (1-ln(p))/p<sup>2</sup></figcaption>
+                </figure>
+                <p>Mielőtt folytatnánk, itt álljunk meg egy kicsit. Egy komputeralgebrai (WoframAlpha), és egy táblázatkezelő (Excel) rendszer, illetve egy numerikus gyökkereső eljárás (intervallumfelező)  segítségével ellenőrizzük ez előzőleg kapott eredményt. </p>
+                <p>A WolframAlpha egy komputeralgebrai rendszer, amelyet a Wolfram Research fejlesztett ki (<a href="https://www.wolframalpha.com/">www.wolframalpha.com/</a>). Egy népszerű böngészővel is használható alkalmazás,lehetővé teszi a matematikai kifejezések, egyenletek, szimbólumok és grafikonok feldolgozását és elemzését.  </p>
+                <p>A solve (1-ln(x))/x^2 =0 kifejezéssel, azon túl, hogy meg tudjuk jeleníteni a függvényt, még megoldást is kapunk (result: x=e). </p>
+
+                <figure>
+                    <img src="assets/pic18.jpg">
+                    <figcaption>12. ábra WolframAlpha - solve (1-ln(x))/x^2 =0</figcaption>
+                </figure>
+                <p>Az Excel egy jól ismert eszköz, az input adatok megadása  (=(1-LN(A2))/HATVÁNY(A2;2)) után Pont diagram segítségével könnyedén tudjuk ábrázolni az f(x) függvényt.</p>
+                <figure>
+                    <img src="assets/pic19.jpg">
+                    <figcaption>13. ábra Egyenletek grafikus megoldása I.</figcaption>
+                </figure>
+                <p>Az eredmény pontos leolvasásához az x és y tengelyek határait testre kell szabni. A példában az x és y tengelyek határai rendre (-0,001; 0,001) és (2,7; 2,8).</p>
+                <figure>
+                    <img src="assets/pic20.jpg">
+                    <figcaption>14. ábra Egyenletek grafikus megoldása II.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/pic21.jpg">
+                    <figcaption>15. ábra Egyenletek grafikus megoldása III.</figcaption>
+                </figure>
+
+                <h2 class="h2content">Kapcsolódó feladatok.</h2>
+                <ul>
+                    <li>Ábrázoljon néhány korábbi tanulmányaiból ismert függvényt a WolframAlpha-val.</li>
+                    <li>Excel segítségével grafikus módszerrel határozza meg az e értékét 4 tizedesjegy pontossággal. Az e értékének megkereséséhez használja a WolframAplha-t.</li>
+                    <li>Nézzen meg és próbáljon ki néhányat a WolframAlpha különböző funkciói (területei) közül.</li>
+                </ul>
+                <figure>
+                    <img src="assets/pic22.jpg">
+                    <figcaption>16. ábra WolframAlpha funkciói</figcaption>
+                </figure>
+
+                <p>Most pedig nézzük az előzőekben említett intervallumfelező módszert. Az intervallumfelező módszer egy numerikus algoritmus, amelyet gyökök közelítésére/keresésére (egyenletek numerikus megoldására) használhatunk. </p>
+                <p>Az eljárás lépései:</p>
+                <p><b>Kezdő intervallum kiválasztása:</b> Ki kell választanunk egy kezdő intervallumot [a,b]. Fontos, hogy az intervallum végpontjainak függvényértéke különböző előjelű legyen.</p>
+                <ul>
+                    <li><b>Intervallum felosztása:</b> A kezdő [a,b] intervallumot felosztjuk két részre az intervallum felezőpontjában. Így két új, kisebb intervallumot kapunk.</li>
+                    <li><b>Függvény kiértékelése:</b> Kiszámítjuk a függvény értékét mindkét új intervallum végpontjában</li>
+                    <li><b>Az intervallum kiválasztása:</b> A két új intervallum közül azt választjuk ki, amelynek a végpontjaiban a függvényértékek különböző előjelűek. Ez az intervallum tartalmazza a gyököt.</li>
+                </ul>
+                <p><b>Lépések ismétlése:</b> Az előző lépéseket ismételjük addig, amíg az intervallum hossza nem lesz kisebb, mint egy előre meghatározott epsilon (a kívánt pontosság). </p>
+                <p>Az intervallumfelező módszer előnye, hogy viszonylag egyszerű és stabil, és konvergens, vagyis az iterációk során mindig közelebb jutunk a gyökéhez.</p>
+                <p><b>Példa</b> Intervallumfelező C++ kód</p>
+                <p>Az alábbi program bekér a felhasználótól egy [a, b] intervallumot , illetve az epsilon (pontosság) értékét. Minél kisebb az epsilon, annál pontosabb lesz az eredmény, de annál több iterációra lehet szükség a kiértékeléshez.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream&gt;
+                            #include &lt;cmath&gt;
+                            
+                            double f(double x) &#10100;
+                                // Függvény definíciója
+                                return (1-log(x))/pow(x,2);
+                            &#10101;
+                            
+                            double intervalBisection(double a, double b, double epsilon, double (*func)(double)) &#10100;
+                                double c = a;
+                                while ((b - a) >= epsilon) &#10100;
+                                    c = (a + b) / 2;
+                                    if ((*func)(c) == 0.0)
+                                        break;
+                                    else if ((*func)(c) * (*func)(a) &lt; 0)
+                                        b = c;
+                                    else
+                                        a = c;
+                                    &#10101;
+                                return c;
+                            &#10101;
+                            int main() &#10100;
+                                double a, b, epsilon;
+                                std::cout &lt;&lt; "Adja meg az intervallumot [a, b]: ";
+                                std::cin >> a >> b;
+                                std::cout &lt;&lt; "Adja meg az epsilon értéket: ";
+                                std::cin >> epsilon;
+                                double root = intervalBisection(a, b, epsilon, f);
+                                std::cout &lt;&lt; "Az egyenlet gyöke: " &lt;&lt; root &lt;&lt; std::endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic23.jpg">
+                    <figcaption>17. ábra Intervallumfelező C++ kód - futtatás</figcaption>
+                </figure>
+            </div>
+        </div>
+</section>

@@ -1,0 +1,329 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+  </div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">1. Fejezet</h1>
+        <br> <h2 class="h2title"> A számológép, számítógép alapfogalmai és a C++ nyelv alapjai</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+        <div class="content">
+        <h1 class="h1content">Bekezdés</h1>
+        <p>A jegyzet elsődlegesen I. évfolyamos programtervező informatikus BSc szakos hallgatók számára készült a bevezetés
+        az informatikába tárgy tartalmi elemeinek elsajátításának, elmélyítésének segítésére. Egy komplex jegyzet, ugyanúgy,
+        mint maga a tárgy. A bevezetés az informatikába egy olyan alapozó tárgy, ahol a hallgatók megismerkednek: a számológép,
+        számítógép alapfogalmaival, a C++ nyelv alapjaival, a Linux operációs rendszer alapvető parancsaival, a helyiértékes
+        számrendszerekkel, a számrendszerek közötti konverziókkal, az alapvető aritmetikai műveletekkel, az információ és entrópia
+        fogalmával, az információelmélet alapjaival, illetve az alapvető kódolási eljárásokkal. </p>
+
+        <h1 class="h1content">A számológép, számítógép alapfogalmai és a C++ nyelv alapjai</h1>
+        <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+        <p>A számítógépekkel, számológépekkel kapcsolatos alapfogalmak (regiszter, szoftver, hardver, stb.),
+        illetve a C++ nyelv alapjainak megismerése.</p>
+
+        <h2 class="h2content">Szükséges eszközök, források:</h2>
+        <p>Böngésző</p>
+
+        <h2 class="h2content">Feldolgozási idő:</h2>
+        <p>2+2 óra</p>
+
+        <h2 class="h2content">Témakörök:</h2>
+        <p>A fejezet főbb tartalmi elemei:</p>
+        <ul>
+            <li>Számológép, számítógép,</li>
+            <li>a C++ nyelv alapjai.</li>
+        </ul>
+        <br>
+        <h1 class="h1content">Számológép, számítógép</h1>
+        <p>Az emberiség már régóta igyekezett olyan segédeszközöket megteremteni, amelyek a számolást,
+        általában a szellemi munkák mechanizálható részének végzését megkönnyítik. A legrégibb ilyen segédeszköz 
+        a golyós számológép, vagy abacus, amely már az ókorban megjelent. Az első automatikus működésű mechanikus 
+        összeadógépet 1642-ben egy francia matematikus Pascal építette meg, amelyet Leibniz 1671-ben továbbfejlesztett a 
+        négy alapművelet elvégzésére. Ezek a mechanikus gépek fogaskerekekkel működő gépek. Az első vezérlésre használt 
+        eszköz ötlete Falcon (1728) nevéhez kapcsolódik, aki egy automatikusan működő szövőgéphez, az ismétlődő szövésminta 
+        kialakítását lyukkártya vezérlésével tervezte. Ötletét Jacquard valósította meg 1798-ban. A lyukkártyás vezérlést 
+        egyéb területekre is alkalmazva 1884-ben Hermann Hollerith valósította meg és 1890-re kifejlesztett egy olyan 
+        lyukkártyarendszert, amelyet pl. a népszámlálásban fel is használtak. Az általa készített gépeken nemcsak a számok, 
+        hanem a gép működését szabályozó utasítások is a lyukkártyákon kerültek rögzítésre. A számológépek mai modernebb 
+        megvalósítása az elektromos impulzusokkal manipuláló, elektromos asztali számológép 1944-től áll rendelkezésünkre 
+        (összeadógép, pénztárgép, zsebszámológép). Ezeken a gépeken minden egyes művelet végzésénél meg kell adni adatot és 
+        a műveletre vonatkozó információt. Az adat az úgynevezett regiszterbe kerül.
+        </p>
+        <br>
+        <h1 class="h1content">A regiszter</h1>
+        <p>A regiszter az adat átmeneti tárolóhelye, amelyben meghatározott nagyságú vagy számjegyet tartalmazó 
+            számot tudunk tárolni. A regiszterek különböző méretűek lehetnek, és különböző célokra használhatók. 
+            Például, a processzor regisztereket használ a műveletekhez, például az összeadáshoz, kivonáshoz, szorzáshoz 
+            és osztáshoz. Ezek a regiszterek az adatokat tárolják, amelyeket a műveletek végrehajtásához használnak. 
+            Az adatmozgatáshoz és az adatfeldolgozáshoz használt regiszterek mellett vannak olyan regiszterek is, amelyek 
+            az utasítások végrehajtásához szükségesek. Például az utasításszámláló regiszter tartalmazza az utasítások címét, 
+            amelyet a CPU (Central Processing Unit- központi feldolgozóegység) következőnek hajt végre.</p>
+        <p>Egy 64 bites regiszter 64 db bitet (8 oktett vagy 16 tetrád) tartalmaz, amelyek a bináris számrendszerben 
+            0 vagy 1 értéket vehetnek fel. </p>
+        <p>Egy 64 bites regiszter felépítése általában az alábbiakat tartalmazza:</p>
+        <ol>
+            <li><b>0-63 bitek:</b> A regiszter 64 db bitet tartalmaz, ezen a 64 bites egész lehet:</li>
+                <ul>
+                    <li>utasítás,</li>
+                    <li>adat,</li>
+                    <li>memóriacím,</li>
+                    <li>vagy egyéb információ.</li>
+                </ul>
+            <li><b>Adatút:</b> Az adatok a regiszteren belül az adatúton keresztül áramlanak. Az adatút lehet két vagy 
+                több bites széles, lehetnek benne szinkronizációs jelek, amelyek biztosítják, hogy az adatok helyesen 
+                érkezzenek meg a regiszterbe.</li>
+            <li><b>Működési módok:</b> A regiszter lehet olvasó, író vagy olvasó-író módú, attól függően, hogy az adatokat 
+                csak olvassák, csak írják vagy mindkettőre van szükség.</li>
+            <li><b>Bemeneti és kimeneti jelek:</b> A regiszter bemeneti és kimeneti jelei lehetnek, amelyek lehetővé teszik az 
+                adatok beolvasását és kiírását a regiszterből</li>
+        </ol>
+
+        <p>A gépi (belső) szóhossz a számítógép által kezelt adatok szélességét jelenti. Ez általában a processzor 
+            regisztereinek és adatbuszainak szélességével azonos, és a számítógép adatkezelésének fontos mutatója.  
+            A gépi szóhossz befolyásolja a számítógép teljesítményét, determinálja, hogy mekkora adatot képes a CPU és a 
+            memória egyszerre feldolgozni.</p>
+
+        <p>Az előadásokon és gyakorlatokon az egyes példákat, feladatokat C++ nyelven ismertetjük, illetve oldjuk meg majd. 
+            Mielőtt folytatnánk a regiszterekkel kapcsolatos vizsgálatokat, teszünk egy rövid kitérőt, megismerkedünk a C++ 
+            nyelv alapjaival.</p>
+
+        <h1 class="h1content">A C++ nyelv alapjai</h1>
+        <p>A C++ egy általános célú, multiparadigmás, magas szintű programozási nyelv, amely a C nyelvből származik.  
+            A nyelvet Bjarne Stroustrup dán informatikus fejlesztette ki az AT&T Bell Laboratories-ben az 1980-as évek elején. 
+            Stroustrup eredetileg a C++-ot "C with Classes"-nek nevezte el, amely egy olyan kiterjesztés volt a C nyelvre, amely 
+            lehetővé tette az objektumorientált programozás használatát. A nevet később módosította a "C++"-ra, ami a "C plus plus" 
+            kifejezés rövidítése, és az "increment" operátor használatára utal. A nyelv népszerűsége az objektumorientált paradigma 
+            támogatásával jelentősen megnőtt az 1990-es években, és sikere napjainkig töretlen. </p>
+
+        <p>A multiparadigmás programozási nyelvek olyan programozási nyelvek, amelyek támogatják több különböző programozási 
+            paradigma alkalmazását. A programozási paradigmák olyan alapvető megközelítési módok, amelyeket a programozók 
+            használhatnak a problémák megoldásához. A C++ nyelv támogatja az objektumorientált, a procedurális és a generikus 
+            programozási paradigmákat is, így használatával kiválaszthatjuk a legmegfelelőbb megközelítési módot a probléma 
+            megoldásához.</p>
+        
+        <p>Az objektumorientált programozás (OOP) egy programozási paradigma, amely az objektumokra épül. Az objektumok 
+            olyan adatszerkezetek, amelyek adattagokból és függvényekből állnak, és képesek az adattagok állapotának 
+            manipulálására és az objektumok közötti kommunikációra.</p>
+
+        <p>A sablonok olyan programozási eszközök, amelyek általános megoldásokat biztosítanak, és a generikus programozást 
+            teszik lehetővé. Az inline függvények lehetővé teszik a kódszegmentek azonnali beillesztését az illető kódszegment 
+            hívó helyén, és gyorsabb kódvégrehajtást biztosítanak.</p>
+            
+        <p>Az STL (Standard Template Library) egy olyan C++ könyvtár, amely sablonokat tartalmazó adatszerkezeteket és algoritmusokat tartalmaz. 
+            Az STL lehetővé teszi a hatékony adatszerkezetek és algoritmusok használatát, ami javítja a kód hatékonyságát és 
+            olvashatóságát.</p>
+            
+        <p>Rengeteg operációs rendszer és platform támogatja a C++-t, beleértve a Windows-t, a Linux-ot, a macOS-t, az Android-ot és az iOS-t. 
+            Az alacsony szintű hardverközeli programozásra (beágyazott rendszerek) is lehetőséget ad, mint például az eszközillesztők 
+            és az operációs rendszer rétegeinek fejlesztése.</p>
+
+        <p>Mint a legtöbb programozási nyelv esetében itt is használhatunk online compiler-t a programjaink megírására, fordítására és futtatására, 
+            így nem kell semmit sem telepítenünk, illetve beállítanunk a számítógépen.</p>
+
+        <p>Mi a következőt fogjuk használni: <a href="https://www.onlinegdb.com/online_c++_compiler">https://www.onlinegdb.com/online_c++_compiler</a></p>
+        <br>
+        <p><b>"Hello, World!"</b></p>
+        <p>A program kiírja a "Hello, World!" üzenetet a konzolra, majd visszatér az értékkel 0 a végrehajtó rendszernek.</p>
+        
+        <pre><kbd>
+            #include &lt;iostream&gt;
+
+            int main() &#10100;
+                std::cout &lt;&lt;"Hello, World!\n";
+                return 0;
+            &#10101;
+        </kbd></pre>
+
+        <p>Nézzük a program részeit!</p>
+
+        <p>Az iostream könyvtár teszi lehetővé a szabványos bemeneti és kimeneti folyamokhoz (input/output streams) való 
+            hozzáférést a C++ programok számára.</p>
+        <p>C++-ban előre definiált folyam jellegű objektumok:</p>
+        <ul>
+            <li>cin (input stream) a szabványos bemenet, amely általában a billentyűzet</li>
+            <li>cout (output stream) a szabványos kimenet, amely általában a képernyő.</li>
+            <li>cerr (error stream) a szabványos hibakimenet, amely általában a képernyő vagy egy log fájl.</li>
+        </ul>
+
+        <p>A C++-ban könyvtárakat include-olni szoktunk, ennek a szabványos alakja:</p>
+        <p><kbd>#include &lt;könyvtárnév&gt;</kbd></p>
+
+        <p>A C++ main függvénye a program belépési pontja, amely automatikusan meghívódik az program indításakor. A main függvény az 
+            a hely, ahol az alkalmazás vezérlése kezdődik és ahol a program elsődleges műveletei történnek.</p>
+        
+        <p>A main függvény általában az alábbi szignatúrával rendelkezik:</p>
+        <pre>
+            <kbd>
+                int main()
+                &#10100;
+                    // Kódblokk
+                    return 0;
+                &#10101;
+            </kbd>
+        </pre>
+
+        <p>A main függvény int típusú értéket ad vissza, amely jelzi a program befejezésének eredményét. A 0 érték azt jelenti, hogy a 
+            program befejeződött. Az exit() függvény használatával bármikor kiléphetünk a programból.</p>
+        
+        <p>A main függvény paramétereit az alábbi módon lehet megadni:</p>
+        <pre>
+            <kbd>
+                int main(int argc, char* argv[])
+                &#10100;
+                    // Kódblokk
+                    return 0;
+                &#10101;
+            </kbd>
+        </pre>
+
+        <p>A argc paraméter a parancssori argumentumok számát tartalmazza, amelyeket az alkalmazás indításakor megadhatunk. Az argv tömb pedig 
+            azokat az argumentumokat tartalmazza, amelyeket karakterláncok formájában adtunk meg.</p>
+        
+        <p>Például az alábbi parancssori argumentumokat adhatjuk meg az program indításakor (Windows): myapp.exe arg1 arg2 arg3</p>
+        
+        <p>Ebben az esetben az argc értéke 4, és az argv tömb a következő értékeket tartalmazza</p>
+        
+        <pre>
+            <kbd>
+                argv[0]: "myapp.exe"
+                argv[1]: "arg1"
+                argv[2]: "arg2"
+                argv[3]: "arg3"
+            </kbd>
+        </pre>
+
+        <h2 class="h2content">Példa</h2>
+        <p> A parancssori argumentumok megadására, és az eredmények megjelenítésére OnlineGDB környezetben.</p>
+        <figure>
+            <img src="assets/pic1.jpg">
+            <figcaption>1. ábra parancssori argumentumok megadása OnlineGDB környezetben.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="assets/pic2.jpg">
+            <figcaption>2. ábra „Hello, World!” program kimenete</figcaption>
+        </figure>
+
+        <p>Az std rövidítés a C++ Standard Library (C++ Könyvtár) névtérét jelöli, amelyben számos beépített C++ osztály, 
+            függvény, típus és konstans található.  Például, ha egy cout függvényt szeretnék használni a kimenetre írásra, 
+            akkor a std::cout-ot kell használnunk, mert az cout a std névtér része.</p>
+        
+        <p>A "Hello, World!" program az std névtér használatával (using namespace).</p>
+        <pre>
+            <kbd>
+                #include &lt;iostream&gt;
+                    using namespace std;
+                    
+                    int main() &#10100;
+                        cout &lt;&lt; "Hello, World!\n";
+                        return 0;
+                    &#10101;
+                    
+            </kbd>
+        </pre>
+
+        <p>A &lt;&lt; és >> operátorok C++-ban az adatok bemeneti vagy kimeneti áramlását jelentik, és gyakran az iostream könyvtárhoz kapcsolódnak. 
+            A &lt;&lt; operátor segítségével lehet adatokat kiírni a standard kimenetre, míg a >> operátorral lehet adatokat beolvasni a standard bemenetről.</p>
+        
+        <p>Ezek az operátorok a C++-ban nem csak a standard I/O-hoz kapcsolódnak, hanem az adatok bemenetére és kimenetére szolgáló más típusú adatfolyamokhoz is használhatók. Az operátorok az objektumokra hivatkoznak, és az objektum típusától függően különböző funkciókat látnak el.</p>
+        
+        <p>Az &lt;&lt; és >> operátorok az áramlásiránytől függően bal- vagy jobboldali operandusok lehetnek. Például a cout &lt;&lt; "Hello World"; kódrészletben a cout az objektum, míg a "Hello World" a jobboldali operandus, amelyet a &lt;&lt; operátor kiír a standard kimenetre.</p>
+        
+        <p>Az std::endl az endline karaktert tartalmazó manipulátor, amelyet a sortörés jelzésére használunk. Az endl egy manipulátor, amely az iostream objektumokra hat.  Az endl manipulátor két dolgot csinál: beszúr egy soremelést, és kiüríti a pufferelt adatokat, így biztosítva, hogy az összes adat, amit ki akarunk írni, valóban kiíródjon a kimenetre.</p>
+        
+        <p>Ezzel a kitérőnk végére is értünk, megismerkedtünk a C++ nyelv alapjaival annyira, hogy a következő kódrészletek már ne tűnjenek teljesen idegennek. A regiszterekkel történő ismerkedést a szóméreteknél hagytuk abba, amennyiben erre már nem emlékszik, nyugodtan görgessen vissza, és elevenítse fel az ismereteket.</p>
+        <p>Processzorok/szóméretek:</p>
+        <ul>
+            <li>8 bites processzor = 1 byte szóhossz (Intel 8008 - 1972 )</li>
+            <li>16 bites processzor = 2 byte szóhossz  (Intel 8086-1978)</li>
+            <li>32 bites = 4 byte szóhossz (Intel 80386- 1985)</li>
+            <li>64 bites = 8 byte szóhossz (AMD -Advanced Micro Devices- Opteron -2003)</li>
+        </ul>
+
+        <p>A legtöbb összeadógép két regiszterrel rendelkezik, az egyikben az éppen beolvasott adatot, a másikban pedig a másik operandust, illetve a művelet eredményét tárolja. Az asztali számítógépek többsége 10-1000 regiszteres, amely közbülső adatok tárolására is lehetőséget ad. A fentiek során ismertetett eszközök a számítógép ősei. Hiba lenne azonban csupán úgy értékelni, hogy a számítógép egy igen gyors asztali számológép.
+            <br>
+            A gyors végrehajtás mellett a „lyukkártyaelv” megszületése is nagyon fontos szerepet játszott a számítógép létrejöttében, mivel a lyukkártyán előkészített adatokat már a feldolgozás előtt be lehet vinni a gépbe, és csökken a műveletek végrehajtásához szüksége idő. Ezen kívül lényeges szempont az is, hogy a kártyára rögzített adatok akárhányszor feldolgozhatók. Ehhez szükséges, hogy a számítógépnek sok regisztere, tárolóhelye legyen. De ha sok tárolóhelye van a számítógépnek, akkor azokba az adatokhoz hasonlóan a gépet működtető utasítások is tárolásra kerülhetnek, amelyek alapján a kijelölt feladat automatikusan, folyamatosan elvégzésre kerülhet (belső programvezérlés). 
+            Büszkén említhetjük, hogy e gondolatsor a magyar származású Neumann János nevéhez fűződik, aki a számítógépet az idegrendszer modelljének tekintette. E modell megvalósítását, a számítógépet úgy is tekinthetjük, mint azokat az eszközöket, amelyeket az ember érzékszervei meghosszabbítására hozott létre (látcső, rádió, televízió stb.). Csakhogy itt az emberi agy bizonyos „képességeinek meghosszabbításáról" van szó, nevezetesen az emberi agy tárolókapacitásának és a „gondolkodás sebességének” a kiterjesztéséről. (Az emberi agy kb. 12-14 milliárd agysejtből áll, és maximum 100 m/sec sebességgel gondolkodik.) E két „képesség” szabja meg azt is, hogy milyen feladatok megoldására célszerű felhasználni a számítógépet. A számítógép tárolóiban minden adat és utasítás számok formájában kerül tárolásra, de hogy ezek jelentése mit takar, hogy az adat szám vagy szöveg, illetve a művelet aritmetikai vagy logikai stb., az már a konkrét feladattól függ, ami univerzális információ-feldolgozó géppé tünteti ki. Alátámasztja ezt, hogy a számítógép űrhajót, atomerőművet, robotot, stb. vezérelhet, újságok, könyvek szövegeinek szerkesztését és nyomtatását végezheti, tervrajzok, képek megalkotásában és tárolásában segíthet, nyelvtani elemzéseket végezhet, nagy adatbázisokat, információs rendszereket működtet stb. 
+            <br>
+            A számítógépet alkotó fizikai eszközök összefoglaló neve hardver (hardware), a gépet működtető programrendszeré pedig a szoftver (software).
+            <br>
+            Azokat a számítógépeket, amelyek csak diszkrét értékeket tudnak feldolgozni, digitális számítógépeknek nevezzük (digit = számjegy). Azokat a számítógépeket pedig, amelyek a bemenő jeleknek, azokkal arányos analóg kimenőjeleket feleltetnek meg, analóg számítógépnek nevezzük. Mi a továbbiakban csak a digitális számítógéppel foglalkozunk. Az első számítógép 1949-ben készült, de igazában 1951-től számíthatjuk a megjelenését, amikor is kereskedelmi forgalomba került. A számítógépek történetében azóta már több generációról is beszélhetünk, de kiemelkedő jelentőséggel bír az első chip vezérlésű számítógép 1969. évi megjelenése. A lyukkártyás rendszer ma már teljesen elavult és adatokat közvetlenül billentyűzeten keresztül vagy egyéb automatizált módon viszik a gépbe és lyukkártya helyett pl. mágneses vagy optikai adathordozókon tároljuk.
+            <br>
+            Minden olyan gépet, amely a beolvasási és kiírási, adattárolási,
+            aritmetikai és vezérlési műveletek elvégzése mellett programok tárolására és
+            utasításonkénti végrehajtására is képes emberi beavatkozás nélkül, számítógépnek nevezzük.
+        </p>
+        <p><b>Példa</b> A következő C++ program ellenőrzi a számítógép architektúráját és kiírja a képernyőre az információkat.</p>
+        <pre>
+            <kbd>
+                #include &lt;iostream&gt;
+                    using namespace std;
+                    int main() &#10100;
+                        // Ellenőrizze, hogy a számítógép 32 vagy 64 bites-e
+                        if (sizeof(void*) == 4) &#10100;
+                            cout &lt;&lt; "A számítógép 32 bites architektúrával rendelkezik." &lt;&lt; endl;
+                        &#10101; else if (sizeof(void*) == 8) &#10100;
+                            cout &lt;&lt; "A számítógép 64 bites architektúrával rendelkezik." &lt;&lt; endl;
+                        &#10101; else &#10100;
+                            cout &lt;&lt; "Az architektúra nem támogatott." &lt;&lt; endl;
+                        &#10101;
+                        return 0;
+                    &#10101;
+            </kbd>
+        </pre>
+
+        <p>A sizeof(void*) függvénnyel ellenőrizhetjük a mutatóméretet, ami az adott számítógép architektúrájára utal. A sizeof(void*) a void* típus méretét adja vissza bájtban. A void* típus egy univerzális mutatótípus, amely bármilyen típusra mutathat. Ha a mutatóméret 4 bájt, akkor a számítógépünk 32 bites architektúrával, ha pedig 8 bájt, akkor 64 bites architektúrával rendelkezik. Az else ágban kezeljük az egyéb eseteket.</p>
+        <p>Az előző példában megjelentek az elágazások is, mint vezérlési szerkezet. </p>
+        <p>Néhány példa az elágazásokra:</p>
+        <pre>
+            <kbd>
+                if utasítás:
+
+                int x = 10;
+                if (x > 5) &#10100;
+                    cout &lt;&lt; "x nagyobb, mint 5" &lt;&lt; endl;
+                &#10101;
+
+                if-else utasítás:
+
+                int x = 3;
+                if (x > 5) &#10100;
+                    cout &lt;&lt; "x nagyobb, mint 5" &lt;&lt; endl;
+                &#10101; else &#10100;
+                    cout &lt;&lt; "x kisebb vagy egyenlő, mint 5" &lt;&lt; endl;
+                &#10101;
+
+                if-else if-else utasítás:
+
+                int x = 10;
+                if (x &lt; 5) &#10100;
+                    cout &lt;&lt; "x kisebb, mint 5" &lt;&lt; endl;
+                &#10101; else if (x > 10) &#10100;
+                    cout &lt;&lt; "x nagyobb, mint 10" &lt;&lt; endl;
+                &#10101; else &#10100;
+                    cout &lt;&lt; "x 5 és 10 között van" &lt;&lt; endl;
+                &#10101;
+
+                switch utasítás:
+
+                int x = 2;
+                switch (x) &#10100;
+                    case 1:
+                        cout &lt;&lt; "x értéke 1" &lt;&lt; endl;
+                        break;
+                    case 2:
+                        cout &lt;&lt; "x értéke 2" &lt;&lt; endl;
+                        break;
+                    case 3:
+                        cout &lt;&lt; "x értéke 3" &lt;&lt; endl;
+                        break;
+                    default:
+                        cout &lt;&lt; "x nem egyenlő sem 1-gyel, sem 2-vel, sem 3-mal" &lt;&lt; endl;
+                        break;
+                &#10101;
+            </kbd>
+        </pre>   
+        </div>
+    </div>
+</section>

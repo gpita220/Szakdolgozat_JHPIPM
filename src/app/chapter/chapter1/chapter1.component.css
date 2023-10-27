@@ -1,0 +1,77 @@
+.container{
+    max-width: 1250px;
+    height: 100%;
+    margin:0 auto 24px;
+}
+.div1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.sidenote{
+    width: 180px;
+    position:static;
+    float:right;
+    margin-top: 0px;
+    margin-left: 10px;
+    text-align: left;
+}
+.contact{
+    font-size: 22px;
+    text-align: center; 
+    background-color: #63b800;
+}
+.icon{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.p1{
+    position:absolute;
+}
+.h1title {
+    color: #111; 
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-size: 45px; 
+    font-weight: 100; 
+    line-height: 45px; 
+    margin: 0 0 0; 
+    padding: 10px 30px;
+    text-align: center; 
+    
+}
+.h2title{
+    padding: 0px 30px;
+    text-align: center; 
+}
+
+hr {
+    border: 0;
+    height: 5px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #63b800, rgba(0, 0, 0, 0));
+}
+.content{
+    font-size: larger;
+}
+.h1content{
+    color:#63b800;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.h2content{
+    color:#63b800;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+p{
+    text-align: justify;
+}
+kbd{
+    background-color: white;
+    color: black;
+}
+img{
+    margin-left: 250px;
+}
+figcaption{
+    text-align: center;
+}

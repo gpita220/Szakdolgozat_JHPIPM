@@ -1,0 +1,321 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">7. Fejezet</h1>
+        <br> <h2 class="h2title"> Adatok ábrázolása számítógépen I.</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben a fixpontos-, illetve BCD számábrázolási módokkal fogunk megismerkedni.</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Fixpontos számábrázolás</li>
+                    <li>Karakterek kódolása</li>
+                    <li>Történelmi ábrázolásmód</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+                <p>Mivel az adatok karakterekből épülnek fel és ezek kódjai 8 vagy 16 bites bitsorozatok, és a számítógépes tárak logikailag legkisebb egysége is 8 bitből álló bájt, ezért durva megfogalmazásban minden adat egy vagy több egymásutáni bájton elhelyezett bitsorozat. Az adatok típusával kapcsolatban már arra is utaltunk, hogy az adattípus megadása egyértelműen meghatározza a tárban való ábrázolásának a módját is. Az ismertetett típusok ábrázolása, tárolása alapvetően kétféle lehet. Az egyik a numerikus típusú (egész és valós) számok műveletvégzésre alkalmas formájú tárolása (gépi számábrázolás), a másik pedig a karakterlánc, szöveg kódolt ábrázolása. Az egész típusú szám úgy is interpetálható, hogy a törtpont (tizedespont, bináris pont) fixen a szám után következik. Ezt a törtpontot máshová is elképzelhetjük (fixálhatjuk), de külön nem jelölhetjük, a gép erről nem vesz tudomást. Ezt a számábrázolást fixpontos ábrázolásnak nevezzük, ellentétben a valós típusú számok ábrázolásával, ahol a törtpont helye nem fix, hanem „lebeghet" és lebegőpontos ábrázolásnak nevezzük.</p>
+
+                <h1 class="h1content">A fixpontos számábrázolás</h1>
+                <p>A fixpontot a bitsorozat után képzeljük el, és csak az egész típusú számokkal foglalkozunk. 
+                    <br>Típusai:</p>
+                <ul>
+                    <li>előjel nélküli ábrázolási mód (N), </li>
+                    <li>előjeles ábrázolási mód (Z).</li>
+                </ul>
+                <p>A fixpontos számokat általában egy, két, négy vagy nyolc bájton ábrázoljuk, tehát 8, 16, 32 illetve 64 bit hosszú bitsorozaton. A fixpontot a bitsorozat után képzeljük el és csak az egész típusú számokkal foglalkozunk. Ez a megkötés semmilyen korlátozást nem jelent. A számok ábrázolását nem a karakterenkénti kódolásával valósítjuk meg, mert pl. 2 bájton csak kétjegyű számot ábrázolhatnánk, és még a számok előjelét sem vettük figyelembe. Ha a számokat kettes számrendszerbe konvertálva adjuk meg, akkor „gazdaságosabb" megoldást kapunk. Az előjel megadásához sem szükséges 1 bájt, ha erre a célra a bitsorozat első bitét jelöljük ki.</p>
+                <p><b>Definíció</b> A számok bináris ábrázolásánál az első bitet előjelbitnek nevezzük, amelynek értéke 0 ha a szám pozitív, és 1 ha a szám negatív.
+                    <br>Az előjelbit értéke a műveletvégzésben is részt vesz, mint érték.
+                    </p>
+                
+                <h2 class="h2content">Pozitív számok ábrázolása</h2>
+                <p>A pozitív számok ábrázolása tehát két bájton úgy történik, hogy azelső bit 0, az ezt követő 15 biten pedig a szám kettes számrendszerbeli alakja következik. Például, mivel +183 = (10110111)<sub>2</sub>, ezért ennek két bájton a</p>
+                <img src="assets/pic61.jpg">
+                <p>bitsorozat felel meg. A két bájton ábrázolható legnagyobb pozitív szám: 215 − 1 = 32767, amelynek a</p>
+                <p style="text-align: center;">0111111111111111 bitsorozat (7FFF)<sub>16</sub></p>
+                <p>felel meg.</p>
+
+                <p>Az egységek elnevezése (és tartományok) 32 bites alapszómérethez viszonyítva: </p>
+                <ul>
+                    <li>nibble (tetrád) - 4 bit tartomány: 0 . . . 15, </li>
+                    <li>bájt (byte) - 8 bit -tartomány: 0 . . . 255, </li>
+                    <li>félszó, rövid egész (short int) - 16 bit -tartomány: 0 . . . 65.535,</li>
+                    <li>szó, hosszú egész (long integer) - 32 bit -tartomány: 0 . . . 4.294.967.295, </li>
+                    <li>duplaszó (double word) - 64 bit -tartomány: 0 . . . 18.446.744.073.709.551.615,</li>
+                    <li>n-biten (általános eset) - n bit -tartomány: 0 . . . 2 n<sup>-1</sup></li>
+                </ul>
+
+                <h2 class="h2content">Negatív számok ábrázolása</h2>
+                <p>A pozitív számok és a nulla esetében a természetes számok tárolásánál megismert ábrázolási módot használjuk. A negatív számokat bitenkénti tagadással (bitek átfordításával) kapjuk meg. </p>
+                <p><b>Példa</b> (4 biten)  A +1 = 0001, ebből a −1 = 1110. Ebben az ábrázolási módban is létezik a negatív nulla: 1111. </p>
+
+                <h2 class="h2content">Kettes komplemens ábrázolási mód </h2>
+                <p>Ez az általánosan használt kódolási eljárás az egész számok esetében. A tárolási elv hasonló az egyes komplemens kódhoz, a pozitív számokat ugyanúgy kódoljuk, a negatív számok esetében pedig kettes komplementrét ábrázoljuk. </p>
+                <p><b>Példa</b> (4 biten)   A +1 = 0001, ebből a −1 = 1111.</p>
+                <br>
+                <p>Tehát, a negatív számok ábrázolásánál 16 biten a szám abszolút értéke kettes számrendszerbeli alakjának kettes komplementere van, amely biztosítja, hogy az 1. biten 1 legyen. Vizsgáljuk meg mit jelent ez?
+                <br>Mivel a fixpontos ábrázolást elsősorban műveletvégzés céljából hozzuk létre, ezért ha a negatív számoknál is csak egyszerűen beírnánk a szám kettes számrendszerbeli alakját, és a két számot összeadnánk, nem kapnánk megfelelő eredményt. 
+                <br>Például:
+                </p>
+                <img src="assets/pic62.jpg">
+                <p>a +1 ábrázolásánál az utolsó biten van 1. A −1 ábrázolása olyan szám kell hogy legyen, amelyet bitenként hozzáadva a +1 bitjeihez 0-t kapunk. Ezt a követelményt a tiszta 1-es bitsorozat elégíti ki. Az összeadást elvégezve ugyanis a 17. helyiérték kivételével tiszta 0 sorozatot kapunk, ami megfelel a 0-nak, mert a 17. helyiértéknek már nincs hely, azt mondjuk hogy kicsordul a tárból.
+                <br>A továbbiakban vizsgáljuk meg, hogyan történik a komplementer képzése és milyen jelentősége van.
+                </p>
+                <p>Mivel +183 ábrázolása</p>
+                <p style="text-align: center;">0000000010110111</p>
+                <p>ennek 1-es komplementere</p>
+                <p style="text-align: center;">1|111111101001000</p>
+                <p style="text-align: center;">+1</p>
+                <p>2-es komplementere, vagyis a –183 ábrázolása</p>
+                <p style="text-align: center;">1|111111101001001</p>
+                <br>
+                <p>A kettes komplementerképzést egy lépésben úgy is megoldhatjuk, hogy a bitsorozatban a végéről előre haladva az első 1-esig bezárólag változatlanul leírjuk a biteket, majd innen tovább minden bitet ellenkezőre változtatunk.
+                <br>Például:
+                </p>
+                <p>000011011000	1000
+                <br>   | ←
+                <br>111100100111	1000                           	kettes komplementere.
+                </p>
+                <p>A negatív számok tartománya 2 bájton az</p>
+                <p style="text-align: center;">1000000000000000	− 32768</p>
+                <p>negatív számig terjedhet, amelynek 1-es komplementere</p>
+                <p style="text-align: center;">(0111111111111111)<sub>2</sub> ,</p>
+                <p>ami 32767, 2-es komplementere 1-gyel nagyobb, vagyis 32768.<br>
+                Összefoglalva az N egész szám két bájton
+                </p>
+                <p style="text-align: center;">−32768 > N > 32767</p>
+                <p>lehet.</p>
+                <br>
+                <p>A korábban eset már szó arról, hogy a negatív számokat komplementereikkel ábrázoljuk, szükségtelenné teszi a kivonást, mint műveletet a számítógépnél, mert az</p>
+                <p style="text-align: center;">A − 6 = A + (−6)</p>
+                <p>módon kezelhető.</p>
+                <br>
+                <p>A fixpontos ábrázolásnak azonban előnyei mellett van egy hátránya is, nevezetesen, hogy két szám összege nem számítható ki minden esetben, mert az összeadás eredménye sem lehet nagyobb pl. 32767-től, különben túlcsordulás következik be. </p>
+                <p>Az egységek (és tartományok) 32 bites alapszómérethez viszonyítva: </p>
+
+                <ul>
+                    <li>nibble -4 bit - tartomány: −8 . . . 7,</li>
+                    <li>bájt -8 bit	- tartomány: −128 . . . 127, </li>
+                    <li>félszó -16 bit - tartomány:   32.768 . . . 32.767, </li>
+                    <li>szó -32 bit	- tartomány:   2.147.483.648 . . . 2.147.483647, </li>
+                    <li>duplaszó -64 bit - tartomány:   9.223.372.036.854.775.808 . . .</li>
+                    <li>n-biten (általános eset) - n bit - tartomány: −2<sup>n-1</sup> . . . 2<sup>n-1</sup>-1.</li>
+                </ul>
+                <br>
+                <p>A következő táblázat a C++ egész típusú változóit mutatja be (<a href="https://en.cppreference.com/w/cpp/language/types">Fundamental types - cppreference.com).</a></p>
+                <img src="assets/pic63.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>A következő program a sizeof operátort használja a C++ egész típusainak méretének lekérdezésére. A sizeof operátor visszaadja a megadott típus méretét bájtokban. A program egyszerűen kiírja az egyes típusok méretét a konzolra. Az int típus méretét általában 4 bájtnak tekintjük, de a pontos méret a platformtól és az implementációtól függően változhat. A többi típus mérete is változhat a platformtól és az implementációtól függően.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            using namespace std;
+                            int main() &#10100;
+                                cout &lt;&lt; "A C++ egész típusainak méretei (bit):\n";
+                                cout &lt;&lt; "char: " &lt;&lt; sizeof(char)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "short: " &lt;&lt; sizeof(short)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "int: " &lt;&lt; sizeof(int)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "long: " &lt;&lt; sizeof(long)* 8 &lt;&lt; " bit" &lt;&lt; std::endl;
+                                cout &lt;&lt; "long long: " &lt;&lt; sizeof(long long)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "unsigned char: " &lt;&lt; sizeof(unsigned char)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "unsigned short: " &lt;&lt; sizeof(unsigned short)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "unsigned int: " &lt;&lt; sizeof(unsigned int)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "unsigned long: " &lt;&lt; sizeof(unsigned long)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                cout &lt;&lt; "unsigned long long: " &lt;&lt; sizeof(unsigned long long)* 8 &lt;&lt; " bit" &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic64.jpg">
+                    <figcaption>26. ábra A C++ egész típusainak lekérdezése</figcaption>
+                </figure>
+                <h3 class="h3content">Példa</h3>
+                <p>A következő program a &lt;limits> fejlécállományban található numeric_limits sablont használja a típusok legkisebb és legnagyobb értékének lekérdezésére. Az int és az unsigned int típusok esetén a std::numeric_limits sablon min() és max() statikus tagfüggvényei adják vissza a legkisebb és legnagyobb értékeket. </p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;limits>
+                            using namespace std;
+                            int main() &#10100;
+                                cout &lt;&lt; "int:" &lt;&lt; endl;
+                                cout &lt;&lt; "Legkisebb érték: " &lt;&lt; numeric_limits&lt;int>::min() &lt;&lt; endl;
+                                cout &lt;&lt; "Legnagyobb érték: " &lt;&lt; numeric_limits&lt;int>::max() &lt;&lt; endl;
+                            
+                                cout &lt;&lt; "\nunsigned int:" &lt;&lt; endl;
+                                cout &lt;&lt; "Legkisebb érték: " &lt;&lt; numeric_limits&lt;unsigned int>::min() &lt;&lt; endl;
+                                cout &lt;&lt; "Legnagyobb érték: " &lt;&lt; numeric_limits&lt;unsigned int>::max() &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic65.jpg">
+                    <figcaption>27. ábra int és unsigned int típusok legkisebb és legnagyobb értékének lekérdezésére C++ kód</figcaption>
+                </figure>
+                <br>
+                <h2 class="h2content">Decimális számok ábrázolása</h2>
+                <p>A BCD (Binary Coded Decimal) olyan kódolási eljárás, amelyet decimális számok (számjegyek) tárolására használunk. Ismert, hogy négy biten (nibble) 16 különböző kódot tárolhatunk, és mivel tízes alapú számrendszerben 0-tól 9-ig vannak számjegyek, ez nekünk bőven elég is. A kódolás olyan értelemben fixpontos, hogy tudjuk előre, hogy hol helyezkedik el a tizedespont, az eltérő ábrázolási mód miatt mégsem sorolhatjuk ebbe a csoportba.
+                <br>Joggal merülhet fel a kérdés, hogy miért van erre a tárolási módra szükségünk? Egyrészt nagyon jól használható olyan esetekben, amikor az adatainkat kijelzésre alkalmassá, az ember számára könnyen "olvashatóvá" kell tennünk. Tehát olyan feladatoknál, ahol viszonylag kevés az aritmetikai, ellenben sok az I/O művelet. Másrészt tudjuk, hogy a törtszámok kettes számrendszerbe való átváltásakor a legritkább esetben kapunk pontos eredményt. Amennyiben az előbb tárgyalt módokon tároljuk a számokat, ez a nagy pontosságot igénylő számításoknál (pl. Bankok, Kutatóközpontok, stb....) jelentős hibákat eredményezhet. Akár a huszadik helyen álló törtjegy értéke is fontos lehet számunkra, miközben lehetséges, hogy már az első tizedes jegy értéke sem pontos. Mivel ennél a tárolási módnál nem a számot, hanem a számjegyeket tároljuk, könnyen megoldható, hogy a kívánt pontosság érdekében az egész rész és a törtrész tárolására tetszőleges számú nibble-t biztosítsunk.
+                <br>BCD kód esetében a bitek súlyozása 8-4-2-1, de léteznek ettől eltérő, elsősorban a méréstechnikában, automatizálásban használatos megoldások is (pl. BCD Aiken kód - 2 4 2 1).
+                </p>
+
+                <h3 class="h3content">Példa BCD kód</h3>
+                <p>A 13907 decimális szám megfelelője BCD kódban:
+                <br>13907 –> 0001 0011 1001 0000 0111.
+                <br>Megjegyzés: a 10012-nél nagyobb számok tiltottak, megjelenésük sok rendszerben hibát eredményezhet.
+                </p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;bitset>
+                            #include &lt;string>
+                            
+                            using namespace std;
+                            
+                            bitset&lt;16> encodeBCD(string number) &#10100;
+                                bitset&lt;16> bcd;
+                                int index = 15;
+                                for (int i = number.length() - 1; i >= 0; i--) &#10100;
+                                    int digit = number[i] - '0';
+                                    for (int j = 0; j &lt; 4; j++) &#10100;
+                                        bcd[index--] = digit & 1;
+                                        digit >>= 1;
+                                    &#10101;
+                                &#10101;
+                                return bcd;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                string number;
+                                cout &lt;&lt; "Adjon meg egy maximum 4 jegyű decimális számot: ";
+                                cin >> number;
+                                bitset&lt;16> bcd = encodeBCD(number);
+                                cout &lt;&lt; "BCD kód: ";
+                                for (int i = 0; i &lt; 16; i++) &#10100;
+                                    if (i % 4 != 0)
+                                        cout &lt;&lt; bcd[i];
+                                    else 
+                                        cout &lt;&lt; " " &lt;&lt; bcd[i];
+                                &#10101;
+                                cout &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic66.jpg">
+                    <figcaption>28. ábra BCD konverter C++ kód futtatás</figcaption>
+                </figure>
+
+                <h2 class="h2content">Összeadás BCD-ben</h2>
+                <p>Tiltott állapotok 8 − 4 − 2 − 1 súlyozás mellett: 1010 . . . 1111
+                <br>Probléma, hogy a tiltott állapotokat kezelni kell, amely megnehezíti a műveletvégzést! Rendben, akkor ne legyenek tiltott állapotok, legyen a súlyozás 4 − 2 − 2 − 1: 
+                </p>
+                <ul>
+                    <li>0 0000, </li>
+                    <li>1 0001, </li>
+                    <li>2 0100, </li>
+                    <li>2 0010, </li>
+                    <li>3 0101, </li>
+                    <li>3 0011, . . .</li>
+                </ul>
+                <p>Ebben az esetben minden állapot elfogadható, viszont itt is van probléma! Redundáns a tárolás!</p>
+
+                <p>Összeadás</p>
+                <img src="assets/pic67.jpg">
+                <p>Ez rendben van!</p>
+                <img src="assets/pic68.jpg">
+                <p>A 1101 tiltott állapot, amelyet kezelni kell! 
+                <br>Megoldás, amennyiben az összeadandó számok értéke nagyobb mint kilenc, a számokhoz hozzá kell adnunk hatot. 
+                </p>
+                <img src="assets/pic69.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>Adjuk össze a 1256,73 és a 91,51 decimális számokat BCD-ben.
+                <br>Az 1256,73 BCD reprezentációja.</p>
+                <img src="assets/pic70.jpg">
+                
+                <p>Az 91,51 BCD reprezentációja.</p>
+                <img src="assets/pic71.jpg">
+                <p>Összeadás</p>
+                <img src="assets/pic72.jpg">
+
+                <h2 class="h2content">Számábrázolási módok az ASCII, EBCDIC kódtáblák</h2>
+                <p>Ezen számábrázolási módnak több variánsa is van attól függően, hogy az ASCII vagy az EBCDIC kódtáblára alapul, továbbá mindkettőn belül van még zónás és pakolt tömörített forma is (ez utóbbiban megegyezik a két alak).</p>
+                <h2 class="h2content">ASCII</h2>
+                <p>Az ASCII (American Standard Code for Information Interchange - amerikai szabványos kód az információ kölcsönös cseréjére) egy egységesített kódrendszer, amelyben a különféle karakterekhez (betűk, számok, vezérlőkarakterek, írásjelek) bináris kódokat rendelnek. A kódot az American Standard Institute dolgozta ki, amelyet az 1977-ben az Amerikai Szabványügyi Hivatal megerősítése és jóváhagyása után a Nemzetközi Szabványügy Hivatal (ISO) is átvett (ISO646).
+                <br>Kezdetben az ASCII egy 7 bites kód volt, amely 27 = 128 különféle bitsorozatot tartalmazott 0-tól 127-ig sorszámozva. Ez az ún. alap vagy standard karakterkészlet (az angol ábécé kis- és nagybetűi, számjegyek, írásjelek). Később az IBM kezdeményezésére hozzáadott 1 bites kiterjesztéssel újabb 128 karakter használatát szabványosította, amely kódrendszer Latin1 néven vált ismerté. Ez a nyolcbites kóddá való kiegészítés tette lehetővé a nemzeti sajátosságokat is figyelembe vevő karakterkészlet kialakítását: 128-255 között az ún. kiegészítő karakterkészlet (számos európai nyelv – pl. francia, német spanyol, stb. – speciális nemzeti karakterei, ékezetes betűk, az angolban nem létező egyéb betűtípusok, vonalrajzoló, a görög ABC betűi, táblázatrajzoló karakterek, stb.) elemei találhatók. Ezeket nevezik kódlapoknak is, pl. Latin1, Latin2, 852-es kódlap, stb. Ez utóbbi, a 852-es a Magyar Szabványügyi Hivatal által is elfogadott kódlap, amely a teljes magyar karakterkészletet tartalmazza.
+                <br>A teljes kódtábla az alábbi címen érhető el és tekinthető meg:<a href="http://www.asciitable.com/">http://www.asciitable.com/ </a> </p>
+
+                <h2 class="h2content">ASCII kódtábla részlete</h2>
+                <img src="assets/pic73.jpg">
+                <h2 class="h2content">EBCDIC</h2>
+                <p>A BCD kód kiterjesztett változata, elnevezése (Extended Binary Coded Decimal Interchange Code = kiterjesztett BCD kód) is erre utal. Az EBCDIC 38 tulajdonképpen egy olyan 8 bites kódkészlet, amely szöveg, grafika és vezérlőkarakterek ábrázolását teszi lehetővé a számítógépeken. Érdekessége a kódképzés szabálya, nem egy egyszerű hozzárendelés alapján kódolódnak a karakterek, hanem a sorszámuknak megfelelően.</p>
+                <h2 class="h2content">EBCDIC kódtábla részlete</h2>
+                <img src="assets/pic74.jpg">
+
+                <h2 class="h2content">Előjeles ábrázolás</h2>
+                <p>Előjeles ábrázolási mód értelmében az előjelet és az egyes számjegyeket is külön bájtokon ábrázoljuk. A számjegyet a bájt alsó részében tároljuk, a felső részét pedig a kódtáblától függően (3 vagy F) töltjük fel.</p>
+
+                <h2 class="h2content">ASCII</h2>
+                <p>1. bájt előjel:
+                <br>4E<sub>16</sub> +
+                <br>60<sub>16</sub> −
+                <br>A további bájtokon ASCII kódban a számjegyek.
+                <br>Fi<sub>16</sub>i = 0,1,2,..,9</p>
+                <img src="assets/pic75.jpg">
+                <p><b>Példa</b> +-516</p>
+                <p>+516</p>
+                <img src="assets/pic76.jpg">
+                <p>-516</p>
+                <img src="assets/pic77.jpg">
+
+                <h2 class="h2content">Zónás ábrázolás</h2>
+                <p>A zónás ábrázolásnál is minden egyes számjegyet külön bájtban tárolunk. A számjegyet a bájt alsó részében tároljuk, a felső részét pedig a kódtáblától függően (3 vagy F) töltjük fel. A szám előjelét itt már nem külön bájton, hanem az első bájt zónajelében tároljuk.</p>
+                <h2 class="h2content">ASCII</h2>
+                <p>Az utolsó bájton lévő előjel és számjegy:
+                <br>ha i >=0 akkor 3i<sub>16</sub>, különben 7i<sub>16</sub>.
+                </p>
+                <img src="assets/pic78.jpg">
+                <p><b>Példa</b> +-418</p>
+                <p>+418</p>
+                <img src="assets/pic79.jpg">
+                <p>-418</p>
+                <img src="assets/pic80.jpg">
+
+                <h2 class="h2content">EBCDIC</h2>
+                <p>A pozitív előjelnek a C, a negatívnak pedig a D értékek felelnek meg.</p>
+                <img src="assets/pic81.jpg">
+                <p><b>Példa</b> +-418</p>
+                <p>+418</p>
+                <img src="assets/pic82.jpg">
+                <p>-418</p>
+                <img src="assets/pic83.jpg">
+                <br>
+                <h2 class="h2content">Pakolt tömörített forma</h2>
+                <p>A pakolt ábrázolási módnál elhagyjuk a zónajeleket, és a számjegyek tárolását nem bájtonként, hanem fél bájtonként végezzük. Így egy bájton két számjegyet tudunk ábrázolni. Az előjel az utolsó fél bájtra kerül. Ezzel a formával már aritmetikai műveletek is végezhetőek.
+                <br>Előjel
+                <br>+ helyett C
+                <br>− helyett D
+                <br>Ha a számjegyek száma páros, akkor a szám elé egy 0-át kell írnunk, hogy az ábrázolás az előjellel együtt egész bájtokon képződjön.
+                </p>
+                <p><b>Példa</b> +− 31 052
+                <br>+ 31 052 ==> 31 05 2C
+                <br>− 31 052 ==> 31 05 2D
+                </p>
+                <p><b>Példa</b> +-453107
+                <br>− 453107 ==> − 04 53 10 7D
+                </p>
+                <img src="assets/pic84.jpg">
+
+            </div>
+        </div>
+</section>

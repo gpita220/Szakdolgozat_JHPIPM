@@ -1,0 +1,244 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">4. Fejezet</h1>
+        <br> <h2 class="h2title"> Helyiértékes számrendszerek III.</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Az előző fejetekben elkezdtük az ismerkedést a helyiértékes számrendszerekkel, és megnéztük, hogyan tudunk áttérni p>1 alapú számrendszerekből decimálisba! Ebben a fejezetben folytatjuk a számrendszerek közötti konverziós algoritmusokkal történő ismerkedést. Megismerjük, hogyan lehet decimális számrendszerből áttérni tetszőleges p>1 alapú számrendszerbe, továbbá, hogy kettő hatvány alapú számrendszerek között milyen gyors, és pontos konverziós algoritmusok léteznek</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Számrendszerek közötti konverziók.</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+                <h3 class="h3content">Bináris, oktális és hexadecimális számrendszer</h3>
+                <p>Könnyen belátható, hogy a bináris számrendszerben egy szám ábrázolásához viszonylag sok pozícióra van szükség. A számítógépi adatábrázolásnál – pl. a memória vagy lemez fizikai tartalmának a megjelenítésekor – gyakran a tömörebb, kevesebb pozíciót használó 8-as vagy 16-os számrendszert használják. Ezeket oktális és hexadecimális számrendszereknek nevezzük. </p>
+                <p>Hosszadalmas átváltási algoritmus alkalmazása helyett a konvertálás egyszerű csoportképzési módszerrel hajtjuk végre. Kihasználjuk, hogy mind a 8, mind a 16 a 2-nek egész hatványa, azaz 2<sup>3</sup> = 8 és 2<sup>4</sup> = 16. Ennek megfelelően, ha egy bináris (2-es számrendszerbeli) számot át akarunk váltani, akkor a "kettedes vesszőtől" (törtrészt az egészrésztől elválasztó jeltől) balra és jobbra hármas (triáda) ill. négyes (tetrád) csoportokat képezhetünk, ami megfelel egy 8-as ill. 16-os számrendszerbeli számjegynek. Az algoritmus visszafelé is működik.</p>
+                <img src="assets/pic24.jpg">
+                <p>Például</p>
+                <img src="assets/pic25.jpg">
+                <p>Ellenőrizzük le az eredményt azzal, hogy mindkét számot átváltjuk 10-es számrendszerbe:</p>
+                <img src="assets/pic26.jpg">
+                <p>Alakítsuk vissza a 2-es számrendszerbeli számot a tetrádok segítségével 16-os számrendszerbe</p>
+                <img src="assets/pic27.jpg">
+                <p>ami 10-es számrendszerben</p>
+                <img src="assets/pic28.jpg">
+                <p>A visszaalakítás során plusz nullákra is lehet szükségünk a triádák vagy a tetrádok kialakításához. Ennek elfelejtése gyakori hibát okoz! Például az (11,101)<sub>2</sub> ≠ (3,5)<sub>16</sub> , hanem a helyes megoldás:</p>
+                <img src="assets/pic29.jpg">
+                <p><b>Definíció.</b> A bináris számrendszerbeli kód egyes pozícióit, amelyre a 0 és 1 bináris számjegyek valamelyike írható az angol binary digit elnevezésből rövidítve bit-nek nevezzük.</p>
+                <p><b>Példa.</b> A következő C++ program oktális és hexadecimális számokból képez kettes számrendszerbeli triádokat, illetve tetrádokat.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;string>
+                            #include &lt;bitset>
+                            
+                            using namespace std;
+                            
+                            string convertToBinaryTriads(string octal) &#10100;
+                                string binaryTriads;
+                                for (char octalDigit : octal) &#10100;
+                                    int decimal = octalDigit - '0'; // Konvertálás decimális formátumba
+                                    string binary = bitset<3>(decimal).to_string() + " "; // Konvertálás kettes számrendszerbeli triádra
+                                    binaryTriads += binary;
+                                &#10101;
+                                return binaryTriads;
+                            &#10101;
+                            string convertToBinaryTetrads(string hexadecimal) &#10100;
+                                string binaryTetrads;
+                                for (char hexDigit : hexadecimal) &#10100;
+                                    int decimal;
+                                    
+                                    if (isdigit(hexDigit)) &#10100;
+                                        decimal = hexDigit - '0'; // Konvertálás decimális formátumba
+                                    &#10101; else &#10100;
+                                        decimal = toupper(hexDigit) - 'A' + 10; // Konvertálás decimális formátumba
+                                    &#10101;
+                                    string binary = bitset<4>(decimal).to_string()+ " "; // Konvertálás kettes számrendszerbeli tetrádra
+                                    binaryTetrads += binary;
+                                &#10101;
+                                return binaryTetrads;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                string octal;
+                                string hexadecimal;
+                                cout &lt;&lt; "Oktális szám: ";
+                                cin >> octal;
+                                string binaryTriads = convertToBinaryTriads(octal);
+                                cout &lt;&lt; "A kettes számrendszerbeli triádok: " &lt;&lt; binaryTriads &lt;&lt; endl;
+                                cout &lt;&lt; "Hexadecimális szám: ";
+                                cin >> hexadecimal;
+                                string binaryTetrads = convertToBinaryTetrads(hexadecimal);
+                                cout &lt;&lt; "A kettes számrendszerbeli tetrádok: " &lt;&lt; binaryTetrads &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic30.jpg">
+                    <figcaption>19. ábra  oktális és hexadecimális számokból bináris triádok és tetrádok képzése – C++ program</figcaption>
+                </figure>
+                
+
+                <h2 class="h2content">Kapcsolódó feladatok.</h2>
+                <ul>
+                    <li>Írja át a for ciklusokat while ciklusokra.</li>
+                    <li>Készítsen tervet olyan programra, amely képes lenne törtszámok kezelésére is.  </li>
+                    <li>Mi a szerepük a  octalDigit - '0'  , a  hexDigit - '0' , illetve a toupper(hexDigit) - 'A' + 10;  utasításoknak? </li>
+                    <li>Nézzen utána a bitset –nek! (std::bitset - cppreference.com)</li>
+                    <li>Egészítse ki a programot úgy, hogy legyen képes egész számok oktális&lt;->hexadecimális konvertálására.</li>
+                    <li>Elemezze, majd futtassa az alábbi kódot, és párosítsa össze a lehetőségeknél megadott kommentetekkel.</li>
+                </ul>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;bitset>
+                            int main() &#10100;
+                                //*****************************************
+                                std::bitset<8> bits("11001010");
+                            
+                                //*****************************************
+                                std::cout &lt;&lt; "Bitset: " &lt;&lt; bits &lt;&lt; std::endl;
+                            
+                                //*****************************************
+                                std::cout &lt;&lt; "Hossz: " &lt;&lt; bits.size() &lt;&lt; std::endl;
+                            
+                                //*****************************************
+                                bool bitValue = bits[3];
+                                std::cout &lt;&lt; "A 3. bit: " &lt;&lt; bitValue &lt;&lt; std::endl;
+                            
+                                //*****************************************
+                                bits.set(2, true);
+                                std::cout &lt;&lt; "Bitset módosítása: " &lt;&lt; bits &lt;&lt; std::endl;
+                            
+                                //*****************************************
+                                unsigned long decimalValue = bits.to_ulong();
+                                std::cout &lt;&lt; "Decimális érték: " &lt;&lt; decimalValue &lt;&lt; std::endl;
+                            
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <p>Lehetőségek:</p>
+                <ul>
+                    <li>// Egy adott bit lekérése</li>
+                    <li>// Bitset kiíratása</li>
+                    <li>// Egy adott bit beállítása</li>
+                    <li>// Bitset átalakítása decimális értékké</li>
+                    <li>// Bitset inicializálása és értékadása</li>
+                    <li>// Bitset hossza</li>   
+                </ul>
+
+                <h2 class="h2content">Tízes számrendszerbeli számok konvertálása</h2>
+                <p>A számrendszer definíciója egyúttal eljárást is ad tetszőleges (p > 1) alapú számrendszerből 10-es számrendszerbe való konvertálásra. A következőkben fordítva, 10-es számrendszerbeli számok tetszőleges számrendszerbe való konvertálásához keresünk eljárást. Ezzel megoldjuk a tetszőleges számrendszerből tetszőleges számrendszerbe konvertálás problémáját is.</p>
+                <p>Tekintsünk egy tetszőleges N tízes számrendszerbeli számot. Az N szám egész része minden helyiértékes és egész alapú számrendszerben egész, a törtrész pedig törtszám. Ezért az egész rész és a törtrész konverzióját külön végezzük el. Legyen tehát</p>
+                <p style="text-align: center;">N = N<sub>0</sub> + T<sub>0</sub></p>
+                <p>ahol N<sub>0</sub> a szám egész részét, T<sub>0</sub> pedig a törtrészét jelöli.</p>
+                <p>Egész rész konvertálása. Általában ez az algoritmus jól ismert, hiszen már a középiskolában tanítják a diákoknak. A következőkben bebizonyítjuk az algoritmus helyességét. Az N0 egész számot felírhatjuk p alapú számrendszerben (figyeljük meg, hogy a szummás kifejezésben most i 0-tól n-ig megy):</p>
+                <img src="assets/pic31.jpg">
+                
+                <p>Feladatunk a a<sub>0</sub>,a<sub>1</sub>,...,a<sub>n</sub> ismeretlen számjegyek meghatározása. A felírt formula alapján a legutolsó jegyet a a<sub>0</sub>-t meghatározhatjuk, mert ha az N<sub>0</sub>-t elosztjuk p-vel, akkor kapunk egy N<sub>1</sub> egész számot, és a maradék egyenlő lesz a<sub>0</sub>-val. Nyilván igaz, hogy a<sub>0</sub> &lt; p.</p>
+                <p style="text-align: center;">N<sub>n</sub> = p ∗ 0 + a<sub>n</sub> .</p>
+
+                <h3 class="h3content">Példák</h3>
+                <p>1. Váltsuk át a 123-at 8-as számrendszerbe!</p>
+                <pre style="text-align: center;">
+                    123 : 8 = 15 és marad	3,
+                    15 : 8 = 1	és marad	7,
+                    1 : 8 = 0	és marad	1.
+                </pre>
+                <p>A fenti műveletsorhoz jól ismert az alábbi formula, ahol a hányados balra, a maradék jobbra kerül, és a számjegyeket alulról felfelé olvassuk ki.</p>
+                <img src="assets/pic32.jpg">
+                <p>2. Váltsuk át 16-os számrendszerbe a 123-at!</p>
+                <img src="assets/pic33.jpg">
+                <p>Fontos megjegyeznünk, hogy az algoritmus véges!</p>
+                <p><b>Törtrész konvertálása.</b> Vizsgáljuk meg a szám T0 törtrészét:</p>
+                <img src="assets/pic34.jpg">
+                <p>szorozzuk meg T<sub>0</sub>-t p-vel</p>
+                <p style="text-align: center;">T<sub>0</sub>p = a<sub>-1</sub> + a<sub>-2</sub>p<sup>-1</sup> + ··· + a<sub>-m</sub>p<sup>-m+1</sup> = a<sub>-1</sub> + T<sub>1</sub>,</p>
+                <p>ahonnan a<sub>-1</sub> a szorzat egész része, az első törtjegy, a törtrész pedig tovább szorozva p-vel</p>
+                <p style="text-align: center;">T<sub>1</sub>p = a<sub>-2</sub> + a<sub>-3</sub>p<sup>-1</sup> + ··· + a<sub>-m</sub>p<sup>-m+2</sup> = a<sub>-2</sub> + T<sub>2</sub> .</p>
+                
+                <p>A szorzat egész része a<sub>-2</sub> adja a második törtjegyet, és az eljárást megismételve tovább folytathatjuk. Ellentétben az előző algoritmussal az eljárás nem biztos, hogy véges, azaz nem mindig ér véget oly módon, hogy a törtrész nullává válik.</p>
+                <p><b>Tétel.</b> A véges formában felírt tízes számrendszerbeli szám nem mindig írható fel véges formában egy másik számrendszerben.</p>
+
+                <h3 class="h3content">Példák</h3>
+                <p>1. Konvertáljuk a 0,6875-öt 8-as számrendszerbe!</p>
+                <pre style="text-align: center;">
+                    0,6875 * 8	=	5,5000 = 5 + 0,5
+	                0,5 * 8	=	4,0000 = 4
+                </pre>
+
+                <p>Leírhatjuk egyszerűbb formában is az eljárást:</p>
+                <img src="assets/pic35.jpg">
+                <p>A kiolvasás felülről lefelé és a baloldalon az egészeknél történik.</p>
+                <p>2. Írjuk át a 0,6875-öt a fenti eljárással 2-es számrendszerbe!</p>
+                <img src="assets/pic36.jpg">
+                <p>3. Váltsuk át 16-os számrendszerbe a 0,2175 számot!</p>
+                <img src="assets/pic37.jpg">
+
+                <h3 class="h3content">Példa</h3>
+                <p>A következő program egy  10-es számrendszerben megadott lebegőpontos számot p>1 alapú számrendszerbe konvertál át. A felhasználótól bekéri a lebegőpontos decimális számot, a cél számrendszer alapját, illetve a törtrész pozícióinak számát.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;cmath>
+                            #include &lt;vector>
+                            
+                            using namespace std;
+                            
+                            string convertToBase(double number, int base, int fractionDigits) &#10100;
+                                string result;
+                                // Egész rész konvertálása
+                                int integerPart = (int)number;
+                                while (integerPart > 0) &#10100;
+                                    int remainder = integerPart % base;
+                                    result = to_string(remainder) + result;
+                                    integerPart /= base;
+                                &#10101;
+                                // Törtrész konvertálása
+                                if (fractionDigits > 0) &#10100;
+                                    result += '.';
+                                    double fractionalPart = number - floor(number);
+                                    for (int i = 0; i &lt; fractionDigits; ++i) &#10100;
+                                        fractionalPart *= base;
+                                        int digit = (int)floor(fractionalPart);
+                                        result += to_string(digit);
+                                        fractionalPart -= digit;
+                                    &#10101;
+                                &#10101;
+                                return result;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                double number;
+                                int base, fractionDigits;
+                                cout &lt;&lt; "Adja meg a 10-es számrendszerbeli számot: ";
+                                cin >> number;
+                                cout &lt;&lt; "Adja meg az új számrendszer alapját (p>1): ";
+                                cin >> base;
+                                cout &lt;&lt; "Adja meg a törtrész pozícióinak számát: ";
+                                cin >> fractionDigits;
+                                string result = convertToBase(number, base, fractionDigits);
+                                cout &lt;&lt; "Az eredmény: " &lt;&lt; result &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic38.jpg">
+                    <figcaption>20. ábra decimális szám konverziója p>1 alapú számrendszerbe</figcaption>
+                </figure>
+            </div>
+        </div>
+</section>

@@ -1,0 +1,59 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+  </div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">Mentett hallgatók adatai</h1></div>
+    <hr>
+      <div class="col-md-12 left_inner_content">
+        <section class="mat-elevation-z8 mattable">
+        <table mat-table [dataSource]="students">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Név </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> E-mail </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="school">
+            <th mat-header-cell *matHeaderCellDef> Egyetem </th>
+            <td mat-cell *matCellDef="let element"> {{element.school}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="major">
+            <th mat-header-cell *matHeaderCellDef> Szak </th>
+            <td mat-cell *matCellDef="let element"> {{element.major}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="header"></tr>
+          <tr mat-row *matRowDef="let row; columns: header;"(click)="selectedRow(row)"
+          [ngClass]="{'highlightTableColor': srow == row}"></tr>
+        </table></section>
+        <div class="col-md-4">
+          <p class="p2">Egy hallgató adatainak frissítéséhez vagy törléséhez kérlek válaszd a szerkeszteni kívánt sort a táblázat sorára kattintva!</p>
+          <form #studentSelect="ngForm">
+            <label for="id"class="form-label">Id:</label>
+            <input type="number"[(ngModel)]="studentform.id" class="form-control" name="id" id="id" placeholder="id" required>
+            <br>
+            <label for="name"class="form-label">Név:</label>
+            <input type="text"[(ngModel)]="studentform.name" class="form-control" name="name" id="name" placeholder="Név" required>
+            <br>
+            <label for="email"class="form-label">E-mail:</label>
+            <input type="email"[(ngModel)]="studentform.email" class="form-control"name="email" id="email" placeholder="teszt@teszt.hu" value="srow.email">
+            <br>
+            <label for="school"class="form-label">Egyetem:</label>
+            <input type="text" [(ngModel)]="studentform.school" class="form-control"name="school" id="school" placeholder="Egyetem" value="srow.school"required>
+            <br>
+            <label for="major"class="form-label">Szak:</label>
+            <input type="text" [(ngModel)]="studentform.major" class="form-control"name="major" id="major" placeholder="Szak" value="srow.major"required>
+            <br>
+            <div clas="buttondiv">
+            <button [disabled]="studentSelect.invalid" type="button" class="btn btn-success" style="margin-right: 20px;" (click)="onUpdateStudent(studentSelect.value, studentSelect)">Hallgató frissítése</button>
+            <button [disabled]="studentSelect.invalid" type="button" class="btn btn-danger" (click)="onDeleteStudentById(studentform.id, studentSelect)">Hallgató törlése</button></div>
+        </form>
+        </div>
+      </div>

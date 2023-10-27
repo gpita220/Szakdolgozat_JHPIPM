@@ -1,0 +1,309 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">8. Fejezet</h1>
+        <br> <h2 class="h2title"> Adatok ábrázolása számítógépen II.</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben a lebegőpontos számábrázolással, illetve ez ezzel kapcsolatos fogalmakkal fogunk  megismerkedni (lebegőpontos ábrázolás -FLOPS, lebegőpontos szám, eltolt karakterisztika, ANSI/IEEE 754-es szabvány, alulcsordulás, túlcsordulás , speciális értékek, kerekítési módok).</p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Lebegőpontos számábrázolás</li>
+                </ul>
+                <h1 class="h1content">A lecke tartalma:</h1>
+                <h2 class="h2content">Lebegőpontos számábrázolás</h2>
+                <p>A lebegőpontos (floating point) számábrázolást a valós számok reprezentálására használjuk. Tulajdonképpen egy olyan eljárás, amely a valós számokat – mivel a számítógépeink csak véges hosszúságú számjegysorozatokkal képesek dolgozni - egy közelítő értékkel helyettesítve racionális számokká alakítja. Míg fixpontos ábrázolásnál, mint arról az előzőekben eset szó, a kettedes pont "fixen" marad, addig lebegőpontosnál ez "lebeghet".</p>
+                <h2 class="h2content">FLOPS</h2>
+                <p>A processzorok műveletvégzési sebességének mértékegysége a FLOPS (FLoating point OPerations Per Second), mellyel a másodpercenként elvégezhető lebegőpontos műveletek számát jellemezhetjük. Az első általános célú számítógép az ENIAC volt, amelynek tervezéséhez 1943-ban kezdtek hozzá, elsősorban hadászati célokra (hidrogénbombához szükséges számítások elvégzése) készült, számítási teljesítménye 5 Kiloflop/s volt (5000 művelet másodpercenként). Hogy érzékeltessük a fejlődést, a jelenlegi (2022. november) leggyorsabb szuperszámítógép a Frontier - HPE Cray EX235a (8,730,112 db processzormag), melynek teljesítménye 1685,65 Petaflop/s.
+                <br>Megjegyzés: Amennyiben érdeklődik a szuperszámítógépek iránt és szeretne több információhoz jutni róluk. Érdemes felkeresni a <a href="https://www.top500.org/">  Home - | TOP500 oldalt.</a>
+                </p>
+                <h2 class="h2content">Lebegőpontos szám</h2>
+                <p>A lebegőpontos ábrázolási mód értelmében minden számot szorzat alakban adunk meg. Egy lebegőpontos szám (floating point number) ebben az esetben a következő alakban írható fel:
+                <br>N = m · Ak, ahol N a lebegőpontos szám, m: a mantissza, A: az alkalmazott számrendszer alapja, k: a kitevő (karakterisztika).
+                <br>Megjegyzés: A mantissza és a kitevő is lehet negatív szám.
+                </p>
+                <h2 class="h2content">Normalizálás</h2>
+                <p>Mielőtt tovább mennénk, fontosnak tartjuk felhívni a figyelmet, hogy a matematikai értelemben illetve a számítástechnikai értelemben vett normálalak között különbséget teszünk.</p>
+                <h2 class="h2content">Egészre normalizálás</h2>
+                <p>Matematikai értelemben a mantissza (m) értéke: 1 ≤ m &lt; A, ahol m ≤ 0 és A a számrendszer alapja. Ebben az esetben egészre normalizálunk, tehát a bináris számrendszerben vett mantissza értéke egy 1  ≤ m &lt; 2 közötti szám lesz.</p>
+                <p><b>Példa</b> Tízes számrendszerbeli szám esetében:</p>
+                <p style="text-align: center;">13,625 = 1,3625 · 10<sup>1</sup></p>
+                <p><b>Példa</b> Kettes számrendszerbeli szám esetében:</p>
+                <p style="text-align: center;">1001,1001<sub>2</sub> = 1,0011001<sub>2</sub> · 2<sup>3</sup></p>
+                <p>Megfigyelhető, hogy az egészek helyén mindig 1-es áll, ezért ennek tárolása szükségtelen. Ezt implicit bit-nek hívjuk. Így a tárolt mantissza (m) értéke:</p>
+                <p style="text-align: center;">m: 0011001</p>
+
+                <h2 class="h2content">Törtre normalizálás</h2>
+                <p>Törtre normalizálás esetében a bináris pontot addig toljuk el, amíg a mantissza értéke 1/2 ≤m &lt; 1 között nem lesz.</p>
+                <p><b>Példa</b> Tízes számrendszerbeli szám esetében:</p>
+                <p style="text-align: center;">13,625 = 0,13625 · 10<sup>2</sup></p>
+                <p><b>Példa</b> Kettes számrendszerbeli szám esetében:</p>
+                <p style="text-align: center;">1001,1001<sub>2</sub> = 0,10011001<sub>2</sub> · 2<sup>4</sup></p>
+                <p>Ebben az esetben a 2−1 helyi értéken lévő bit mindig 1-es értékű, ezért ennek eltárolása is felesleges. A tárolt mantissza értéke természetesen megegyezik az előzővel:</p>
+                <p style="text-align: center;">m: 0011001</p>
+                <p><b>Megjegyzés:</b> A későbbi műveletvégzés előtt mindkét esetben a nem tárolt (implicit) biteket vissza kell helyezni, ellenkező esetben hibás eredményt fogunk kapni.</p>
+
+                <h2 class="h2content">Eltolt karakterisztika</h2>
+                <p>Az ábrázolás során a számítógépnek nem kell tárolnia a számrendszer alapját, hiszen minden számítás azonos alapú számrendszerben ábrázolt számokkal történik. A számítógép meghatározott számú tárolóhelyet biztosít mind a mantissza, mind pedig a kitevő számára, ezeket már tárolni kell. A mantissza, mint ahogy az előzőekben már volt róla szó, egy valódi tört, melynek ábrázolása történhet kettes komplemens alapján is.
+                    <br>A kitevő ábrázolása azonban legtöbbször feszített módban (többletes kód segítségével) történik. Ezt a megoldást eltolt vagy ofszet karakterisztikának is hívják. Ekkor k-t a lebegőpontos szám karakterisztikájának nevezzük. A feszített módú ábrázolás értelmében a karakterisztikát eltoljuk a pozitív számok tartományába, így a negatív kitevő is ábrázolhatóvá válik anélkül, hogy előjelét külön kellene ábrázolni.
+                </p>
+                <p>Az eltolás mértékére (d) két megoldás használatos: d = 2n−1 – 1, egészre normalizálás esetén d = 2<sup>n-1</sup>  törtre normalizálás esetén, ahol n a karakterisztika ábrázolására szánt bitek száma. Így az eltolt karakterisztika (k) a</p>
+                <p style="text-align: center;">k=e + d</p>
+                <p>összefüggéssel számítható ki (ahol e az ábrázolni kívánt kitevő).
+                    <br>Amennyiben a karakterisztika ábrázolására 8 bit áll rendelkezésünkre, az eltolás mértéke:
+                </p>
+                <p style="text-align: center;">d = 128 − 1 = 127</p>
+                <p>A feszített módban ábrázolandó kitevő az előző példa esetében:</p>
+                <p style="text-align: center;">k = 3 + 127 = 130</p>
+                <p>Bináris alakban:</p>
+                <p style="text-align: center;">k = 10000010<sub>2</sub></p>
+
+                <h2 class="h2content">Lebegőpontos számok reprezentálása</h2>
+                <p>További vizsgálatokat végezve az N lebegőpontos számon megfigyelhető, hogy van legnagyobb eleme (N∞). Ez abban az esetben áll elő, amikor a mantissza és karakterisztika is a legnagyobb értéket veszi fel, míg a legkisebb pozitív számot, N<sub>0</sub> -t úgy kapjuk, hogy a legkisebb normalizált mantisszát és a karakterisztikát vesszük. Az előzőekből következik, hogy a legkisebb ábrázolható szám a −N<sub>∞</sub> , és a legnagyobb negatív szám pedig a −N<sub>0</sub>. Mindezekből megállapítható, hogy az N tulajdonképpen egy 0-ra szimmetrikus korlátos halmaz, amely része a Q-nak, és csak véges sok eleme van.
+                    <br>Szemléltetéshez nézzük a következő példát. Ábrázoljuk az N lebegőpontos számot 1 byte-on úgy, hogy az első bit jelölje az előjelet, a következő 3 bit a karakterisztikát és a maradék 4 bit pedig a mantisszát. Normalizált ábrázolási mód értelmében a mantissza (első értékén csak egyes állhat) 1000<sub>2</sub> és 1111<sub>2</sub> között, a karakterisztika (eltolt) pedig 0002 (−3) és 1112 (+3) között vehet fel értékeket.
+                    <br>A legnagyobb ábrázolható számot (N∞) abban az esetben kapjuk meg, amikor a karakterisztika az 111<sub>2</sub>, a mantissza pedig az 1111<sub>2</sub> értéket veszi fel.
+                </p>
+                <img src="assets/pic85.jpg">
+                <p>A legkisebb pozitív szám (N<sub>0</sub>) pedig akkor áll elő, amikor a mantissza értéke 10002 a karakterisztika értéke pedig 000<sub>2</sub> (−3)</p>
+                <img src="assets/pic86.jpg">
+                <p>Megjegyzés: Az egy byte-on ábrázolható lebegőpontos számok darabszáma a 8 különböző mantisszához hozzávéve a 7 lehetséges karakterisztikát a negatív számokkal és a nullával együtt 2 · 8 · 7 + 1 = 113.</p>
+                <img src="assets/pic87.jpg">
+
+                <h2 class="h2content">ANSI/IEEE 754-es szabvány</h2>
+                <p>A lebegőpontos számok ábrázolásának egységesítését 1977-ben kezdték meg. Cél a különböző architektúrák között az adatszintű kompatibilitás megteremtése. Minden architektúrából összegyűjtötték a legjobb megoldásokat, az első szabvány, amelyet a nagy processzorgyártók (Intel, AMD, Motorola, stb...) is elfogadtak, 1985-re született meg. Az IEEE 754-es szabvány a lebegőpontos művelet végrehajtásához kétfajta pontosságot definiált 2-es és 10-es számrendszerben: - egyszeres pontosság (single precision): 32 bit, - dupla pontosság (double precision): 64 bit.</p>
+                <p>A jelenlegi verzió, az  IEEE 754-2019, amely tartalmazza az eredeti IEEE 754-és az IEEE 854-1987-es (alaptól független lebegőpontos ábrázolás) szabványokat, öt alapvető formátumot definiál.
+                <br>Három bináris lebegőpontos alapvető formátum (kódolt 32, 64 vagy 128 bit) és két decimális lebegőpontos alapvető formátum (kódolt 64 vagy 128 bit).
+                </p>
+                <img src="assets/pic88.jpg">
+                <p>Mielőtt egy konkrét példát megnéznénk, nézzük meg, hogyan épül fel egy bináris szám 32 biten. Az első bit az előjel bit, amely az ábrázolandó valós szám előjele (e), az ezt követő 8 biten ábrázoljuk az eltolt karakterisztikát (k), végül az utolsó 23 biten pedig a mantisszát (m).</p>
+                <p>Fontos megjegyezni, hogy az előjel bit értéke 0, ha a szám pozitív és 1, ha negatív. Továbbá azt, hogy a mantisszában levő fixpontos szám egészre normalizáltan értendő, tehát az eltolás mértéke 127. Az előjel esetében az e = 0 és az e = 255 különleges esetekre vannak fenntartva, mint a ±0, ±∞ és a NaN (Not a Number).
+                <br>A következő táblázatban összefoglalva megtalálhatóak az egyes pontosságokhoz tartozó előjel, karakterisztika és mantissza bitértékek.
+                </p>
+
+                <img src="assets/pic89.jpg">
+                <p><b>Megjegyzés:</b> Dupla pontosság esetében az ábrázolható számtartomány:</p>
+                <p style="text-align: center;">4,19 · 10<sup>-307</sup> &lt; |N| &lt; 1,67 · 10<sup>308</sup></p>
+                <p>között van</p>
+                <p><b>Példa.</b> Ábrázoljuk lebegőpontosan 32 biten a 38,2910 számot! Egészrész:</p>
+                <p style="text-align: center;">38<sub>10</sub> = 100110<sub>2</sub></p>
+                <p>Törtrész:
+                <br>0,29<sub>10</sub> = 0,010010100011110101110000<sub>2</sub>
+                </p>
+                <p>Kettes számrendszerbeli alak:</p>
+                <p style="text-align: center;">38,29<sub>10</sub> = 100110,010010100011110101110000<sub>2</sub></p>
+                <p>Egészre normalizált alak:</p>
+                <p style="text-align: center;">N = 1,00110010010100011110101110000<sub>2</sub> · 2<sup>5</sup></p>
+                <p>Mantissza (23 bit):</p>
+                <p style="text-align: center;">m = 00110010010100011110101<sub>2</sub></p>
+                <p>Karakterisztika (8 bit):</p>
+                <p style="text-align: center;">k = 5 + 127 = 132<sub>10</sub> = 10000100<sub>2</sub></p>
+                <p>Előjelbit (1 bit):</p>
+                <p style="text-align: center;">e = 0</p>
+                <p>Táblázatba foglalva:</p>
+                <img src="assets/pic90.jpg">
+                <p>Hexadecimális alak:</p>
+                <img src="assets/pic91.jpg">
+                <p style="text-align: center;">N<sub>16</sub> : 421928F5</p>
+
+                <p><b>Megjegyzés:</b> Természetesen az N<sub>16</sub> nem azonos az N szám tizenhatos számrendszerbeli értékével, ezért nem használtunk egyenlőségjelet.</p>
+                <p><b>Példa</b> Melyik tízes számrendszerbeli szám hexadecimális alakja a következő N16 : C16A0000? Bináris alak:</p>
+                <img src="assets/pic92.jpg">
+                <p>Csoportosítva:</p>
+                <img src="assets/pic93.jpg">
+                <p>Előjel bit:</p>
+                <p style="text-align: center;">e = 1</p>
+                <p>Tehát negatív számról van szó.</p>
+                <p>karakterisztika:</p>
+                <p style="text-align: center;">k = 10000010<sub>2</sub>k = 10000010<sub>2</sub> = 130 k = 130 − 127 = 3</p>
+                <p>Kiolvasható, hogy a kitevő értéke 3.</p>
+                <p>Mantissza:</p>
+                <p style="text-align: center;">m = 110101000000000000000002</p>
+                <p>Megjegyzés: He felejtsük el, hogy az implicit bit-et nem tároljuk!</p>
+                <p>Implicit bitet visszatéve:</p>
+                <p style="text-align: center;">1,11010100000000000000000<sub>2</sub></p>
+                <p>A szám normálalakja:</p>
+                <p style="text-align: center;">N = −1,11010100000000000000000<sub>2</sub> · 2<sup>3</sup></p>
+                <p>Kettes számrendszerbeli alak:</p>
+                <p style="text-align: center;">−1110,101<sub>2</sub></p>
+                <p>Tízes számrendszerbeli alak:</p>
+                <p style="text-align: center;">−14,625</p>
+
+                <h3 class="h3content">Példa</h3>
+                <p>A következő C++ program bekér a felhasználótól egy float típusú számot,  reinterpret_cast segítségével átalakítja az unsigned long típusra, hogy a számot bitek sorozataként lehessen kezelni. A std::bitset osztály segítségével létrehoz egy bit sorozatot a lebegőpontos szám reprezentációjából. Az std::hex függvénnyel beállítjuk a kiírás módját hexadecimális formátumra. Az std::setw segítségével beállítjuk a kiírás szélességét a megfelelő hosszúságú hexadecimális szám megjelenítéséhez. Az std::setfill függvénnyel pedig megadhatjuk a töltő karaktert (a '0'-t), hogy a számot megfelelő hosszúságú hexadecimális formában jelenítse meg.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;bitset>
+                            #include &lt;iomanip>
+                            
+                            using namespace std;
+                            int main() &#10100;
+                                float number;
+                                cout &lt;&lt; "Adjon meg egy lebegőpontos számot: ";
+                                cin >> number;
+                                bitset&lt;sizeof(float) * 8> bits((unsigned long)(&number));
+                                cout &lt;&lt; "Bitreprezentáció: " &lt;&lt; bits &lt;&lt; endl;
+                                cout &lt;&lt; "Hexadecimális alak: " &lt;&lt; hex &lt;&lt; setw(sizeof(float) * 2) &lt;&lt; setfill('0')
+                                &lt;&lt; *reinterpret_cast&lt;unsigned int*>(&number) &lt;&lt; endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic94.jpg">
+                    <figcaption>30. ábra Lebegőpontos számábrázolás C++ kód</figcaption>
+                </figure>
+
+                <h2 class="h2content">Alulcsordulás, túlcsordulás</h2>
+                <p>Az eddigi példákból is kiderült, hogy a valós számokat sok esetben nem tudjuk pontosan ábrázolni. A 38,29 valós számot 128 bites pontosság mellett sem tudjuk pontosan ábrázolni. Továbbá nem tudjuk ábrázolni a túl nagy, illetve a túl kis számokat sem. 32 biten a legkisebb ábrázolható szám a 2<sup>-126</sup> ≈ 1,2 x 10<sup>-38</sup>, amelynél kisebb szám esetében alulcsordulás (underflow) hibaüzenetet kapunk.</p>
+                <p>Túlcsordulás (overflow) hibaüzenetet kapunk, amennyiben 3,4 x 10<sup>38</sup>-nál nagyobb számot szeretnénk ábrázolni.</p>
+                <figure>
+                    <img src="assets/pic95.jpg">
+                    <figcaption>5.3. ábra. b, ábrázolható egész számok</figcaption>
+                </figure>
+
+                <h1 class="h1content">Speciális értékek</h1>
+                <h2 class="h2content">Előjeles nulla</h2>
+                <p>Az IEEE 754 szabvány a nullát előjelesen kezeli. Ez azt jelenti, hogy létezik pozitív nulla "+0" és negatív nulla "-0" is. Ezek műveletvégzéskor sok esetben egyenlően viselkednek. Előfordul néhány eset azonban, amikor eltérnek. Például, a "1/-0" a negatív végtelen (pontosan), míg az "1/+0" a pozitív végtelent jelenti (pontosan). A "+0" és "-0" közötti különbség leginkább összetett műveletek esetében jelentkezik.
+                <br><b>Megjegyzés:</b> A legtöbb aritmetikai művelet, amelynek eredménye 0, a "+0" értéket kapja.
+                </p>
+                <h2 class="h2content">Végtelen ábrázolása</h2>
+                <p>A szabvány ugyanúgy, mint az előjeles nulla esetében, a végtelen ábrázolására is két értéket különböztet meg (+∞ és −∞). 32 bites bináris ábrázolás mellett a mínusz végtelen hexadecimális alakja FF800000, a pozitív végtelen alakja pedig a 7F800000. A végtelent úgy kezeli, mint egy nagyon nagy számot, így értelmezett a végtelennel való műveletvégzés is, tehát a következő műveletek elvégezhetők.</p>
+                <p><b>Példa</b> Műveletek a végtelennel </p>
+                <ul>
+                    <li>(+∞) + x = (+∞)</li>
+                    <li>(+∞) · x = (+∞) </li>
+                    <li>(+∞)/x = (+∞) </li>
+                    <li>x/(+∞) = +0, ahol (0 &lt; x &lt; ∞)</li>
+                </ul>
+                <p><b>Példa.</b> Konkrét értékekkel</p>
+                <ul>
+                    <li>(+∞) + (+7) = (+∞)</li>
+                    <li>(+∞) · (−2) = (−∞)</li>
+                    <li>(+∞) · 0 = NaN</li>
+                </ul>
+                <br>
+                <p>NaN – Not a Number. Már az előző példában is találkozhattunk a NAN ("nem szám") értékkel, amely egy speciális érték, amelyet érvénytelen műveletek, mint a 0/0, ∞ · 0, vagy sqrt(−1) visszatérési értékére használnak. IEEE 754/1985 szabvány speciális lebegőpontos számformái A következő táblázatban megtalálhatóak az IEEE 754/1985 szabvány speciális lebegőpontos számformái.</p>
+                <img src="assets/pic96.jpg">
+                <h2 class="h2content">Kerekítés</h2>
+                <p>Gyakran előfordul, hogy a pontos eredményt még 128-biten sem tudjuk ábrázolni, ezért a kerekítés korrekt elvégzését követeli meg a szabvány. </p>
+                <p>A kerekítés alapvetően négyféleképpen történhet:</p>
+                <ul>
+                    <li>Csonkolás (Round toward zero) Levágjuk az n-ik számjegy után az összes számjegyet.</li>
+                    <li>Bankár kerekítés (Round to the Nearest Value -tie to even-) Az n++ 1. számjegy alapján kerekítünk: ha ez a számjegy nagyobb, mint 5, felfelé kerekítünk, ha kisebb, lefelé; ha 5, akkor az n-ik számjegy alapján döntünk (például felfelé kerekítünk ha az páros, és lefelé, ha páratlan).</li>
+                    <li>Kerekítés a pozitív végtelenhez (Round toward Positive Infinity) Ebben az esetben egyszerűen felfelé kerekítünk.</li>
+                    <li>Kerekítés a negatív végtelenhez (Round toward Negative Infinity) Ebben az esetben egyszerűen lefelé kerekítünk.</li>
+                </ul>
+                <p>A C++ lebegőpontos típusai</p>
+                <img src="assets/pic97.jpg">
+
+                <h2 class="h2content">Egyenlőségvizsgálat lebegőpontos számokkal</h2>
+                <p>A lebegőpontos számokkal történő egyenlőségvizsgálat veszélyes lehet azért, a lebegőpontos reprezentáció közelítő jellege miatt. Az egyenlőségvizsgálatnál pontos bitreprezentáció egyezést várunk el, de a véges bitsorozatok miatt eltérések lehetnek a tényleges értékek között. Ez az eltérés legyen bármilyen kicsi is (1 bit elérés), tehát a két szám gyakorlatilag azonosnak tekinthető, de a direkt egyenlőségvizsgálat hibás eredményt adhat.</p>
+                <p><b>Példák</b> az egyenlőségvizsgálat problémáira.</p>
+                <p>Az alábbi kód esetében a várt eredmény az "Egyenlő" lenne, mivel az a+b+c+d+e+f értéke 1. Azonban a lebegőpontos reprezentáció következtében az a+b+c+d+e+f értéke valójában kissé eltérhet az elvárttól, és az egyenlőségvizsgálat hibásan "Nem egyenlő" eredményt adhat. Az első esetben az eredmény az, hogy „egyenlő”, a második esetben pedig, hogy „nem egyenlő”. Semmi mást nem csináltunk, csak felcseréltük a változók sorrendjét az összeadásnál. Az alábbi példából tehát az is megállapítható, hogy a lebegőpontos számok esetében az összeadás nem kommutatív. Ez természetesen minden olyan műveletre igaz, ahol a kommutativitás adott (pl. szorzás).</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;bitset>
+                            #include &lt;iomanip>
+                            
+                            using namespace std;
+                            int main() &#10100;
+                                float a = 0.1f;
+                                float b = 0.1f;
+                                float c = 0.2f;
+                                float d = 0.5f;
+                                float e = 0.08f;
+                                float f = 0.02f;
+                            if (a+b+c+d+e+f == 1.0f) &#10100;
+                                std::cout &lt;&lt; "Egyenlő" &lt;&lt; std::endl;
+                            &#10101; else &#10100;
+                                std::cout &lt;&lt; "Nem egyenlő" &lt;&lt; std::endl;
+                            &#10101;
+                            if (d+b+c+a+e+f == 1.0f) &#10100;
+                                std::cout &lt;&lt; "Egyenlő" &lt;&lt; std::endl;
+                            &#10101; else &#10100;
+                                std::cout &lt;&lt; "Nem egyenlő" &lt;&lt; std::endl;
+                            &#10101;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic98.jpg">
+                    <figcaption>33. ábra Egyenlőségvizsgálat lebegőpontos számokkal I.</figcaption>
+                </figure>
+
+                <p><b>Példa</b></p>
+                <p>Az alábbi példában egyenlőséget kapunk.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;bitset>
+                            #include &lt;iomanip>
+                            
+                            using namespace std;
+                            int main() &#10100;
+                            float c = 1.0f / 0.26f;
+                            float d = c * 0.26f;
+                            std::cout &lt;&lt; "A d változó értéke: " &lt;&lt; d &lt;&lt; std::endl;
+                            if (d == 1.0f) &#10100;
+                                std::cout &lt;&lt; "Egyenlő" &lt;&lt; std::endl;
+                            &#10101; else &#10100;
+                                std::cout &lt;&lt; "Nem egyenlő" &lt;&lt; std::endl;
+                            &#10101;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic99.jpg">
+                    <figcaption>34. ábra Egyenlőségvizsgálat lebegőpontos számokkal II.</figcaption>
+                </figure>
+                <p><b>Példa</b></p>
+                <p>A lebegőpontos számokkal kapcsolatos egyenlőségvizsgálati problémákat kiküszöbölhetjük, ha helyette egy megengedett hiba tartományban vizsgáljuk az értékeket. Az eredeti egyenlőségvizsgálat helyett az abszolút különbséget vagy a relatív különbséget hasonlítjuk fel összehasonlításra. Az epsilon = 0.0001 azt jelenti, hogy hibahatár, 1 tízezred.</p>
+                <pre>
+                    <kbd>#include &lt;iostream>
+                        #include &lt;bitset>
+                        #include &lt;iomanip>
+                        
+                        using namespace std;
+                        int main() &#10100;
+                            float a = 0.1f;
+                            float b = 0.1f;
+                            float c = 0.2f;
+                            float d = 0.5f;
+                            float e = 0.08f;
+                            float f = 0.02f;
+                            float epsilon = 0.0001; // Megengedett hiba
+                            if ((abs(a+b+c+d+e+f-1.0f) &lt; epsilon)) &#10100;
+                                cout &lt;&lt; "Egyenlő" &lt;&lt; endl;
+                            &#10101; else &#10100;
+                                cout &lt;&lt; "Nem egyenlő" &lt;&lt; endl;
+                            &#10101;
+                            if ((abs(d+b+c+a+e+f-1.0f) &lt; epsilon)) &#10100;
+                                cout &lt;&lt; "Egyenlő" &lt;&lt; endl;
+                            &#10101; else &#10100;
+                                cout &lt;&lt; "Nem egyenlő" &lt;&lt; endl;
+                            &#10101;
+                                return 0;
+                        &#10101;
+                        </kbd>
+                </pre>
+
+                <figure>
+                    <img src="assets/pic100.jpg">
+                    <figcaption>35. ábra Egyenlőségvizsgálat lebegőpontos számokkal III.</figcaption>
+                </figure>
+            </div>
+        </div>
+</section>

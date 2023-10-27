@@ -1,0 +1,246 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">5. Fejezet</h1>
+        <br> <h2 class="h2title"> Műveletek különböző P>1 alapú számrendszerben</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                
+                <p>Az előző fejezetekben megismerkedtünk a helyiértékes számrendszerekkel, illetve végig néztük az számrendszerek között alkalmazható alapvető konverziós algoritmusokat is. Ebben a fejezetben csak az alapvető aritmetikai műveletekre fogunk koncentrálni. A műveleteket egész számokkal fix pozíción fogjuk elvégezni, így meg fogunk ismerkedni a komplementer illetve túlcsordulás fogalmakkal is. </p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Komplementer fogalma.</li>
+                    <li>Túlcsordulás fogalma.</li>
+                    <li>Műveletvégzés fix pozíción.</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+                <h1 class="h1content">Komplementer fogalma</h1>
+                <p><b>Definíció.</b> Egy p alapú számrendszerben egy szám (p−1)-es komplementere az a szám, amely minden helyiértéken (p − 1)-re egészíti ki a számot.</p>
+
+                <h3 class="h3content">Például</h3>
+                <ul>
+                    <li>a (10110111)<sub>2</sub> egyes komplementere (01001000)<sub>2</sub>,</li>
+                    <li>a (264)<sub>8</sub>  hetes komplementere (513)<sub>7</sub>,</li>
+                    <li>a (354)<sub>10</sub> kilences komplementere (645)<sub>10</sub>,</li>
+                    <li>•	a (1FA)<sub>16</sub> tizenötös komplementere (E05)<sub>16</sub>.</li>
+                </ul>
+                <br>
+                <p>Vegyük észre, hogy ez az eljárás a kettes számrendszerben egy bitenkénti negáció, vagyis nagyon egyszerű eljárás:</p>
+                <p style="text-align: center;">1 helyett 0,	0 helyett 1</p>
+                <p>írandó minden biten.</p>
+                <br>
+                <p><b>Definíció.</b> A p alapú számrendszerben, a p-s komplementert a (p − 1)-es komplementerből 1 hozzáadásával kapjuk.</p>
+                <ul>
+                    <li>a (354)<sub>10</sub> tízes komplementere (645)<sub>10</sub> + (1)<sub>10</sub> = (646)<sub>10</sub></li>
+                    <li>a (10110111)<sub>2</sub> kettes komplementere (01001001)<sub>2</sub></li>
+                    <li>a (264)<sub>8</sub> nyolcas komplementere (514)<sub>8</sub></li>
+                    <li>a (1FA)<sub>16</sub> tizenhatos komplementere (E06)<sub>16</sub></li>
+                </ul>
+
+                <h2 class="h2content">Túlcsordulás</h2>
+                <p>A túlcsordulás (overflow) egy olyan jelenség, amikor egy adott adattípusban (fix pozíción) tárolt érték meghaladja az adott adattípus által reprezentálható legnagyobb értéket. Ez általában akkor fordulhat elő, amikor egy adott művelet eredménye túl nagy lesz ahhoz, hogy az adott adattípusban (fix pozíción) elférjen.</p>
+                <h3 class="h3content">Példa</h3>
+                <p>Amennyiben decimális számrendszerben 3 pozíción szeretnénk elvégezni a következő összedást 567+523 az eredmény csonkolódik 090 lesz. A helyes eredmény 1090 lenne, de ennek tárolására 4 pozícióra lenne szükségünk, az 1 túlcsordul. Túlcsordulás bármelyik művelet esetén előfordulhat, kezelni kell. Megfelelő adattípusok kiválasztásával és értékellenőrzésekkel elkerülhető a túlcsordulás és annak potenciális problémái.</p>
+                <h3 class="h3content">Példa</h3>
+                <p>A példában egy int típusú változóban eltároljuk tároljuk az int adattípus maximális értékét a std::numeric_limits&lt;int>::max() függvény segítségével. Ezután a result változóban az int maximális értékéhez hozzáadunk 1-et, ami túlcsordulást eredményez, mivel az int adattípus nem képes tárolni az eredményt. Az eredmény általában egy negatív szám lesz, mivel a túlcsordulás eredményeként az int adattípus "visszatekeri" az értéket és a legkisebb negatív értéktől kezdi elölről.</p>
+                
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;limits>
+                            
+                            int main() &#10100;
+                                int maxValue = std::numeric_limits&lt;int>::max(); // Az int adattípus maximális értéke
+                                int result = maxValue + 1; // Túlcsordulás történik
+                                
+                                std::cout &lt;&lt; "Eredmény: " &lt;&lt; result &lt;&lt; std::endl;
+                                
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic39.jpg">
+                    <figcaption>21. ábra Túlcsordulás szemléltetése</figcaption>
+                </figure>
+                
+                <h1 class="h1content">Műveletvégzés különböző számrendszerekben</h1>
+                <h2 class="h2content">Összeadás bináris számrendszerben.</h2>
+                <p>Mivel most elsődlegesen bináris számrendszerben dolgozunk, ezen számrendszer alapját nem jelöljük</p>
+                <img src="assets/pic40.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>10011 + 11001</p>
+                <img src="assets/41.jpg">
+                <h3 class="h3content">Példa Bináris számok összeadása C++ kód</h3>
+                <p>A következő program két sztringként átadott bináris számot az össze az előzőekben ismertetett (kezeli az átviteleket) algoritmus alapján. </p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;string>
+                            
+                            using namespace std;
+                            string addBinaryStrings(string binary1, string binary2) &#10100;
+                                string result;
+                                int carry = 0;
+                                int i = binary1.length() - 1;
+                                int j = binary2.length() - 1;
+                                
+                                while (i >= 0 || j >= 0 || carry != 0) &#10100;
+                                    int sum = carry;
+                                    
+                                    if (i >= 0)
+                                        sum += binary1[i--] - '0';
+                                    
+                                    if (j >= 0)
+                                        sum += binary2[j--] - '0';
+                                    
+                                    carry = sum / 2;
+                                    sum %= 2;
+                                    
+                                    result = to_string(sum) + result;
+                                &#10101;
+                                
+                                return result;
+                            &#10101;
+                            
+                            int main() &#10100;
+                                string binary1, binary2;
+                                cout &lt;&lt; "Adja meg az első bináris számot: ";
+                                cin >> binary1;
+                                cout &lt;&lt; "Adja meg a második bináris számot: ";
+                                cin >> binary2;
+                                string sum = addBinaryStrings(binary1, binary2);
+                                cout &lt;&lt; "Összeg: " &lt;&lt; sum &lt;&lt; std::endl;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <figure>
+                    <img src="assets/pic42.jpg">
+                    <figcaption>22. ábra Bináris számok összeadása C++kód futtatása</figcaption>
+                </figure>
+                <h2 class="h2content">Kapcsolódó feladatok</h2>
+                <ul>
+                    <li>Módosítsa a programot úgy, hogy az minden egyes lépést kiírjon a képernyőre (részeredmények, átvitelek).</li>
+                    <li>Módosítsa az előző programot úgy, hogy az képes legyen törtrészek kezelésére is.</li>
+                </ul>
+                <h2 class="h2content">Összeadás oktális számrendszerben. </h2>
+                <p>Mivel most elsődlegesen oktális számrendszerben dolgozunk, ezen számrendszer alapját nem jelöljük. </p>
+                <img src="assets/pic43.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>20451 + 64276</p>
+                <img src="assets/pic44.jpg">
+                
+                <h2 class="h2content">Összeadás hexadecimális számrendszerben. </h2>
+                <p>Mivel most elsődlegesen oktális számrendszerben dolgozunk, ezen számrendszer alapját nem jelöljük. </p>
+                <img src="assets/pic45.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>AB09C + 1AAE0F</p>
+                <img src="assets/pic46.jpg">
+
+                <h2 class="h2content">Kivonás</h2>
+                <p>Klasszikus  értelemben vett kivonást nem végzünk,  összeadásra vezetjük vissza! A különbséget a kisebbítendő és a kivonandó p komplementerének összeadásával képezzük.</p>
+                <p style="text-align: center;">A − B = A + (−B)</p>
+                <h3 class="h3content">Példa</h3>
+                <p>235<sub>8</sub> − 653<sub>8</sub> = 235<sub>8</sub> + (−653<sub>8</sub>)</p>
+                <p>Kérdés, hogy hány pozíción dolgozzunk? Amennyiben az eredmény pozitív
+                    várhatóan 3 pozíción elférne, azonban az előjel tárolásáról mindenképp
+                    gondoskodnunk kell (4 pozíció minimum szükséges).</p>
+                <p>A 235 pozitív szám, egy dolgunk van kiegészíteni annyi 0-val, amennyi a fix pozíció méretének (+1 db 0) eléréséhez kell.</p>
+                <p>235<sub>8</sub>->0235<sub>8</sub></p>
+                
+                <p>A −653<sub>8</sub> esetében képeznünk kell a nyolcas komplementerét 4 pozíción.  Első lépésként vesszük a szám abszolútértékét, 653<sub>8</sub>. Ezt a számot kiegészítjük annyi 0-val, amennyi a fix pozíció méretének (+1 db 0) eléréséhez kell. Végezetük előállítjuk a kiegészített szám (0653<sub>8</sub>) 7-es komplementerét (7124<sub>8</sub>), majd hozzáadunk 1-et  (7125<sub>8</sub>).</p>
+                <p>−653<sub>8</sub>->| − 653<sub>8</sub>|->653<sub>8</sub>-> 0653<sub>8</sub>->7124<sub>8</sub> + 1<sub>8</sub>->7125<sub>8</sub></p>
+
+                <img src="assets/pic47.jpg">
+                <p>Ellenőrzés.</p>
+                <img src="assets/pic48.jpg">
+
+                <h3 class="h3content">Példa</h3>
+                <p>Végezzük el a következő műveletet 10-es számrendszerben, komplementerek használatával (5 pozíción).</p>
+                <pre>
+                    (124<sub>10</sub> − 637<sub>10</sub>) · (−45)<sub>10</sub>
+                    124<sub>10</sub> -> 00124<sub>10</sub>
+                    −637<sub>10</sub>->| − 637<sub>10</sub>|->637<sub>10</sub>-> 00637<sub>10</sub>->99362<sub>10</sub>+1<sub>10</sub>->99363<sub>10</sub>
+                    −45<sub>10</sub>-> | − 45<sub>10</sub>|-> 45<sub>10</sub>-> 00045<sub>10</sub>-> 99954<sub>10</sub> + 1<sub>10</sub>-> 99955<sub>10</sub>
+                </pre>
+                <img src="assets/pic49.jpg">
+                <p>99487<sub>10</sub> · 99955<sub>10</sub> = 99442|23085<sub>10</sub></p>
+                <p>Mivel 5 pozíción dolgoztunk az eredmény is 5 pozíción keletkezik (utolsó 5): 23085<sub>10</sub>.Amennyiben a (124<sub>10</sub> − 637<sub>10</sub>) · (45)<sub>10</sub> lett volna a feladat, már 6 pozícióra lenne szükségünk! Miért is?</p>
+
+                <h2 class="h2content">Szorzás</h2>
+                <p>A klasszikus algoritmus(ok) alapján, figyelni kell az egyes számrendszerek helyiértékeire, és az  átvitelekre.</p>
+                <h2 class="h2content">Szorzás bináris számrendszerben</h2>
+                <img src="assets/pic50.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>10011*1011 </p>
+                <img src="assets/pic51.jpg">
+                
+                <h2 class="h2content">Szorzás oktális számrendszerben</h2>
+                <img src="assets/pic52.jpg">
+                <h3 class="h3content">Példa</h3>
+                <p>732*106</p>
+                <img src="assets/pic53.jpg">
+                <p>Lépésről lépésre</p>
+                <img src="assets/pic54.jpg">
+
+                <h2 class="h2content">Szorzás hexadecimális számrendszerben</h2>
+                <img src="assets/pic55.jpg">
+                <h3 class="h3content">Példa</h3>
+                1A9*B2E
+                <img src="assets/pic56.jpg">
+                <p>Lépésről lépésre</p>
+                <img src="assets/pic57.jpg">
+
+                <h2 class="h2content">Osztás</h2>
+                <p>A klasszikus algoritmus(ok) alapján. Az osztásokat csak kettes számrendszerben fogunk elvégezni. </p>
+                <p style="text-align: center;">0 / 0 = NaN  	0 / 1 = 0   	1 / 0 = N aN    	1 / 1 = 1</p>
+                <h3 class="h3content">Példa</h3>
+                <pre style="text-align: center;">
+                    101:10=10
+                    01
+                    1
+                </pre>
+                <p>hányados: 10<br>maradék: 1</p>
+
+                <h3 class="h3content">Lépésről lépésre</h3>
+                <ul>
+                    <li>1-ben az 10-a nincs meg, ezért egy pozícióval balra toljuk a kijelölést.</li>
+                    <li>10-ban az 10-a megvan 1-szer, a maradék 0.</li>
+                    <li>1-ben az 10-a nincs meg 1-szer sem (0), a maradék 1.</li>
+                </ul>
+                <h3 class="h3content">Példa</h3>
+                <pre style="text-align: center;">
+                    11010:101=101
+                    1
+                    11
+                    110
+                </pre>
+                <p>hányados: 100<br>maradék: 1</p>
+                <h3 class="h3content">Lépésről lépésre</h3>
+                <ul>
+                    <li>1-ben az 101-a nincs meg, ezért egy pozícióval balra toljuk a kijelölést.</li>
+                    <li>11-ben az 101-a nincs meg, ezért még egy pozícióval balra toljuk a kijelölést.</li>
+                    <li>110-ban az 101-a megvan 1-szer, a maradék 1.  </li>
+                    <li>A maradék mellé lehozom a következő pozíción lévő szám értékét, így lesz 11.</li>
+                    <li>11-ben az 101-a nincs meg 1-szer sem (0), a maradék 11.</li>
+                    <li>A maradék mellé lehozom a következő pozíción lévő szám értékét, így lesz 110.</li>
+                    <li>110-ban az 101-a megvan 1-szer, a maradék 1.</li>
+                </ul>
+
+
+
+
+
+            </div>
+        </div>
+</section>

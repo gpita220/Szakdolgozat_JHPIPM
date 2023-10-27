@@ -1,0 +1,84 @@
+<mat-toolbar  style="justify-content: center;">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon >menu</mat-icon></button>
+      Menü
+      <span class="title-center">Bevezetés az Informatikába - Segédanyag </span>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+  <mat-sidenav-container hasBackdrop="false">
+    <mat-sidenav  #sidenav mode="over"> 
+      <mat-nav-list>
+        <a mat-list-item class="listitem" routerLink="mainpage" routerLinkActive="active" (click)="sidenav.toggle()"><mat-icon>home</mat-icon><span class="fo"><b>Főoldal</b></span></a>
+        <mat-expansion-panel [class.mat-elevation-z0]="true">
+          <mat-expansion-panel-header class="iconb">
+              <mat-icon>book</mat-icon><b>Fejezetek</b>
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+          <mat-nav-list>
+              <a mat-list-item routerLink="chapter1"(click)="sidenav.toggle()">
+                  <span>1. Fejezet</span>
+              </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLink="chapter2"(click)="sidenav.toggle()">
+                <span>2. Fejezet</span>
+            </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLink="chapter3"(click)="sidenav.toggle()">
+              <span>3. Fejezet</span>
+          </a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="chapter4"(click)="sidenav.toggle()">
+            <span>4. Fejezet</span>
+        </a>
+      </mat-nav-list>
+      <mat-nav-list>
+      <a mat-list-item routerLink="chapter5"(click)="sidenav.toggle()">
+          <span>5. Fejezet</span>
+      </a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="chapter6"(click)="sidenav.toggle()">
+            <span>6. Fejezet</span>
+        </a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-list-item routerLink="chapter7"(click)="sidenav.toggle()">
+              <span>7. Fejezet</span>
+          </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLink="chapter8"(click)="sidenav.toggle()">
+                <span>8. Fejezet</span>
+            </a>
+            </mat-nav-list>
+            <mat-nav-list>
+              <a mat-list-item routerLink="chapter9"(click)="sidenav.toggle()">
+                  <span>9. Fejezet</span>
+              </a>
+              </mat-nav-list>
+              <mat-nav-list>
+                <a mat-list-item routerLink="chapter10"(click)="sidenav.toggle()">
+                    <span>10. Fejezet</span>
+                </a>
+                </mat-nav-list>
+                <mat-nav-list>
+                  <a mat-list-item routerLink="chapter11"(click)="sidenav.toggle()">
+                      <span>11. Fejezet</span>
+                  </a>
+                  </mat-nav-list>
+        </ng-template>
+      </mat-expansion-panel>
+      <a mat-list-item class="listitem" routerLink="studenteditor" routerLinkActive="active"(click)="sidenav.toggle()"><mat-icon>portrait</mat-icon><span class="fo"><b>Hallgatók</b></span></a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content><router-outlet></router-outlet>
+  </mat-sidenav-content>
+        
+  </mat-sidenav-container>
+
+  
+  

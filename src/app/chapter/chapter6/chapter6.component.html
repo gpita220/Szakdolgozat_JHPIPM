@@ -1,0 +1,236 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11@gmail.com</span></p>
+</div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">6. Fejezet</h1>
+        <br> <h2 class="h2title"> Adatok, Adatstruktúrák</h2></div>
+        <hr>
+        <div class="col-md-11 left_inner_content">
+            <div class="content">
+                <h2 class="h2content">Célok, megszerezhető kompetenciák:</h2>
+                <p>Ebben a fejezetben meg fogunk ismerkedni az adat fogalmával, és az adatok tárolására alkalmas fontosabb adatstruktúrákkal.  </p>
+                <h2 class="h2content">Szükséges eszközök, források:</h2>
+                <p>Papír, ceruza, radír, böngésző.</p>
+                <h2 class="h2content">Feldolgozási idő:</h2>
+                <p>2+2 óra</p>
+                <h2 class="h2content">Témakörök:</h2>
+                <ul>
+                    <li>Adat, adatstruktúrák</li>
+                </ul>
+                <h2 class="h2content">A lecke tartalma:</h2>
+
+                <h1 class="h1content">Az adat fogalma</h1>
+                <p>Az előző fejezetekben megismerkedtünk azokkal a karakterekkel, amelyek segítségével az információkat megadhatjuk és rögzíthetjük a számítógép számára.</p>
+                <p><b>Definíció.</b> A rögzített, megjelenített információt adatnak nevezzük. </p>
+                <p>Az adat elnevezéssel a mindennapi életben is gyakran találkozunk:</p>
+                <ul>
+                    <li>béradat, felvételi létszám adatok, statisztikai adatok, mérési adatok stb.</li>
+                    <li>adatfeldolgozás, adattárolás, adatátvitel stb.</li>
+                </ul>
+                <p>Az információ és adat megjelölést általában azonos jelentésűnek fogadják el: információ-feldolgozás – adatfeldolgozás információhordozó – adathordozó stb. szóhasználatban. Ne felejtsük el azonban, hogy az adat csak az információ hordozója, ami mindenki számára létező adat, de nem biztos, hogy információ is, mivel annak jelentése is van. Tehát az adat és információ nem azonos fogalmak.</p>
+                <p>A mindennapi életben általában</p>
+                <ul>
+                    <li>numerikus (számszerű mennyiségek) adatok pl. a dolgozó bére, a hallgató ösztöndíja, az osztály létszáma, tanulmányi átlaga, a tanuló születési évszáma, a beteg vérsüllyedése, az iskola telefonszáma stb. és</li>
+                    <li>alfabetikus, illetve alfanumerikus adatok pl. a tanuló neve, a tanuló címe, a dolgozó szakképzettsége, iskolai végzettsége, családi állapota stb. fordulnak elő.</li>
+                </ul>
+                <p>Ezek az adatok sok mindenben különböznek egymástól. Az egyik adat lehet mért, a másik lehet számított más adatokból, de lehet az adatot örökölni, vagy másoktól kapni, vagy megszerezni stb. Bennünket azonban itt elsősorban az érdekel, hogy miben hasonlóak. A felsorolásból kitűnik, hogy minden adat valaminek vagy valakinek a valamije vagy valakije. Pontosabban az adat az egyed vagy objektum tulajdonsága, attribútuma rögzített formában. Egy egyednek több tulajdonsága lehet, például a tanuló neve, születési helye, születési éve, lakhelye stb. és egy tulajdonság több egyedhez is tartozhat, pl. ugyanaz a születési év több tanulóhoz is tartozhat. Mind az egyedek száma, mind a tulajdonságok száma elvileg végtelen lehet. </p>
+                <p>Fontos feladat tehát egy adatfeldolgozási feladat megoldásával kapcsolatban</p>
+                <ul>
+                    <li>a feldolgozásban résztvevő egyedek véges halmazának kiválasztása és</li>
+                    <li>a feldolgozáshoz szükséges tulajdonságok ugyancsak véges halmazának meghatározása.</li>
+                </ul>
+
+                <p>Ezek figyelembevételével tehát az úgynevezett adatfeldolgozási feladatoknál mindig kialakítható egy táblázat, amelynek oszlopaiban az egyedek azonos tulajdonságaira vonatkozó adatok szerepelnek, soraiban pedig egy-egy egyed figyelembe vett összes tulajdonságainak az adatai. Például a tanulókra vonatkozó alábbi adatok:</p>
+                <img src="assets/pic58.jpg">
+                <p>A fenti csoportosítás összefüggést, relációt fejez ki az adatelemek között. Ez a struktúra az alapja az ún. relációs adatbáziskezelő rendszereknek is, amelyekkel a későbbiek során foglalkozunk majd.</p>
+
+                <h2 class="h2content">Elemi adattípusok</h2>
+                <p>A táblázatunkban szereplő KÓD tulajdonsághoz tartozó adatok egész típusúak, az ÁTLAG-hoz tartozók valós típusúak, a SZÜLETÉSI IDŐ dátum típusúak, a NÉV, LAKHELY, ELTARTÓ FOGLALKOZÁSA tulajdonságokhoz tartozó adatok pedig karakterlánc típusúak. A típus a számítógépes feldolgozásban résztvevő adat legfontosabb jellemzője.</p>
+
+                <p><b>Definíció.</b> Az adattípus megadása meghatározza a szóban forgó típus értékkészletét, a rajta végzett műveleteket és a tárban való ábrázolását.<br>Az adattípusok kétfélék lehetnek:</p>
+                <ul>
+                    <li>elemi adattípusok, amelyeknek felhasználói szempontból nincs belső szerkezetük,</li>
+                    <li>összetett adattípusok, vagy adatstruktúrák, amelyek elemi adattípusokból épülnek fel.</li>
+                </ul>
+                <p>Az adat típusát meghatározhatjuk a formája, vagy a programbeli leírása alapján. Adattípust definiálni is tudunk pl. szín, hónap, nap típus stb., de ezek alkalmazhatósága a programnyelvektől függ. Mi itt csak azokat az adattípusokat említjük meg, amelyeket a legtöbb programnyelv kezelni tud. <br>Elemi adattípusok:</p>
+                <ul>
+                    <li>Egész (integer) típusú adat: Mindig csak egész szám lehet. Az egész típusú adatokkal minden numerikus művelet elvégezhető. Például, −5;255;0</li>
+                    <li>Valós (real, float, double) típusú adat: Mindig csak tört szám lehet. Ezekkel az adatokkal is a műveletek sokaságát végezhetjük, amelyek a matematikából már közismertek. Például, −12,5;0,0125. Meg kell jegyeznünk, hogy a táblázatkezelők követik a nemzeti beállításokat, de a programozási nyelvek általában nem, azaz a tizedespontot használnak tizedes vessző helyett.</li>
+                    <li>Logikai (logical, bool, Boolean) típusú adat: Mindig csak két érték lehet: igaz vagy hamis, amelyet jelölhetünk true, vagy false formában, vagy egyéb módon is. Legfontosabb műveletek: a negáció (not), a konjunkció (and), a diszjunkció (or) és az antivalencia (xor).</li>
+                    <li>Karakter (char) típusú adat:
+                        <ul>
+                            <li>Mindig csak egy karakter lehet. Ábrázolásuk ASCII kód esetén 1, UNICODE esetén 2 bájton a belső kódjuk alapján történik. Értelmezhető műveletek az összehasonlítás, kódmegadás, előző karakter, következő karakter képzése. Például, A; 8; $; %.</li>
+                            <li>A másik értelmezés szerint egyes programnyelvek elemi adattípusnak tekintik a karakterlánc vagy szöveg típust is, mivel a műveletek ebben az esetben is az adatok teljes egészén kerülnek végrehajtásra és nem azok egy részén. Ilyen értelmezésben a karakter egy karakterből álló szöveg. Tehát nincs külön jelentősége a karakter típus első változatának. Értelmezhető műveletek az összehasonlítás és az összefűzés (konkatenáció) művelete. Például, EGER; ALGOL-60; NAGY IMRE.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>A felsorolt elemi típusok tárban való ábrázolását a későbbiek során ismertetjük</p>
+
+                <h1 class="h1content">Összetett adattípusok, adatstruktúrák</h1>
+                <p>Az elemi adattípusokból különböző adatstruktúrákat állíthatunk össze. Ha a táblázatunk oszlopait tekintjük, azokban azonos típusú adatok szerepelnek egy meghatározott sorrendben.</p>
+                <p><b>Definíció</b> Az azonos típusú adatokból álló véges adatsort tömbnek nevezzük.</p>
+
+                <p>A legegyszerűbb tömb a matematikából ismert vektor, pl.</p>
+                <p style="text-align: center;">(a<sub>1</sub>,a<sub>2</sub>,...,a<sub>n</sub>) ,</p>
+                <p>amelyet a számítástechnikában</p>
+                <p style="text-align: center;">A(1),A(2),... ,A(n),</p>
+                <p>vagy</p>
+                <p style="text-align: center;">A[1],A[2],... ,A[n]</p>
+                <p>     módon jelölünk. Az A a tömb neve, minden elemre azonos, és bármely elemére az indexével hivatkozunk. A(J) a J. tömbelem.</p>
+                <p>Az adatok sorozatának elrendezése, ha több azonos típusú tulajdonságot foglalunk egybe (pl. a hét öt munkanapján elért termelési eredmények dolgozónként), két dimenzióban történhet. Ilyen a matematikából ismert mátrix elrendezés.</p>
+                <p style="text-align: center;">a11	a12	...	a1n</p>
+                <p style="text-align: center;">a21	a22	...	a2n</p>
+                <p style="text-align: center;">...	...	...	...</p>
+                <p style="text-align: center;">am1	am2	...	amn</p>
+                <p>amelynek m sora és n oszlopa van. Az ilyen struktúrát kétdimenziós tömbnek nevezzük és az i. sor j. elemére az</p>
+                <p style="text-align: center;">A(i,j) vagy A[i,j]</p>
+                <p>jelöléssel hivatkozhatunk.</p>
+
+                <p>A tömbök dimenziószáma tovább is növelhető, de a gyakorlatban a legtöbb feladat megoldható egy és kétdimenziós tömbök használatával. Itt is megemlíthetjük, hogy ha csak az egy karaktert tekintjük elemi típusnak, akkor a karakterlánc vagy szöveg is összetett típus és a tömbhöz hasonló struktúrával rendelkezik: olyan karaktersorozat, amelynek az elemszáma változhat.
+                    <br>Tekintsük most a táblázatunk egy sorát. Ezek az adatok különböző típusúak, de logikailag egybefűzi őket az, hogy egy tanulóra vonatkoznak.
+                </p>
+
+                <h3 class="h3content">Példa Mátrixok feltöltése és kiíratása C++ kód</h3>
+                <p>A következő program feltölt 1-től 100-ig számokkal, és kirajzol egy 10x10-es mátrixot.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            using namespace std;
+                            const int MATRIX_SIZE = 10;
+                            int main() &#10100;
+                                int matrix[MATRIX_SIZE][MATRIX_SIZE];
+                            
+                                // Mátrix feltöltése és kiíratása
+                                cout &lt;&lt; "10x10-es mátrix:" &lt;&lt; endl;
+                                for (int i = 0; i &lt; MATRIX_SIZE; i++) &#10100;
+                                    for (int j = 0; j &lt; MATRIX_SIZE; j++) &#10100;
+                                        matrix[i][j] = i * MATRIX_SIZE + j+1;
+                                        cout &lt;&lt; matrix[i][j] &lt;&lt; "\t";
+                                    &#10101;
+                                    cout &lt;&lt; endl;
+                                &#10102;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+
+                <figure>
+                    <img src="assets/pic59.jpg">
+                    <figcaption>24. ábra 10X10-es mátrix feltöltése C++ kód</figcaption>
+                </figure>
+
+
+                <p><b>Definíció</b> Tetszőleges típusú, logikailag összefüggő adatok egy egységgé való összekapcsolása adja a rekordot.<br>(A definíció nem zárja ki az egyenlő típusokból történő felépítést sem.) A rekordot is, mint a tömböt egy névvel azonosítjuk. A rekord részeinek (mezőinek) is neve van. Így lehetőség van a rekord elemeinek elérésére is, és a rekord együttes kezelésére is. Példánkban legyen a rekord neve: TANULOK az elemek (mezők) neve pedig KOD, NEV, SZIDO, LAKHELY, ATLAG, FOGL. Ilyen megnevezések mellett például a tanuló nevére a</p>
+                <p style="text-align: center;">TANULOK.NEV</p>
+                <p>lakhelyére a</p>
+                <p style="text-align: center;">TANULOK.LAKHELY</p>
+                <p>jelöléssel hivatkozhatunk.</p>
+                <p>Az adatfeldolgozási feladatoknál az is szükséges, hogy az egyedet, vagyis a hozzátartozó rekordot azonosítani tudjuk, illetve megkülönböztessük a többitől. Ezt úgy érjük el, ha a rekordba beépítünk egy ilyen azonosítót. A NEV táblázatunkban lehetne ilyen azonosító, de a valóságban azonos nevű tanulók létezhetnek, így ezt elvetjük. Könnyen belátható, hogy azonosítónak egyedül a KOD választható, amelyről feltesszük, hogy sorszám és csak egyszer fordul elő.</p>
+
+                <p><b>Definíció</b> A record C++ nyelvben való megvalósulása a struktúra. A következő példában mutatunk egy példát a struktúra használatára:</p>
+
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;string>
+                            using namespace std;
+                            
+                            struct Személy &#10100;
+                                int kód;
+                                string név;
+                                string születésiIdő;
+                                string lakhely;
+                                double átlag;
+                                string foglalkozás;
+                            &#10101;
+                            int main() &#10100;
+                                Személy személy1 = &#10100;100, "Ács Ferenc", "1999.01.22", "Eger", 4.1, "tanár"&#10101;;
+                                Személy személy2 =&#10100;101, "Balla Béla", "1999.05.07", "Maklár", 3.5, "szabó"&#10101;;
+                                Személy személy3 = &#10100;102, "Csende Károly", "1998.11.12", "Eger", 3.5, "eladó"&#10101;;
+                            
+                                cout &lt;&lt; "Kód: " &lt;&lt; személy1.kód &lt;&lt; ", Név: " &lt;&lt; személy1.név &lt;&lt; ", Születési idő: " &lt;&lt; személy1.születésiIdő
+                                        &lt;&lt; ", Lakhely: " &lt;&lt; személy1.lakhely &lt;&lt; ", Átlag: " &lt;&lt; személy1.átlag &lt;&lt; ", Foglalkozás: "
+                                        &lt;&lt; személy1.foglalkozás &lt;&lt; endl;
+                            
+                                cout &lt;&lt; "Kód: " &lt;&lt; személy2.kód &lt;&lt; ", Név: " &lt;&lt; személy2.név &lt;&lt; ", Születési idő: " &lt;&lt; személy2.születésiIdő
+                                &lt;&lt; ", Lakhely: " &lt;&lt; személy2.lakhely &lt;&lt; ", Átlag: " &lt;&lt; személy2.átlag &lt;&lt; ", Foglalkozás: "
+                                &lt;&lt; személy2.foglalkozás &lt;&lt; endl;
+                                
+                                cout &lt;&lt; "Kód: " &lt;&lt; személy3.kód &lt;&lt; ", Név: " &lt;&lt; személy3.név &lt;&lt; ", Születési idő: " &lt;&lt; személy3.születésiIdő
+                                          &lt;&lt; ", Lakhely: " &lt;&lt; személy3.lakhely &lt;&lt; ", Átlag: " &lt;&lt; személy3.átlag &lt;&lt; ", Foglalkozás: "
+                                          &lt;&lt; személy3.foglalkozás &lt;&lt; endl;
+                            
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+
+                <figure>
+                    <img src="assets/pic60.jpg">
+                    <figcaption>25. ábra Rekord szemléltetése – C++ kód</figcaption>
+                </figure>
+
+                <h3 class="h3content">Példa</h3>
+                <p>A következő C++ kódban az előző feladat kicsit átdolgozott változata látható. Azon túl, hogy kiegészült még két személlyel, a rekordokat egy vector-ban tároljuk el. Az std::vector egy dinamikus tömb C++ nyelvű  implementációja, amely lehetővé teszi a méretének dinamikus változtatását, továbbá a hatékony elemhelyezést és elemeltávolítást. Kiegészítettük még a programot egy keresFoglalkozás alprogrammal , amely paraméterként kap egy Személy tömböt (személyek), annak méretét (méret), valamint egy foglalkozást (foglalkozás), majd visszatér egy std::vector-ral, amely tartalmazza az adott foglalkozású személyek nevét.</p>
+                <pre>
+                    <kbd>
+                        #include &lt;iostream>
+                            #include &lt;string>
+                            #include &lt;vector>
+                            
+                            using namespace std;
+                            
+                            struct Személy &#10100;
+                                int kód;
+                                string név;
+                                string születésiIdő;
+                                string lakhely;
+                                double átlag;
+                                string foglalkozás;
+                            &#10101;;
+                            
+                            vector&lt;string> keresFoglalkozás(Személy személyek[], int méret, const string& foglalkozás) &#10100;
+                                vector&lt;std::string> találatok;
+                                for (int i = 0; i &lt; méret; i++) &#10100;
+                                    if (személyek[i].foglalkozás == foglalkozás) &#10100;
+                                        találatok.push_back(személyek[i].név);
+                                    &#10101;
+                                &#10101;
+                                return találatok;
+                            &#10101;
+                            int main() &#10100;
+                                const int méret = 5;
+                                Személy személyek[méret] = &#10100;
+                                    &#10100;100, "Ács Ferenc", "1999.01.22", "Eger", 4.1, "tanár" &#10101;,
+                                    &#10100;101, "Balla Béla", "1999.05.07", "Maklár", 3.5, "szabó" &#10101;,
+                                    &#10100;102, "Csende Károly", "1998.11.12", "Eger", 3.5, "eladó" &#10101;,
+                                    &#10100;103, "Csengő Szilárd", "1993.1.7", "Fűzesabony", 3.5, "horgász" &#10101;,
+                                    &#10100;104, "Mária Besnyő", "1995.3.19", "Egerbakta", 3.5, "eladó" &#10101;
+                                &#10101;;
+                                cout &lt;&lt; "A eladók nevei:\n";
+                                vector&lt;string> találatok = keresFoglalkozás(személyek, méret, "eladó");
+                                
+                                if (találatok.empty()) &#10100;
+                                    cout &lt;&lt; "Nincs találat.\n";
+                                &#10101;
+                                else &#10100;
+                                    for (string& név : találatok) &#10100;
+                                        cout &lt;&lt; név &lt;&lt; endl;
+                                    &#10101;
+                                &#10101;
+                                return 0;
+                            &#10101;
+                    </kbd>
+                </pre>
+                <br>
+                <p><b>Definíció</b> Az azonosító vagy kulcs az egyednek olyan tulajdonsága, vagy tulajdonságcsoportja, amely adott konkrét esetben csak egy egyednél fordul elő.</p>
+                <p>A népesség-nyilvántartásban az állampolgárt a személyi szám azonosítja, tehát ez a rekord kulcsa, amellyel az állampolgár adatait gyorsan „el tudják érni". Ha valamilyen külön tárolón pl. lemezen vagy szalagon, vagy háttértárolón valamennyi egyed rekordját összegyűjtjük, akkor a táblázathoz jutunk.</p>
+                <br>
+                <p><b>Definíció</b> Többnyire háttértárolón tárolt olyan adatszerkezetet, amelynek az elemei rekordok, állománynak vagy fájlnak (file) nevezzük.</p>
+                <p>Szemléletesen az adatok hierarchiája: a rekord adatokból: A1,A2,..., a fájl rekordokból: R1, R2, ..., az adatbázis fájlokból: F1, F2, ... épül fel.</p>
+                
+            </div>
+        </div>
+</section>

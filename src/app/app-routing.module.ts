@@ -15,28 +15,43 @@ import { Chapter9Component } from './chapter/chapter9/chapter9.component';
 import { Chapter10Component } from './chapter/chapter10/chapter10.component';
 import { Chapter11Component } from './chapter/chapter11/chapter11.component';
 import { Chapter12Component } from './chapter/chapter12/chapter12.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { AuthGuard } from '@auth0/auth0-angular';
+import { LoginpageComponent } from './login/loginpage/loginpage.component';
+import { RegisterpageComponent } from './login/registerpage/registerpage.component';
+import { ContentComponent } from './auth/content/content.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthenticationGuard } from './login/auth.guard';
+import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.component';
+
+
 
 const routes: Routes = [
-  {path:'',redirectTo: '/mainpage', pathMatch: 'full'},
-  {path:'mainpage', component:MainpageComponent},
+  {path:'',redirectTo:'/login', pathMatch:"full"},
+  {path:'mainpage',component:MainpageComponent,canActivate:[AuthenticationGuard]},
   {path:'studentregister',component:StudentregisterComponent},
   {path:'studenteditor', component:StudenteditorComponent},
-  {path:'chapter1',component:Chapter1Component},
-  {path:'chapter2',component:Chapter2Component},
-  {path:'chapter3',component:Chapter3Component},
-  {path:'chapter4',component:Chapter4Component},
-  {path:'chapter5',component:Chapter5Component},
-  {path:'chapter6',component:Chapter6Component},
-  {path:'chapter7',component:Chapter7Component},
-  {path:'chapter8',component:Chapter8Component},
-  {path:'chapter9',component:Chapter9Component},
-  {path:'chapter10',component:Chapter10Component},
-  {path:'chapter11',component:Chapter11Component},
-  {path:'chapter12',component:Chapter12Component}
+  {path:'chapter1',component:Chapter1Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter2',component:Chapter2Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter3',component:Chapter3Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter4',component:Chapter4Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter5',component:Chapter5Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter6',component:Chapter6Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter7',component:Chapter7Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter8',component:Chapter8Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter9',component:Chapter9Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter10',component:Chapter10Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter11',component:Chapter11Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter12',component:Chapter12Component,canActivate:[AuthenticationGuard]},
+  {path:'login',component:LoginpageComponent, pathMatch:"full"},
+  {path:'register',component:RegisterpageComponent},
+  {path:'profile',component:ProfileComponent,canActivate:[AuthenticationGuard]},
+  {path:'profiles',component:ProfilesAdminComponent,canActivate:[AuthenticationGuard]},
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

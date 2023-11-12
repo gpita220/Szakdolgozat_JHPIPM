@@ -1,0 +1,120 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11&#64;gmail.com</span></p>
+  </div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">A regisztrált felhasználók adatai</h1></div>
+        <hr>
+        <div class="col-md-12 left_inner_content">
+            <section class="mat-elevation-z8 mattable">
+            <table mat-table [dataSource]="users">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>  
+
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell *matHeaderCellDef> Keresztnév </th>
+                    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef> Vezetéknév</th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="school">
+                    <th mat-header-cell *matHeaderCellDef> Egyetem </th>
+                    <td mat-cell *matCellDef="let element"> {{element.school}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="major">
+                    <th mat-header-cell *matHeaderCellDef> Szak </th>
+                    <td mat-cell *matCellDef="let element"> {{element.major}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> E-mail </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="username">
+                    <th mat-header-cell *matHeaderCellDef> Felhasználónév </th>
+                    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="passwordDecoded">
+                    <th mat-header-cell *matHeaderCellDef> jelszó </th>
+                    <td mat-cell *matCellDef="let element"> {{element.passwordDecoded}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="role">
+                    <th mat-header-cell *matHeaderCellDef> Jogosultság </th>
+                    <td mat-cell *matCellDef="let element">{{element.roles[0].name=="ROLE_ADMIN"?'admin':'user'}} </td>
+                </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="header"></tr>
+              <tr mat-row *matRowDef="let row; columns: header;"(click)="selectedRow(row)"
+              [ngClass]="{'highlightTableColor': srow == row}"></tr>
+            </table>
+        </section>
+    </div>
+            <div class="col-md-12 left_inner_content">
+                <div class="row">
+                <div class="col-md-4">
+              <p class="p2">Egy hallgató adatainak frissítéséhez vagy törléséhez kérlek válaszd a szerkeszteni kívánt sort a táblázat sorára kattintva!</p>
+              <div class="alert alert-warning" *ngIf="failedDiv">
+                Hiba!!<br />{{ errormessage }}
+              </div>
+              </div>
+              <div class="col-md-3">
+              <form #userForm="ngForm">
+                <div class="form-outline mb-4">
+                    <label for="idInput"class="form-label">Id</label>
+                    <input type="text"[(ngModel)]="user.id" class="form-control" name="id" id="idInput" required readonly>
+                  </div>
+                <div class="form-outline mb-4">
+                  <label for="firstNameLabel"class="form-label">Keresztnév</label>
+                  <input type="text"[(ngModel)]="user.firstName" class="form-control" name="firstName" id="firstNameLabel"placeholder="Keresztnév" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="lastNameLabel"class="form-label">Vezetéknév</label>
+                  <input type="text"[(ngModel)]="user.lastName" class="form-control" name="lastName"id="lastNameLabel" placeholder="Vezetéknév" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="school"class="form-label">Egyetem</label>
+                  <input type="text"[(ngModel)]="user.school" class="form-control" name="school" id="school" placeholder="Egyetem" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="major"class="form-label">Szak</label>
+                  <input type="text"[(ngModel)]="user.major" class="form-control" name="major" id="major" placeholder="Szak" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="email"class="form-label">E-mail</label>
+                  <input type="text"[(ngModel)]="user.email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="username"class="form-label">Felhasználónév</label>
+                  <input type="text"[(ngModel)]="user.username" class="form-control" name="username" id="username" placeholder="Felhasználónév" required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label for="password"class="form-label">Jelszó</label>
+                  <input type="password"[(ngModel)]="user.passwordDecoded" class="form-control" name="password" id="password" placeholder="Jelszó" required>
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="role"class="form-label">Jogosultság</label>
+                    <input type="text"[(ngModel)]="user.role" class="form-control" name="role" id="role" placeholder="Jogosultság" required>
+                  </div>
+            </form>
+            
+            </div>
+            <div class="col-md-4">
+                
+                <p><button class="btn btn-success"(click)="onUpdate(userForm)">Felhasználó frissítés</button></p>
+                <p><button class="btn btn-danger"(click)="onDelete(userForm)">Felhasználó törlése</button></p>
+                
+            </div>
+        </div>
+    </div>
+</section>

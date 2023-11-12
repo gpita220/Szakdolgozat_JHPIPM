@@ -1,13 +1,14 @@
 <mat-toolbar  style="justify-content: center;">
     <mat-toolbar-row>
-      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon >menu</mat-icon></button>
-      Menü
+      <button mat-icon-button (click)="sidenav.toggle()"*ngIf="isLoggedIn()"><mat-icon >menu</mat-icon></button>
+      <span *ngIf="isLoggedIn()">Menü</span>
       <span class="title-center">Bevezetés az Informatikába - Segédanyag </span>
+      <span style="text-align: right;"><button mat-icon-button (click)="onLogout()"*ngIf="isLoggedIn()"><mat-icon>logout</mat-icon></button></span>
     </mat-toolbar-row>
   
   </mat-toolbar>
   <mat-sidenav-container hasBackdrop="false">
-    <mat-sidenav  #sidenav mode="over"> 
+    <mat-sidenav  #sidenav mode="over" > 
       <mat-nav-list>
         <a mat-list-item class="listitem" routerLink="mainpage" routerLinkActive="active" (click)="sidenav.toggle()"><mat-icon>home</mat-icon><span class="fo"><b>Főoldal</b></span></a>
         <mat-expansion-panel [class.mat-elevation-z0]="true">
@@ -78,6 +79,8 @@
         </ng-template>
       </mat-expansion-panel>
       <a mat-list-item class="listitem" routerLink="studenteditor" routerLinkActive="active"(click)="sidenav.toggle()"><mat-icon>portrait</mat-icon><span class="fo"><b>Hallgatók</b></span></a>
+      <a mat-list-item class="listitem" routerLink="profile" routerLinkActive="active" (click)="sidenav.toggle()"><mat-icon>person</mat-icon><span class="fo"><b>Profil</b></span></a>
+      <a mat-list-item class="listitem" routerLink="profiles" routerLinkActive="active" (click)="sidenav.toggle()"*ngIf="userIsAdmin"><mat-icon>person</mat-icon><span class="fo"><b>Profilok</b></span></a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content><router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+.login-container{
+    max-width: 400px; 
+    margin: 60px auto 0;
+  }
+h1{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+button{
+    margin-bottom: 10px;
+}

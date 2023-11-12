@@ -9,7 +9,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule, NgForm} from '@angular/forms';
+import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 
@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { Chapter1Component } from './chapter/chapter1/chapter1.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { StudentregisterComponent } from './studentform/studentregister/studentregister.component';
 import { StudenteditorComponent } from './studentform/studenteditor/studenteditor.component';
 import { StudentService } from './Service/student.service';
@@ -35,6 +35,18 @@ import { Chapter9Component } from './chapter/chapter9/chapter9.component';
 import { Chapter10Component } from './chapter/chapter10/chapter10.component';
 import { Chapter11Component } from './chapter/chapter11/chapter11.component';
 import { Chapter12Component } from './chapter/chapter12/chapter12.component';
+import { LoginpageComponent } from './login/loginpage/loginpage.component';
+import { RegisterpageComponent } from './login/registerpage/registerpage.component';
+import { AuthContentComponent } from './auth/auth-content/auth-content.component';
+import { ContentComponent } from './auth/content/content.component';
+import { ButtonsComponent } from './auth/content/buttons/buttons.component';
+
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard, AuthService } from '@auth0/auth0-angular';
+import { HttpRequestInterceptor } from './login/httpRequestInterceptor';
+import { StorageService } from './Service/storage.service';
+import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.component';
+
 
 
 @NgModule({
@@ -56,6 +68,15 @@ import { Chapter12Component } from './chapter/chapter12/chapter12.component';
     Chapter10Component,
     Chapter11Component,
     Chapter12Component,
+    LoginpageComponent,
+    RegisterpageComponent,
+    AuthContentComponent,
+    ContentComponent,
+    ButtonsComponent,
+    ProfileComponent,
+    ProfilesAdminComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -73,9 +94,11 @@ import { Chapter12Component } from './chapter/chapter12/chapter12.component';
     FormsModule,
     HttpClientModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
   ],
-  providers: [StudentService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
+              AuthGuard, AuthService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

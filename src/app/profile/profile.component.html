@@ -1,0 +1,77 @@
+<div class="sidenote">
+    <h1 class="contact">Kapcsolatok</h1>
+    <p><mat-icon class="icon"> phone</mat-icon><span class="p1">+36-70-5152466</span></p>
+    <p><mat-icon class="icon">mail</mat-icon><span class="p1">galvacs11&#64;gmail.com</span></p>
+  </div>
+<section class="container">
+    <div class="div1"><h1 class="h1title">Porfil adatok</h1></div>
+        <hr>
+        <div class="col-md-8" style="float: right; position: relative;">
+          <div *ngIf="profilediv==true">
+        <p class="p2">Ha szeretnéd módosítani a profil adataidat kattints a lenti gombra.</p><button  class="btn btn-success" (click)="onProfileDivShow()">Adatok módosítása</button></div>
+          <div *ngIf="profileform==true;">
+            <form #userUpdate="ngForm"*ngIf="!isUpdateSuccessful">
+              <div class="form-outline mb-4">
+                <label for="firstNameLabel"class="form-label">Keresztnév</label>
+                <input type="text"[(ngModel)]="currentUser.user.firstName" class="form-control" name="firstName" id="firstNameLabel"  value="currentUser.user.firstName" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="lastNameLabel"class="form-label">Vezetéknév</label>
+                <input type="text"[(ngModel)]="currentUser.user.lastName" class="form-control" name="lastName"id="lastNameLabel" placeholder="Vezetéknév" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="school"class="form-label">Egyetem</label>
+                <input type="text"[(ngModel)]="currentUser.user.school" class="form-control" name="school" id="school" placeholder="Egyetem" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="major"class="form-label">Szak</label>
+                <input type="text"[(ngModel)]="currentUser.user.major" class="form-control" name="major" id="major" placeholder="Szak" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="email"class="form-label">E-mail</label>
+                <input type="text"[(ngModel)]="currentUser.user.email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="username"class="form-label">Felhasználónév</label>
+                <input type="text"[(ngModel)]="currentUser.user.username" class="form-control" name="username" id="username" placeholder="Felhasználónév" required>
+              </div>
+              <div class="form-outline mb-4">
+                <label for="password"class="form-label">Jelszó</label>
+                <input type="password"[(ngModel)]="currentUser.user.passwordDecoded" class="form-control" name="password" id="password" placeholder="Jelszó" required>
+              </div>
+              <button [disabled]="userUpdate.invalid" type="button" class="btn btn-success" style="margin-right: 20px;" (click)="onUserUpdate()">Hallgató frissítése</button>
+              <div class="alert alert-warning" *ngIf="isUpdateFailed">
+                Hibás regisztráció!<br />{{ errorMessage }}
+              </div>
+              <div class="alert alert-success" *ngIf="isUpdateSuccessful">
+              Sikeres regisztráció
+            </div>
+          </form>
+          </div>
+      </div>
+        
+        <div class="col-md-3 left_inner_content">
+<div *ngIf="currentUser; else loggedOut">
+  <header>
+    <h3>
+      <b>Felhasználónév:</b>{{ currentUser.username }}
+    </h3>
+  </header>
+  
+  <b>Jogosultsági típus:</b>
+  <ul>
+    <li>{{currentUserRole}}</li>
+  </ul>
+  <p><b>Keresztnév:</b>{{currentUser.user.firstName}}</p>
+  <p><b>Vezetéknév:</b>{{currentUser.user.lastName}}</p>
+  <p><b>Egyetem:</b>{{currentUser.user.school}}</p>
+  <p><b>Szak:</b>{{currentUser.user.major}}</p>
+  <p><b>E-mail:</b>{{currentUser.user.email}}</p>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
+</div>
+
+</section>

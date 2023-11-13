@@ -323,7 +323,39 @@
                         break;
                 &#10101;
             </kbd>
-        </pre>   
+        </pre>
+        <h2 class="h2content">Önellenörző kérdések:</h2>
+        <div style="margin-bottom: 300px;">
+        <ol>
+            <li><button class="btn btn-link"(click)="onButtonClik1()">Ki építette az első automatikus működésű mechanikus számológépet?</button></li>
+            <div *ngIf="question1">
+                <form [formGroup]="qForm"(ngSubmit)="onSubmit('value1')">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-4">
+                            <input type="radio" name="q1"id="q1a1"value="value1" formControlName="q1">
+                            <label for="q1a1">value</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q1"id="q1a2"value="value2"formControlName="q1">
+                            <label for="q1a2">value</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q1"id="q1a3"value="value3"formControlName="q1">
+                            <label for="q1a3">value</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px">Ellenőrzés</button>
+                </form>
+                <div class="alert alert-success" *ngIf="isSuccess">
+
+                </div>
+                <div class="alert alert-warning"*ngIf="isError">
+
+                </div>
+            </div>
+        </ol>
+        </div>
         </div>
     </div>
 </section>

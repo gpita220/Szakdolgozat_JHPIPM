@@ -47,7 +47,7 @@ const routes: Routes = [
   {path:'register',component:RegisterpageComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthenticationGuard]},
   {path:'profiles',component:ProfilesAdminComponent,canActivate:[AuthenticationGuard]},
-  { path: '**', redirectTo: '/login' }
+  
 ];
 
 @NgModule({

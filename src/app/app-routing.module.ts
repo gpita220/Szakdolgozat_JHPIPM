@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'studentregister',component:StudentregisterComponent},
   {path:'studenteditor', component:StudenteditorComponent},
   {path:'chapter1',component:Chapter1Component,canActivate:[AuthenticationGuard]},
-  {path:'chapter2',component:Chapter2Component,canActivate:[AuthenticationGuard]},
+  {path:'chapter2',component:Chapter2Component,},
   {path:'chapter3',component:Chapter3Component,canActivate:[AuthenticationGuard]},
   {path:'chapter4',component:Chapter4Component,canActivate:[AuthenticationGuard]},
   {path:'chapter5',component:Chapter5Component,canActivate:[AuthenticationGuard]},
@@ -51,7 +51,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload', anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

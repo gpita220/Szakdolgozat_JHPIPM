@@ -64,11 +64,11 @@
                 </ul>
                 
                 <h1 class="h1content">Tetszőleges p>1 alapú számrendszer</h1>
-                <p>Tetszőleges p>1 alapú számrendszer esetében a számjegyek: &#10100;,1,…,p-1&#10101;.</p>
+                <p>Tetszőleges p>1 alapú számrendszer esetében a számjegyek: &#10100;0,1,…,p-1&#10101;.</p>
                 <h2 class="h2content">Általános alak:</h2>
                 <img src="assets/pic6.jpg" style="margin-left: 400px;">
                 <p>Az N szám értékét úgy kapjuk meg, hogy a számjegyek értékét megszorozzuk a helyiértékükkel és mindezt összeadjuk. </p>
-                <p>Ha p > 10, akkor az ai ∈ &#10100;,1,2,3,4,5,6,7,8,9, A, B, C, D, E, F, ...&#10101; jelölést alkalmazzuk a számjegyek megadására.</p>
+                <p>Ha p > 10, akkor az ai ∈ &#10100;0,1,2,3,4,5,6,7,8,9, A, B, C, D, E, F, ...&#10101; jelölést alkalmazzuk a számjegyek megadására.</p>
 
                 <h2 class="h2content">Decimális számrendszer</h2>
                 <p>A decimális számrendszerben a &#10100;,1,2,3,4,5,6,7,8,9&#10101; véges számjegyhalmaz elemeiből képzett végtelen sorozatok és a valós számok között kölcsönösen egyértelmű leképezést valósítunk meg figyelembe véve a helyiértékes jelölést.</p>
@@ -77,14 +77,20 @@
                 <p style="text-align: center;">&#10100;a<sub>n</sub>a<sub>n-1</sub>...a<sub>1</sub>a<sub>0</sub>,a<sub>-1</sub>a<sub>-2</sub>...a<sub>-m</sub>&#10101;<sub>10</sub></p>
                 <p>alakban jelölt szám értéke</p>
                 <img src="assets/pic7.jpg" style="margin-left: 400px;">
-
-                <h1 class="h1content">Bináris (kettes) számrendszer</h1>
+                <div class="row">
+                    <div class="col-md-4"><h1 class="h1content"id="q1">Bináris (kettes) számrendszer</h1></div>
+                    <div class="col-md-8"><button class="btn btn-success" *ngIf="bottomButton1" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+                </div>
                 <p>Bináris számrendszer esetében a számjegyek: &#10100;0,1&#10101;. A Számrendszer alapja: p = 2. Jelölés: 1110<sub>2</sub> , 1110<sub>b</sub> vagy (1110)<sub>2</sub>.</p>
                 <h2 class="h2content">Általános alak:</h2>
                 <img src="assets/pic8.jpg" style="margin-left: 400px;">
                 <p>Bináris számrendszerben az N = 1110, 11<sub>2</sub> helyiértékes szám 1 db 8-ast, 1 db 4-est, 1 db 2-est, 0 db 1-est, 1 db 1/2-et és 1 db 1/4-et jelöl, azaz N = 1 * 2<sup>3</sup> + 1 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup> + 1 * 2<sup>-1</sup> + 1 * 2<sup>-2</sup> .</p>
                 <p style="text-align: center;">N = 14, 75</p>
-                <h2 class="h2content">Oktális (nyolcas) számrendszer</h2>
+
+                <div class="row">
+                    <div class="col-md-4"><h2 class="h2content"id="q2">Oktális (nyolcas) számrendszer</h2></div>
+                    <div class="col-md-8"><button class="btn btn-success" *ngIf="bottomButton2" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+                </div>
                 <p>Oktális számrendszer esetében a számjegyek: &#10100;0,1,2,3,4,5,6,7&#10101;.</p>
                 <p>A Számrendszer alapja: p = 8. </p>
                 <p>Jelölés: 734<sub>8</sub> , 734<sub>o</sub> vagy (734)<sub>8</sub></p>
@@ -94,7 +100,10 @@
                 <p>Oktális számrendszerben az N = 437, 128 helyiértékes szám 4 db 64-est, 3 db 8-ast, 7 db 1-est, 1 db 1/8-ot és 2 db 1/64-et jelöl, azaz N = 4 * 8<sup>2</sup> + 3 * 8<sup>1</sup> + 7 * 8<sup>0</sup> + 1 * 8<sup>-1</sup> + 2 * 8<sup>-2</sup> . </p>
                 <p style="text-align: center;">N = 287, 15625</p>
 
-                <h1 class="h1content">Hexadecimális (tizenhatos) számrendszer</h1>
+                <div class="row">
+                    <div class="col-md-4"><h1 class="h1content" id="q3">Hexadecimális (tizenhatos) számrendszer</h1></div>
+                    <div class="col-md-8"><button class="btn btn-success" *ngIf="bottomButton3" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+                </div>
                 <p>Hexadecimális számrendszer esetében a számjegyek: &#10100;0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F&#10101;.</p>
                 <p>A Számrendszer alapja: p = 16. </p>
                 <p>Jelölés: BABA<sub>16</sub> , BABA<sub>h</sub> vagy (BABA)<sub>16</sub></p>
@@ -135,7 +144,9 @@
                     <li>egyhatározatlanú - például: 1 + y + y<sup>2</sup>3y<sup>5</sup> , 1 + x + x<sup>2</sup>3x<sup>5</sup></li>
                     <li>többhatározatlanú - például: 1 + y + x<sup>2</sup>3z<sup>5</sup> , 1 + xy + x<sup>2</sup>3z<sup>5</sup></li>
                 </ul>
-
+                <div class="row" id="q4">
+                    <div><div class="col-md-12"><button class="btn btn-success" *ngIf="bottomButton4" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>                </div>
+                </div>
                 <p>Egyhatározatlanú polinomnak nevezzük az f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>n</sup> formális kifejezéseket, ahol n ≥ 0 egész szám és a<sub>0</sub>, . . . , a<sub>n</sub> komplex számok. Az x neve határozatlan. Az a<sub>j</sub>x<sub>j</sub> a polinom egy tagja, az <sub>j</sub> együtthatója a<sub>j</sub>. Az a<sub>0</sub> = a<sub>0</sub>x<sub>0</sub> a konstans tag. Polinom foka Ha a<sub>n</sub> ≠ 0, akkor f foka n. A legnagyobb olyan kitevő ,amelyhez tartozó együttható nem 0.</p>
 
                 <p>Amint az az előzőkből is látszik, egy tetszőleges p>1 alapú szám tulajdonképpen egy olyan speciális polinom, ahol a határozatlan a p, az együtthatók pedig csak a &#10100;0,1,…,p-1&#10101; vehetnek fel értékeket.</p>
@@ -154,8 +165,115 @@
                 </pre>
                 <p>A b<sub>0</sub> éppen a f(x<sub>0</sub>) érték.</p>
 
-
-
+                <h2 class="h2content" id="questions">Önellenörző kérdések:</h2>
+                <div style="margin-bottom: 300px;">
+                <ol>
+                    <li><button class="btn btn-link" (click)="onButtonClick1()"> Hogyan jelöljük a bináris számrendszerben a számjegyeket és mi a számrendszer alapja?</button></li>
+                    <div *ngIf="question1">
+                        <form [formGroup]="qForm1"(ngSubmit)="onSubmit1('value1')">
+                        <div class="row"style="text-align: center;">
+                            <div class="col-md-4">
+                                <input type="radio" name="q1"id="q1a1"value="value1" formControlName="q1">
+                                <label for="q1a1">&#10100;0,1&#10101;, jelölése: 1010<sub>2</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q1"id="q1a2"value="value2"formControlName="q1">
+                                <label for="q1a2">&#10100;0,1,2&#10101;, jelölése: 1010<sub>2</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q1"id="q1a3"value="value3"formControlName="q1">
+                                <label for="q1a3">&#10100;0,1&#10101;, jelölése: 1010<sub>1</sub></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                        </form>
+                        <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                            Helyes válasz!
+                        </div>
+                        <div class="alert alert-warning col-md-7"*ngIf="isError">
+                            Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q1')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                        </div>
+                    </div>
+                    <li><button class="btn btn-link" (click)="onButtonClick2()">Hogyan jelöljük a oktális számrendszerben a számjegyeket és mi a számrendszer alapja?</button></li>
+                    <div *ngIf="question2">
+                        <form [formGroup]="qForm2"(ngSubmit)="onSubmit2('value2')">
+                        <div class="row"style="text-align: center;">
+                            <div class="col-md-4">
+                                <input type="radio" name="q2"id="q2a1"value="value1" formControlName="q2">
+                                <label for="q2a1">&#10100;0,1,2,3,4,5,6,7,8&#10101;, jelölése: 718<sub>8</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q2"id="q2a2"value="value2"formControlName="q2">
+                                <label for="q2a2">&#10100;0,1,2,3,4,5,6,7&#10101;, jelölése: 718<sub>8</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q2"id="q2a3"value="value3"formControlName="q2">
+                                <label for="q2a3">&#10100;1,2,3,4,5,6,7,8&#10101;, jelölése: 718<sub>8</sub></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                        </form>
+                        <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                            Helyes válasz!
+                        </div>
+                        <div class="alert alert-warning col-md-7"*ngIf="isError">
+                            Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q2')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                        </div>
+                    </div>
+                    <li><button class="btn btn-link" (click)="onButtonClick3()">Hogyan jelöljük a hexadecimális számrendszerben a számjegyeket és mi a számrendszer alapja?</button></li>
+                    <div *ngIf="question3">
+                        <form [formGroup]="qForm3"(ngSubmit)="onSubmit3('value3')">
+                        <div class="row"style="text-align: center;">
+                            <div class="col-md-4">
+                                <input type="radio" name="q3"id="q3a1"value="value1" formControlName="q3">
+                                <label for="q3a1">&#10100;1,2,3,4,5,6,7,8,A,B,C,D,E,F&#10101;, jelölése: BABA<sub>16</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q3"id="q3a2"value="value2"formControlName="q3">
+                                <label for="q3a2">&#10100;0,1,2,3,4,5,6,7,8...,15,16&#10101;, jelölése: BABA<sub>16</sub></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q3"id="q3a3"value="value3"formControlName="q3">
+                                <label for="q3a3">&#10100;0,1,2,3,4,5,6,7,A,B,C,D,E,F&#10101;, jelölése: BABA<sub>16</sub></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                        </form>
+                        <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                            Helyes válasz!
+                        </div>
+                        <div class="alert alert-warning col-md-7"*ngIf="isError">
+                            Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q3')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                        </div>
+                    </div>
+                    <li><button class="btn btn-link" (click)="onButtonClick4()">Melyik az egyhatározatlanú polinom általános leírása?</button></li>
+                    <div *ngIf="question4">
+                        <form [formGroup]="qForm4"(ngSubmit)="onSubmit4('value1')">
+                        <div class="row"style="text-align: center;">
+                            <div class="col-md-4">
+                                <input type="radio" name="q4"id="q4a1"value="value1" formControlName="q4">
+                                <label for="q4a1">f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>n</sup></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q4"id="q4a2"value="value2"formControlName="q4">
+                                <label for="q4a2">f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>-n</sub>x<sup>n</sup></label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="radio" name="q4"id="q4a3"value="value3"formControlName="q4">
+                                <label for="q4a3">f(x) = a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>n</sub>x<sup>-n</sup></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                        </form>
+                        <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                            Helyes válasz!
+                        </div>
+                        <div class="alert alert-warning col-md-7"*ngIf="isError">
+                            Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q4')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                        </div>
+                    </div>
+                </ol>
+                </div>
             </div>
         </div>
 </section>

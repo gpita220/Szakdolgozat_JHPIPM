@@ -14,8 +14,12 @@ export class SidenavComponent {
 
   }
   ngOnInit(): void {
-    this.userIsAdmin=this.storageService.userIsAdmin();
-    
+    if(this.storageService.getUser==null){
+      this.userIsAdmin=false;
+    }
+    if(this.isLoggedIn()){
+      this.userIsAdmin=this.storageService.userIsAdmin();
+    }
   }
   public isLoggedIn():boolean{
     return this.storageService.isLoggedIn();
@@ -25,5 +29,6 @@ export class SidenavComponent {
     this.userIsAdmin=false;
     this.route.navigate(["login"]);
   }
+
 
 }

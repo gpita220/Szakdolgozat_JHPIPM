@@ -35,7 +35,13 @@
             <li>a C++ nyelv alapjai.</li>
         </ul>
         <br>
-        <h1 class="h1content">Számológép, számítógép</h1>
+        <div class="row">
+            <div class="col-md-4">
+        <h1 class="h1content"id="q1">Számológép, számítógép</h1></div>
+        <div class="col-md-8">
+        <button class="btn btn-success" *ngIf="bottomButton1" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button>
+        </div> 
+        </div>
         <p>Az emberiség már régóta igyekezett olyan segédeszközöket megteremteni, amelyek a számolást,
         általában a szellemi munkák mechanizálható részének végzését megkönnyítik. A legrégibb ilyen segédeszköz 
         a golyós számológép, vagy abacus, amely már az ókorban megjelent. Az első automatikus működésű mechanikus 
@@ -51,7 +57,11 @@
         a műveletre vonatkozó információt. Az adat az úgynevezett regiszterbe kerül.
         </p>
         <br>
-        <h1 class="h1content">A regiszter</h1>
+        <div class="row">
+            <div class="col-md-4"><h1 class="h1content" id="q2">A regiszter</h1></div>
+            <div class="col-md-8"><button class="btn btn-success" *ngIf="bottomButton2" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+        </div>
+        
         <p>A regiszter az adat átmeneti tárolóhelye, amelyben meghatározott nagyságú vagy számjegyet tartalmazó 
             számot tudunk tárolni. A regiszterek különböző méretűek lehetnek, és különböző célokra használhatók. 
             Például, a processzor regisztereket használ a műveletekhez, például az összeadáshoz, kivonáshoz, szorzáshoz 
@@ -87,8 +97,11 @@
         <p>Az előadásokon és gyakorlatokon az egyes példákat, feladatokat C++ nyelven ismertetjük, illetve oldjuk meg majd. 
             Mielőtt folytatnánk a regiszterekkel kapcsolatos vizsgálatokat, teszünk egy rövid kitérőt, megismerkedünk a C++ 
             nyelv alapjaival.</p>
-
-        <h1 class="h1content">A C++ nyelv alapjai</h1>
+            <div class="row">
+                <div class="col-md-4"><h1 class="h1content" id="q4">A C++ nyelv alapjai</h1></div>
+                <div class="col-md-8"><button class="btn btn-success" *ngIf="bottomButton4" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+            </div>
+        
         <p>A C++ egy általános célú, multiparadigmás, magas szintű programozási nyelv, amely a C nyelvből származik.  
             A nyelvet Bjarne Stroustrup dán informatikus fejlesztette ki az AT&T Bell Laboratories-ben az 1980-as évek elején. 
             Stroustrup eredetileg a C++-ot "C with Classes"-nek nevezte el, amely egy olyan kiterjesztés volt a C nyelvre, amely 
@@ -222,7 +235,9 @@
                     
             </kbd>
         </pre>
-
+        <div class="row" id="q5">
+            <div class="col-md-12"><button class="btn btn-success" *ngIf="bottomButton5" (click)="onBottomButton('questions')" style="float: right; margin-top: 20px;">Oldal legaljára</button></div>
+        </div>
         <p>A &lt;&lt; és >> operátorok C++-ban az adatok bemeneti vagy kimeneti áramlását jelentik, és gyakran az iostream könyvtárhoz kapcsolódnak. 
             A &lt;&lt; operátor segítségével lehet adatokat kiírni a standard kimenetre, míg a >> operátorral lehet adatokat beolvasni a standard bemenetről.</p>
         
@@ -324,34 +339,146 @@
                 &#10101;
             </kbd>
         </pre>
-        <h2 class="h2content">Önellenörző kérdések:</h2>
+        <h2 class="h2content" id="questions">Önellenörző kérdések:</h2>
         <div style="margin-bottom: 300px;">
         <ol>
-            <li><button class="btn btn-link"(click)="onButtonClik1()">Ki építette az első automatikus működésű mechanikus számológépet?</button></li>
+            <li><button class="btn btn-link"(click)="onButtonClick1()">Ki építette az első automatikus működésű mechanikus számológépet?</button></li>
             <div *ngIf="question1">
-                <form [formGroup]="qForm"(ngSubmit)="onSubmit('value1')">
+                <form [formGroup]="qForm1"(ngSubmit)="onSubmit1('value1')">
                     <div class="row" style="text-align: center;">
                         <div class="col-md-4">
                             <input type="radio" name="q1"id="q1a1"value="value1" formControlName="q1">
-                            <label for="q1a1">value</label>
+                            <label for="q1a1">Pascal</label>
                         </div>
                         <div class="col-md-4">
                             <input type="radio" name="q1"id="q1a2"value="value2"formControlName="q1">
-                            <label for="q1a2">value</label>
+                            <label for="q1a2">Leibniz</label>
                         </div>
                         <div class="col-md-4">
                             <input type="radio" name="q1"id="q1a3"value="value3"formControlName="q1">
-                            <label for="q1a3">value</label>
+                            <label for="q1a3">Falcon</label>
                         </div>
 
                     </div>
-                    <button type="submit" class="btn btn-success"style="margin-top:15px">Ellenőrzés</button>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
                 </form>
-                <div class="alert alert-success" *ngIf="isSuccess">
-
+                <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                    Helyes válasz!
                 </div>
-                <div class="alert alert-warning"*ngIf="isError">
+                <div class="alert alert-warning col-md-7"*ngIf="isError">
+                    Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q1')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                </div>
+            </div>
 
+            <li><button class="btn btn-link"(click)="onButtonClick2()">Mi a regiszter alapvető feladata?</button></li>
+            <div *ngIf="question2">
+                <form [formGroup]="qForm2"(ngSubmit)="onSubmit2('value2')">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-4">
+                            <input type="radio" name="q2"id="q2a1"value="value1" formControlName="q2">
+                            <label for="q2a1">A regiszterek a virtuális memóriát tárolják, amelyeket a műveletek végrehajtásához használnak.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q2"id="q2a2"value="value2"formControlName="q2">
+                            <label for="q2a2">A regiszterek az adatokat tárolják, amelyeket a műveletek végrehajtásához használnak.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q2"id="q2a3"value="value3"formControlName="q2">
+                            <label for="q2a3">A regiszterek különböző méretűek lehetnek, és különböző célokra használhatók.</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                </form>
+                <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                    Helyes válasz!
+                </div>
+                <div class="alert alert-warning col-md-7"*ngIf="isError">
+                    Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q2')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                </div>
+            </div>
+
+            <li><button class="btn btn-link"(click)="onButtonClick3()">Mit jelent, hogy egy processzor szóhossza 64 bit?</button></li>
+            <div *ngIf="question3">
+                <form [formGroup]="qForm3"(ngSubmit)="onSubmit3('value1')">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-4">
+                            <input type="radio" name="q3"id="q3a1"value="value1" formControlName="q3">
+                            <label for="q3a1">A gépi szóhossz befolyásolja a számítógép teljesítményét, determinálja, hogy mekkora adatot képes a CPU és a memória egyszerre feldolgozni.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q3"id="q3a2"value="value2"formControlName="q3">
+                            <label for="q3a2">A CPU által kezelt virtuális mermória szélességét jelenti.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q3"id="q3a3"value="value3"formControlName="q3">
+                            <label for="q3a3">A CPU által kezelt adatok kihasználhatóságát jelenti.</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                </form>
+                <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                    Helyes válasz!
+                </div>
+                <div class="alert alert-warning col-md-7"*ngIf="isError">
+                    Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q2')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                </div>
+            </div>
+
+            <li><button class="btn btn-link"(click)="onButtonClick4()">Mi az STL könyvtár?</button></li>
+            <div *ngIf="question4">
+                <form [formGroup]="qForm4"(ngSubmit)="onSubmit4('value3')">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-4">
+                            <input type="radio" name="q4"id="q4a1"value="value1" formControlName="q4">
+                            <label for="q4a1">Java könyvtár, amely sablonokat tartalmazó adatszerkezeteket tartalmaz.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q4"id="q4a2"value="value2"formControlName="q4">
+                            <label for="q4a2">C# könyvtár, amely sablonokat tartalmazó adatszerkezeteket és algoritmusokat tartalmaz.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q4"id="q4a3"value="value3"formControlName="q4">
+                            <label for="q4a3">C++ könyvtár, amely sablonokat tartalmazó adatszerkezeteket és algoritmusokat tartalmaz.</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                </form>
+                <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                    Helyes válasz!
+                </div>
+                <div class="alert alert-warning col-md-7"*ngIf="isError">
+                    Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q4')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
+                </div>
+            </div>
+
+            <li><button class="btn btn-link"(click)="onButtonClick5()">Mely operátorokkal lehet adatok áramlásának irányát beállítani?</button></li>
+            <div *ngIf="question5">
+                <form [formGroup]="qForm5"(ngSubmit)="onSubmit5('value2')">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-4">
+                            <input type="radio" name="q5"id="q5a1"value="value1" formControlName="q5">
+                            <label for="q4a1">&lt; és ></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q5"id="q5a2"value="value2"formControlName="q5">
+                            <label for="q4a2">&lt;&lt; és >></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="radio" name="q5"id="q5a3"value="value3"formControlName="q5">
+                            <label for="q5a3">(( és ))</label>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-success"style="margin-top:15px; margin-bottom:15px">Ellenőrzés</button>
+                </form>
+                <div class="alert alert-success col-md-2" *ngIf="isSuccess">
+                    Helyes válasz!
+                </div>
+                <div class="alert alert-warning col-md-7"*ngIf="isError">
+                    Rossz válasz! <button class="btn btn-link" style="margin:0" (click)="onMessageClick('q5')">Ide kattinva</button> meg tudod nézni, hogy a fejezet melyik részén keresheted a kérdésre a választ.
                 </div>
             </div>
         </ol>

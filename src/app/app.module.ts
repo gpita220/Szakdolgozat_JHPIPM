@@ -46,6 +46,7 @@ import { AuthGuard, AuthService } from '@auth0/auth0-angular';
 import { HttpRequestInterceptor } from './login/httpRequestInterceptor';
 import { StorageService } from './Service/storage.service';
 import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.component';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 
 
@@ -98,7 +99,8 @@ import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.componen
     ReactiveFormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
-              AuthGuard, AuthService, StorageService],
+              AuthGuard, AuthService, StorageService,BnNgIdleService
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

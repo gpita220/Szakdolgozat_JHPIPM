@@ -51,4 +51,6 @@ export class LoginpageComponent {
 	  reloadPage(): void {
 		window.location.reload();
 	  }
+
+	  
 }

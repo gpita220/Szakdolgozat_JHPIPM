@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainpageComponent } from './mainpage/mainpage.component';
-import { StudentregisterComponent } from './studentform/studentregister/studentregister.component';
-import { StudenteditorComponent } from './studentform/studenteditor/studenteditor.component';
 import { Chapter1Component } from './chapter/chapter1/chapter1.component';
 import { Chapter2Component } from './chapter/chapter2/chapter2.component';
 import { Chapter3Component } from './chapter/chapter3/chapter3.component';
@@ -15,11 +13,8 @@ import { Chapter9Component } from './chapter/chapter9/chapter9.component';
 import { Chapter10Component } from './chapter/chapter10/chapter10.component';
 import { Chapter11Component } from './chapter/chapter11/chapter11.component';
 import { Chapter12Component } from './chapter/chapter12/chapter12.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { AuthGuard } from '@auth0/auth0-angular';
 import { LoginpageComponent } from './login/loginpage/loginpage.component';
 import { RegisterpageComponent } from './login/registerpage/registerpage.component';
-import { ContentComponent } from './auth/content/content.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthenticationGuard } from './login/auth.guard';
 import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.component';
@@ -28,11 +23,11 @@ import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.componen
 
 const routes: Routes = [
   {path:'',redirectTo:'/login', pathMatch:"full"},
-  {path:'mainpage',component:MainpageComponent,canActivate:[AuthenticationGuard]},
-  {path:'studentregister',component:StudentregisterComponent},
-  {path:'studenteditor', component:StudenteditorComponent},
+  {path:'login',component:LoginpageComponent, pathMatch:"full"},
+  {path:'register',component:RegisterpageComponent},
+  {path:'mainpage',component:MainpageComponent},
   {path:'chapter1',component:Chapter1Component,canActivate:[AuthenticationGuard]},
-  {path:'chapter2',component:Chapter2Component,},
+  {path:'chapter2',component:Chapter2Component,canActivate:[AuthenticationGuard]},
   {path:'chapter3',component:Chapter3Component,canActivate:[AuthenticationGuard]},
   {path:'chapter4',component:Chapter4Component,canActivate:[AuthenticationGuard]},
   {path:'chapter5',component:Chapter5Component,canActivate:[AuthenticationGuard]},
@@ -43,8 +38,6 @@ const routes: Routes = [
   {path:'chapter10',component:Chapter10Component,canActivate:[AuthenticationGuard]},
   {path:'chapter11',component:Chapter11Component,canActivate:[AuthenticationGuard]},
   {path:'chapter12',component:Chapter12Component,canActivate:[AuthenticationGuard]},
-  {path:'login',component:LoginpageComponent, pathMatch:"full"},
-  {path:'register',component:RegisterpageComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthenticationGuard]},
   {path:'profiles',component:ProfilesAdminComponent,canActivate:[AuthenticationGuard]},
   

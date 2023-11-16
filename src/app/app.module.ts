@@ -37,10 +37,6 @@ import { Chapter11Component } from './chapter/chapter11/chapter11.component';
 import { Chapter12Component } from './chapter/chapter12/chapter12.component';
 import { LoginpageComponent } from './login/loginpage/loginpage.component';
 import { RegisterpageComponent } from './login/registerpage/registerpage.component';
-import { AuthContentComponent } from './auth/auth-content/auth-content.component';
-import { ContentComponent } from './auth/content/content.component';
-import { ButtonsComponent } from './auth/content/buttons/buttons.component';
-
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard, AuthService } from '@auth0/auth0-angular';
 import { HttpRequestInterceptor } from './login/httpRequestInterceptor';
@@ -71,9 +67,6 @@ import { BnNgIdleService } from 'bn-ng-idle';
     Chapter12Component,
     LoginpageComponent,
     RegisterpageComponent,
-    AuthContentComponent,
-    ContentComponent,
-    ButtonsComponent,
     ProfileComponent,
     ProfilesAdminComponent,
 

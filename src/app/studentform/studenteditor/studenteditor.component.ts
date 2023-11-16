@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentService } from 'src/app/Service/student.service';
-import { Student } from 'src/app/class/student';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
@@ -12,8 +11,8 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 })
 export class StudenteditorComponent implements OnInit{
 
-  public srow!:Student;
-  public students!:Student[];
+  public srow!:any;
+  public students!:any;
   public header: string[] = ['name', 'email', 'school','major'];
   studentform={
     id:0,
@@ -32,7 +31,7 @@ export class StudenteditorComponent implements OnInit{
 
   public onGetStudents(){
     this.studentService.getStudents().subscribe(
-      (response:Student[])=> {
+      (response:any[])=> {
         this.students=response;
       },
       (error: HttpErrorResponse)=>{
@@ -55,9 +54,9 @@ export class StudenteditorComponent implements OnInit{
       );
   }
  
-  public onUpdateStudent(student: Student, form:NgForm){
+  public onUpdateStudent(student: any, form:NgForm){
     this.studentService.updateStudent(student).subscribe(
-      (response: Student) =>{
+      (response: any) =>{
         alert("siker");
         this.onGetStudents();
         form.reset();
@@ -69,7 +68,7 @@ export class StudenteditorComponent implements OnInit{
     );
   }
 
-  public selectedRow(datasource:Student) {
+  public selectedRow(datasource:any) {
       this.studentform.id=datasource.id;
       this.studentform.name=datasource.name;
       this.studentform.email=datasource.email;

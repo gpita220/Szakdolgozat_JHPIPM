@@ -78,7 +78,6 @@
                     </mat-nav-list>
         </ng-template>
       </mat-expansion-panel>
-      <a mat-list-item class="listitem" routerLink="studenteditor" routerLinkActive="active"(click)="sidenav.toggle()"><mat-icon>portrait</mat-icon><span class="fo"><b>Hallgatók</b></span></a>
       <a mat-list-item class="listitem" routerLink="profile" routerLinkActive="active" (click)="sidenav.toggle()"><mat-icon>person</mat-icon><span class="fo"><b>Profil</b></span></a>
       <a mat-list-item class="listitem" routerLink="profiles" routerLinkActive="active" (click)="sidenav.toggle()"*ngIf="userIsAdmin"><mat-icon>person</mat-icon><span class="fo"><b>Profilok</b></span></a>
       </mat-nav-list>

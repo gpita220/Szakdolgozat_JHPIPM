@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentService } from 'src/app/Service/student.service';
-import { Student } from 'src/app/class/student';
 
 @Component({
   selector: 'app-studentregister',
@@ -17,7 +16,7 @@ export class StudentregisterComponent {
 
   public onAddStudent(studentAddForm: NgForm){
     this.studentService.addStudent(studentAddForm.value).subscribe(
-      (response: Student) =>{
+      (response:any) =>{
         alert("siker");
         this.router.navigate(['/','mainpage']);
       },

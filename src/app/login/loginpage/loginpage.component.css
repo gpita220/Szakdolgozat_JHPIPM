@@ -3,9 +3,17 @@
     margin: 60px auto 0;
   }
 h1{
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color:#3C6F00
 }
 button{
+    margin-top: 10px;
     margin-bottom: 10px;
+}
+label{
+    color:#13a808;
+}
+form{
+    font-size: larger;
 }

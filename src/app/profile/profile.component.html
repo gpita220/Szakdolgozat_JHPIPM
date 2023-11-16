@@ -39,7 +39,7 @@
                 <label for="password"class="form-label">Jelszó</label>
                 <input type="password"[(ngModel)]="currentUser.user.passwordDecoded" class="form-control" name="password" id="password" placeholder="Jelszó" required>
               </div>
-              <button [disabled]="userUpdate.invalid" type="button" class="btn btn-success" style="margin-right: 20px;" (click)="onUserUpdate()">Hallgató frissítése</button>
+              <button [disabled]="userUpdate.invalid" type="button" class="btn btn-success" style="margin-right: 20px; margin-bottom: 100px;" (click)="onUserUpdate()">Hallgató frissítése</button>
               <div class="alert alert-warning" *ngIf="isUpdateFailed">
                 Hibás regisztráció!<br />{{ errorMessage }}
               </div>
@@ -50,28 +50,18 @@
           </div>
       </div>
         
-        <div class="col-md-3 left_inner_content">
-<div *ngIf="currentUser; else loggedOut">
-  <header>
-    <h3>
-      <b>Felhasználónév:</b>{{ currentUser.username }}
-    </h3>
-  </header>
-  
-  <b>Jogosultsági típus:</b>
-  <ul>
-    <li>{{currentUserRole}}</li>
-  </ul>
-  <p><b>Keresztnév:</b>{{currentUser.user.firstName}}</p>
-  <p><b>Vezetéknév:</b>{{currentUser.user.lastName}}</p>
-  <p><b>Egyetem:</b>{{currentUser.user.school}}</p>
-  <p><b>Szak:</b>{{currentUser.user.major}}</p>
-  <p><b>E-mail:</b>{{currentUser.user.email}}</p>
-</div>
-
+  <div class="col-md-3">
+  <p class="p3"><b>Felhasználónév:</b> {{ currentUser.username }}</p>
+  <p class="p3"><b>Jogosultsági típus:</b> {{currentUserRole}}</p>
+  <p class="p3"><b>Keresztnév:</b> {{currentUser.user.firstName}}</p>
+  <p class="p3"><b>Vezetéknév:</b> {{currentUser.user.lastName}}</p>
+  <p class="p3"><b>Egyetem:</b> {{currentUser.user.school}}</p>
+  <p class="p3"><b>Szak:</b> {{currentUser.user.major}}</p>
+  <p class="p3"><b>E-mail:</b> {{currentUser.user.email}}</p>
+  </div>
 <ng-template #loggedOut>
   Please login.
 </ng-template>
-</div>
+
 
 </section>

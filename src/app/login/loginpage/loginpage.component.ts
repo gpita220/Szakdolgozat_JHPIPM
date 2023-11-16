@@ -13,26 +13,28 @@ export class LoginpageComponent {
 	user: any = {
 		username: null,
 		password: null
-	  };
-	  isLoggedIn = false;
-	  isLoginFailed = false;
-	  errorMessage = '';
-	  roles: string[] = [];
+	};
+	isLoggedIn = false;
+	isLoginFailed = false;
+	errorMessage = '';
+	roles: string[] = [];
 	
-	  constructor(private authService: AuthService, private storageService: StorageService, private route:Router) { }
+	hide=true;
+	constructor(private authService: AuthService, private storageService: StorageService, private route:Router) { }
 	
-	  ngOnInit(): void {
+	ngOnInit(): void {
 		if (this.storageService.isLoggedIn()) {
-		  this.isLoggedIn = true;
-		  this.roles = this.storageService.getUser().roles;
+		this.isLoggedIn = true;
+		this.roles = this.storageService.getUser().roles;
 		}
-	  }
+		this.hide=true;
+	}
 	
-	  onSubmit(): void {
+	onSubmit(): void {
 		const { username, password } = this.user;
 	
 		this.authService.login(username, password).subscribe({
-		  next: data => {
+		next: data => {
 			this.storageService.saveUser(data);
 	
 			this.isLoginFailed = false;
@@ -40,17 +42,19 @@ export class LoginpageComponent {
 			this.roles = this.storageService.getUser().roles;
 			
 			this.route.navigate(["/mainpage"]);
-		  },
-		  error: err => {
+		},
+		error: err => {
 			this.errorMessage = err.error.message;
 			this.isLoginFailed = true;
-		  }
+		}
 		});
-	  }
+	}
 	
-	  reloadPage(): void {
+	reloadPage(): void {
 		window.location.reload();
-	  }
+	}
 
-	  
+	public passwordType(){
+		this.hide=!this.hide;
+	}  
 }

@@ -18,6 +18,7 @@ import { RegisterpageComponent } from './login/registerpage/registerpage.compone
 import { ProfileComponent } from './profile/profile.component';
 import { AuthenticationGuard } from './login/auth.guard';
 import { ProfilesAdminComponent } from './profiles-admin/profiles-admin.component';
+import { AdminGuard } from './login/admin.guard';
 
 
 
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path:'chapter11',component:Chapter11Component,canActivate:[AuthenticationGuard]},
   {path:'chapter12',component:Chapter12Component,canActivate:[AuthenticationGuard]},
   {path:'profile',component:ProfileComponent,canActivate:[AuthenticationGuard]},
-  {path:'profiles',component:ProfilesAdminComponent,canActivate:[AuthenticationGuard]},
+  {path:'profiles',component:ProfilesAdminComponent,canActivate:[AuthenticationGuard, AdminGuard]},
   
 ];
 

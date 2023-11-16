@@ -21,9 +21,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { Chapter1Component } from './chapter/chapter1/chapter1.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { StudentregisterComponent } from './studentform/studentregister/studentregister.component';
-import { StudenteditorComponent } from './studentform/studenteditor/studenteditor.component';
-import { StudentService } from './Service/student.service';
 import { Chapter2Component } from './chapter/chapter2/chapter2.component';
 import { Chapter3Component } from './chapter/chapter3/chapter3.component';
 import { Chapter4Component } from './chapter/chapter4/chapter4.component';
@@ -52,8 +49,6 @@ import { BnNgIdleService } from 'bn-ng-idle';
     SidenavComponent,
     MainpageComponent,
     Chapter1Component,
-    StudentregisterComponent,
-    StudenteditorComponent,
     Chapter2Component,
     Chapter3Component,
     Chapter4Component,

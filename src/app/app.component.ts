@@ -17,10 +17,11 @@ export class AppComponent {
 
   // initiate it in your component OnInit
   ngOnInit(): void {
-    this.bnIdle.startWatching(1000).subscribe((isTimedOut: boolean) => {
+    this.bnIdle.startWatching(1200).subscribe((isTimedOut: boolean) => {
       
       if (isTimedOut) {
         console.log(this.bnIdle);
+        alert("Inaktív voltál, ezért most kijelentkeztetünk!")
         console.log('session expired');
         if(this.strogareService.isLoggedIn()){
           this.strogareService.clean();

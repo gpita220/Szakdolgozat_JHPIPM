@@ -44,15 +44,27 @@ hr {
     height: 5px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #63b800, rgba(0, 0, 0, 0));
 }
+.p3{
+    color:#3C6F00;
+    
+}
 .p2{
     background-color: #B3FD5C;
     padding: 20px;
-    font-size: larger;
+    
   }
+h3{
+    color:#3C6F00;
+}
 label{
     font-style: oblique;
     font-weight: bold;
+    margin-bottom: 5px;
+    color:#13a808;
 }
 input{
     width: 350px;
+}
+section{
+    font-size: larger;
 }

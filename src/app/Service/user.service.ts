@@ -33,10 +33,6 @@ export class UserService {
     roles
     },httpOptions);
   }
- /* public findUserByUsername(username:string):Observable<User>{
-    return this.http.get<User>(`${this.backendUrl}/user/findByUsername?username=`+username,httpOptions);
-  }
-  */
   public deleteUser(id:number):Observable<void>{
     return this.http.delete<void>(backendURL+'delete?id='+id,httpOptions);
   } 

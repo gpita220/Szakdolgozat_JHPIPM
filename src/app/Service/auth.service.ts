@@ -14,7 +14,8 @@ const httpOptions = {
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  login(username: string, password: string): Observable<any> {
+
+  public login(username: string, password: string): Observable<any> {
     return this.http.post(
       backendURL + 'signin',
       {
@@ -25,7 +26,7 @@ export class AuthService {
     );
   }
 
-  register(firstName:string,lastName:string,school:string,major:string, email: string, username: string, password: string): Observable<any> {
+  public register(firstName:string,lastName:string,school:string,major:string, email: string, username: string, password: string): Observable<any> {
     return this.http.post(
       backendURL + 'signup',
       {

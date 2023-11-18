@@ -28,6 +28,7 @@ export class LoginpageComponent {
 		this.roles = this.storageService.getUser().roles;
 		}
 		this.hide=true;
+		
 	}
 	
 	onSubmit(): void {

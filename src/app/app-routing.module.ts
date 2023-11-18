@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'',redirectTo:'/login', pathMatch:"full"},
   {path:'login',component:LoginpageComponent, pathMatch:"full"},
   {path:'register',component:RegisterpageComponent},
-  {path:'mainpage',component:MainpageComponent},
+  {path:'mainpage',component:MainpageComponent,canActivate:[AuthenticationGuard]},
   {path:'chapter1',component:Chapter1Component,canActivate:[AuthenticationGuard]},
   {path:'chapter2',component:Chapter2Component,canActivate:[AuthenticationGuard]},
   {path:'chapter3',component:Chapter3Component,canActivate:[AuthenticationGuard]},

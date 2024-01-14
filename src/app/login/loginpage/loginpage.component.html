@@ -9,12 +9,12 @@
 
 						<h1>Bejelentkezés</h1>
 	      				<div class="form-outline mb-4">
-							<label class="form-label" for="usernameInput">Bejelentkezés</label>
+							<label class="form-label" for="usernameInput">Felhasználónév</label>
 	        				<input type="login" id="usernameInput" name= "username" class="form-control" [(ngModel)]="user.username" placeholder="Felhasználónév" />
 	      				</div>
 
 	      				<div class="form-outline mb-4">
-							<label class="form-label" for="passwordInput">Regisztráció</label>
+							<label class="form-label" for="passwordInput">Jelszó</label>
 							<a style="float: right;" (click)="passwordType()"><mat-icon *ngIf="hide">visibility</mat-icon><mat-icon *ngIf="!hide">visibility_off</mat-icon></a>
 	        				<input [type]="hide ? 'password' : 'text'" id="passwordInput" name="password" class="form-control" [(ngModel)]="user.password" placeholder="Jelszó"/>
 	      				</div>
